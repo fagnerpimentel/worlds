@@ -1,9 +1,12 @@
 <launch>
   <arg name="model" default="empty" />
   <arg name="enable_gui" default="true" />
+  <arg name="paused" default="true" />
 
   <include file="$(find gazebo_ros)/launch/empty_world.launch" >
+    <arg name="paused" default="$(arg paused)"/>
     <env name="GAZEBO_MODEL_PATH" value="$(find social_worlds)/models/"/>
+    <env name="GAZEBO_PLUGIN_PATH" value="/home/fagner/gazebo_plugin_tutorial/build"/>
     <arg name="world_name" default="$(find social_worlds)/worlds/$(arg model).world"/>
     <arg name="gui" default="$(arg enable_gui)"/>
   </include>
