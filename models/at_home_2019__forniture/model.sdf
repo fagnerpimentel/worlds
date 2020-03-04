@@ -1,0 +1,18 @@
+<?xml version='1.0'?>
+<sdf version='1.6'>
+  <model name='at_home_2019_sliding_doors'>
+
+    <!-- @HOME 2019 - empty -->
+    <include>
+      <uri>model://at_home_2019__empty</uri>
+      <pose>0 0 0 0 -0 0</pose>
+    </include>
+
+    <!-- table 1 -->
+    <include>
+      <uri>model://table</uri>
+      <pose>5.3 -2 0 0 0 0</pose>
+    </include>
+
+  </model>
+</sdf>
