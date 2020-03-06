@@ -22,7 +22,7 @@
     <include>
       <uri>model://sliding_door</uri>
       <name>door2</name>
-      <pose>2.7 -0.75 0 0 0 -1.5707</pose>
+      <pose>2.9 -0.65 0 0 0 -1.5707</pose>
     </include>
     <plugin name="auto_sliding_door_2" filename="libauto_sliding_door.so">
       <door_name>door2</door_name>
@@ -32,7 +32,7 @@
     <include>
       <uri>model://sliding_door</uri>
       <name>door3</name>
-      <pose>0.65 -1.9 0 0 0 3.1415</pose>
+      <pose>0.65 -1.75 0 0 0 3.1415</pose>
     </include>
     <plugin name="auto_sliding_door_3" filename="libauto_sliding_door.so">
       <door_name>door3</door_name>
@@ -42,7 +42,7 @@
     <include>
       <uri>model://sliding_door</uri>
       <name>door4</name>
-      <pose>-1.1 -0.75 0 0 0 -1.5707</pose>
+      <pose>-1 -0.65 0 0 0 -1.5707</pose>
     </include>
     <plugin name="auto_sliding_door_4" filename="libauto_sliding_door.so">
       <door_name>door4</door_name>
@@ -52,7 +52,7 @@
     <include>
       <uri>model://sliding_door</uri>
       <name>door5</name>
-      <pose>-4.7 3.5 0 0 0 0</pose>
+      <pose>-5 3.5 0 0 0 0</pose>
     </include>
     <plugin name="auto_sliding_door_5" filename="libauto_sliding_door.so">
       <door_name>door5</door_name>

@@ -25,16 +25,12 @@
     </include>
 
 
+
     <!-- human_2 -->
-    <model name="human_2_collision_model">
-      <pose>0 0 -100 0 0 0</pose>
+    <!-- <model name="human_2_collision_model"> -->
+      <!-- <pose>0 0 -100 0 0 0</pose>
       <link name="link">
         <collision name="link">
-    <include>
-      <uri>model://actor</uri>
-      <name>human_1</name>
-      <pose>6 -5 1 0 0.0 3.1415</pose>
-    </include>
           <pose>0 -0.18 0.05 0 -1.5707963267948966 0</pose>
           <geometry>
             <box>
@@ -52,22 +48,22 @@
       <animation name="animation">
         <filename>model://actor/meshes/ANIMATION_walking.dae</filename>
         <interpolate_x>true</interpolate_x>
-      </animation>
+      </animation> -->
       <!-- <plugin name="trajectory" filename="libTrajectoryActorPlugin.so">
           <target> 2.0 1.5 1.0 1.570796 -0.0 1.5707963267948966 </target>
         <velocity>0.5</velocity>
         <obstacle_margin>1.5</obstacle_margin>
         <obstacle>simple</obstacle>
       </plugin>   -->
-      <plugin name="attach_model_2" filename="libAttachModelPlugin.so">
+      <!-- <plugin name="attach_model_2" filename="libAttachModelPlugin.so">
         <link>
           <link_name>human_2_pose</link_name>
           <model>
             <model_name>human_2_collision_model</model_name>
           </model>
         </link>
-      </plugin>
-    </actor>
+      </plugin> -->
+    <!-- </actor> -->
 
   </world>
 </sdf>
