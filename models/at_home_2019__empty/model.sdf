@@ -3,32 +3,30 @@
   <model name='at_home_2019_empty'>
     <pose frame=''>0.5 -0.5 0 0 0 0</pose>
 
-    <model name='unit_box'>
+    <link name='box_link'>
       <pose frame=''>0.0 4 0.5 0 0 0</pose>
-      <link name='link'>
-        <collision name='collision'>
-          <max_contacts>10</max_contacts>
-          <geometry>
-            <box>
-              <size>1 1 1</size>
-            </box>
-          </geometry>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <box>
-              <size>0.5 2.5 1</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <name>Gazebo/Wood</name>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-            </script>
-          </material>
-        </visual>
-      </link>
-    </model>
+      <collision name='collision'>
+        <max_contacts>10</max_contacts>
+        <geometry>
+          <box>
+            <size>0.5 2.5 1</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='visual'>
+        <geometry>
+          <box>
+            <size>0.5 2.5 1</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Wood</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
 
     <link name='Wall_11'>
       <pose frame=''>0.087 -0.5 0 0 0 3.14159</pose>

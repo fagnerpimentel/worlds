@@ -1,10 +1,10 @@
 <?xml version='1.0'?>
 <sdf version='1.6'>
-  <world name='robocup_at_home_2019'>
+  <world name='default'>
 
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose frame=''>3 -10 10 0 0.7853 1.5707</pose>
+        <pose frame=''>-5 -1 11 0 0.7853 0</pose>
       </camera>
     </gui>
 
@@ -20,50 +20,70 @@
 
     <!-- @HOME 2019 - forniture and sliding doors -->
     <include>
+      <name>Robocup@HOME</name>
       <uri>model://at_home_2019__forniture_sliding_doors</uri>
       <pose>0 0 0 0 0 0</pose>
     </include>
 
-
-
-    <!-- human_2 -->
-    <!-- <model name="human_2_collision_model"> -->
-      <!-- <pose>0 0 -100 0 0 0</pose>
-      <link name="link">
-        <collision name="link">
-          <pose>0 -0.18 0.05 0 -1.5707963267948966 0</pose>
-          <geometry>
-            <box>
-              <size>0.44 1.62 0.60</size>
-            </box>
-          </geometry>
-        </collision>
-      </link>
-    </model>
-    <actor name="human_2">
-      <pose> 5 -5 1 0 0.0 3.1415 </pose>
+    <!-- Human 1 -->
+    <actor name="human_1">
+      <pose>3.9 3.5 1.05 0 0 1.5707</pose>
       <skin>
-        <filename>model://actor/meshes/SKIN_man_green_shirt.dae</filename>
+        <filename>sitting.dae</filename>
       </skin>
-      <animation name="animation">
-        <filename>model://actor/meshes/ANIMATION_walking.dae</filename>
-        <interpolate_x>true</interpolate_x>
-      </animation> -->
-      <!-- <plugin name="trajectory" filename="libTrajectoryActorPlugin.so">
-          <target> 2.0 1.5 1.0 1.570796 -0.0 1.5707963267948966 </target>
-        <velocity>0.5</velocity>
-        <obstacle_margin>1.5</obstacle_margin>
-        <obstacle>simple</obstacle>
-      </plugin>   -->
-      <!-- <plugin name="attach_model_2" filename="libAttachModelPlugin.so">
-        <link>
-          <link_name>human_2_pose</link_name>
-          <model>
-            <model_name>human_2_collision_model</model_name>
-          </model>
-        </link>
-      </plugin> -->
-    <!-- </actor> -->
+      <script>
+        <trajectory id="0" type="sitting">
+          <waypoint>
+            <time>0</time>
+            <pose>4.3 3.5 0 0 0 3.1415</pose>
+          </waypoint>
+          <waypoint>
+            <time>3</time>
+            <pose>4.3 3.5 0 0 0 3.1415</pose>
+          </waypoint>
+        </trajectory>
+      </script>
+    </actor>
+
+    <!-- Human 2 -->
+    <actor name="human_2">
+      <pose>4 -7 1.05 0 0 1.5707</pose>
+      <skin>
+        <filename>stand.dae</filename>
+      </skin>
+      <script>
+        <trajectory id="1" type="stand">
+          <waypoint>
+            <time>0</time>
+            <pose>4 -7 0 0 0 3.1415</pose>
+          </waypoint>
+          <waypoint>
+            <time>3</time>
+            <pose>4 -7 0 0 0 3.1415</pose>
+          </waypoint>
+        </trajectory>
+      </script>
+    </actor>
+
+    <!-- Human 3 -->
+    <actor name="human_3">
+      <pose>5 -7 1.05 0 0 1.5707</pose>
+      <skin>
+        <filename>stand.dae</filename>
+      </skin>
+      <script>
+        <trajectory id="1" type="stand">
+          <waypoint>
+            <time>0</time>
+            <pose>5 -7 0 0 0 3.1415</pose>
+          </waypoint>
+          <waypoint>
+            <time>3</time>
+            <pose>5 -7 0 0 0 3.1415</pose>
+          </waypoint>
+        </trajectory>
+      </script>
+    </actor>
 
   </world>
 </sdf>

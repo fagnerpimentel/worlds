@@ -96,7 +96,7 @@
     <include>
       <name>sofa_1</name>
       <uri>model://sofa_set_2</uri>
-      <pose>4.4 3 0 0 0 1.5707</pose>
+      <pose>4.4 3 0 0 0 -1.5707</pose>
     </include>
 
     <!-- sofa 2 -->
