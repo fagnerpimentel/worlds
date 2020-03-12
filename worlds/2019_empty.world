@@ -21,8 +21,8 @@
     <!-- @HOME 2019 - forniture and sliding doors -->
     <include>
       <name>Robocup@HOME</name>
-      <uri>model://at_home_2019__forniture_sliding_doors</uri>
-      <pose>0 0 0 0 0 0</pose>
+      <uri>model://at_home_2019__forniture</uri>
+      <pose>0 0 0.1 0 0 0</pose>
     </include>
 
     <!-- Human 1 -->
@@ -46,20 +46,40 @@
     </actor>
 
     <!-- Human 2 -->
+
     <actor name="human_2">
-      <pose>4 -7 1.05 0 0 1.5707</pose>
+      <pose>4 -8 1.05 0 0 3.1415</pose>
+      <link name="link">
+        <collision name="collision">
+          <pose>0 0 0.05 0 -1.5707 0</pose>
+          <geometry>
+            <box>
+              <size>0.44 1.62 0.60</size>
+            </box>
+          </geometry>
+        </collision>
+      </link>
       <skin>
-        <filename>stand.dae</filename>
+        <filename>walk.dae</filename>
       </skin>
       <script>
-        <trajectory id="1" type="stand">
+        <loop>false</loop>
+        <trajectory id="1" type="walking">
           <waypoint>
-            <time>0</time>
-            <pose>4 -7 0 0 0 3.1415</pose>
+            <time>1</time>
+            <pose>4 -8 0 0 0 3.1415</pose>
+          </waypoint>
+          <waypoint>
+            <time>2</time>
+            <pose>2.7 -8 0 0 0 3.1415</pose>
           </waypoint>
           <waypoint>
             <time>3</time>
-            <pose>4 -7 0 0 0 3.1415</pose>
+            <pose>2.7 -8 0 0 0 1.5707</pose>
+          </waypoint>
+          <waypoint>
+            <time>6</time>
+            <pose>2.7 -3 0 0 0 1.5707</pose>
           </waypoint>
         </trajectory>
       </script>
@@ -67,23 +87,73 @@
 
     <!-- Human 3 -->
     <actor name="human_3">
-      <pose>5 -7 1.05 0 0 1.5707</pose>
+      <pose>5 -8 1.05 0 0 3.1415</pose>
       <skin>
-        <filename>stand.dae</filename>
+        <filename>walk.dae</filename>
       </skin>
       <script>
-        <trajectory id="1" type="stand">
+        <trajectory id="1" type="walking">
           <waypoint>
             <time>0</time>
-            <pose>5 -7 0 0 0 3.1415</pose>
+            <pose>5 -8 0 0 0 3.1415</pose>
           </waypoint>
           <waypoint>
             <time>3</time>
-            <pose>5 -7 0 0 0 3.1415</pose>
+            <pose>5 -8 0 0 0 3.1415</pose>
           </waypoint>
         </trajectory>
       </script>
     </actor>
+
+    <!-- Sliding Door 1 -->
+    <include>
+      <uri>model://sliding_door</uri>
+      <name>door1</name>
+      <pose>2.7 -5.55 0 0 0 -1.5707</pose>
+    </include>
+    <plugin name="auto_sliding_door_1" filename="libauto_sliding_door.so">
+      <door_name>door1</door_name>
+    </plugin>
+
+    <!-- Sliding Door 2 -->
+    <include>
+      <uri>model://sliding_door</uri>
+      <name>door2</name>
+      <pose>2.9 -0.65 0 0 0 -1.5707</pose>
+    </include>
+    <plugin name="auto_sliding_door_2" filename="libauto_sliding_door.so">
+      <door_name>door2</door_name>
+    </plugin>
+
+    <!-- Sliding Door 3 -->
+    <include>
+      <uri>model://sliding_door</uri>
+      <name>door3</name>
+      <pose>0.65 -1.75 0 0 0 3.1415</pose>
+    </include>
+    <plugin name="auto_sliding_door_3" filename="libauto_sliding_door.so">
+      <door_name>door3</door_name>
+    </plugin>
+
+    <!-- Sliding Door 4 -->
+    <include>
+      <uri>model://sliding_door</uri>
+      <name>door4</name>
+      <pose>-1 -0.65 0 0 0 -1.5707</pose>
+    </include>
+    <plugin name="auto_sliding_door_4" filename="libauto_sliding_door.so">
+      <door_name>door4</door_name>
+    </plugin>
+
+    <!-- Sliding Door 5 -->
+    <include>
+      <uri>model://sliding_door</uri>
+      <name>door5</name>
+      <pose>-5 3.5 0 0 0 0</pose>
+    </include>
+    <plugin name="auto_sliding_door_5" filename="libauto_sliding_door.so">
+      <door_name>door5</door_name>
+    </plugin>
 
   </world>
 </sdf>
