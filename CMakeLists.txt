@@ -15,5 +15,5 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${GAZEBO_CXX_FLAGS}")
 ################################################################################
 
 # Build our plugin
-add_library(actor_control SHARED plugins/actor_control1.cc)
+add_library(actor_control SHARED plugins/actor_control.cc)
 target_link_libraries(actor_control ${GAZEBO_LIBRARIES} ${roscpp_LIBRARIES})
