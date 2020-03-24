@@ -1,22 +1,19 @@
-cmake_minimum_required(VERSION 2.8.3)
-
+cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
 project(social_worlds)
 
-find_package(catkin REQUIRED)
-find_package(gazebo REQUIRED)
+find_package(roscpp REQUIRED)
+find_package(std_msgs REQUIRED)
+include_directories(${roscpp_INCLUDE_DIRS})
+include_directories(${std_msgs_INCLUDE_DIRS})
 
+# Find Gazebo
+find_package(gazebo REQUIRED)
 include_directories(${GAZEBO_INCLUDE_DIRS})
 link_directories(${GAZEBO_LIBRARY_DIRS})
-list(APPEND CMAKE_CXX_FLAGS "${GAZEBO_CXX_FLAGS}")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${GAZEBO_CXX_FLAGS}")
 
-catkin_package()
+################################################################################
 
-find_package(roslaunch)
-
-foreach(dir config launch meshes urdf)
-	install(DIRECTORY ${dir}/
-		DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${dir})
-endforeach(dir)
-
-add_library(auto_sliding_door SHARED plugins/auto_sliding_door.cc)
-target_link_libraries(auto_sliding_door ${GAZEBO_LIBRARIES})
+# Build our plugin
+add_library(actor_control SHARED plugins/actor_control1.cc)
+target_link_libraries(actor_control ${GAZEBO_LIBRARIES} ${roscpp_LIBRARIES})
