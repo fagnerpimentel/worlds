@@ -11,14 +11,14 @@
      </inertial>
      <collision name ='rail_collision'>
      <geometry>
-        <box><size>2.0 2.0 0.00001</size></box>
+        <box><size>0.08 2.0 0.001</size></box>
       </geometry>
      </collision>
-     <!-- <visual name ='rail_visual'>
+     <visual name ='rail_visual'>
        <geometry>
-         <box><size>2.0 2.0 0.00001</size></box>
+         <box><size>0.08 2.0 0.001</size></box>
        </geometry>
-     </visual> -->
+     </visual>
    </link>
 
    <link name ='door_link'>

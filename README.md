@@ -9,4 +9,18 @@ http://pedsim.silmaril.org/
   <door_name>door1</door_name>
 </plugin> -->
 
-rosservice call /gazebo/apply_body_wrench '{body_name: "door3::door_link", wrench: { force: { x: 0, y: 1, z: 0.0 } }, duration: -1 }'
+
+
+
+
+
+
+
+# usado para publicar uma nova posição do ator no gazebo
+rostopic pub --once /actor_control/<actor_name>/pose geometry_msgs/Pose ...
+
+# usado para abrir uma porta
+rostopic pub --once /sliding_door_control/<door_name>/command std_msgs/String "data: 'open'"
+
+# usado para fechar uma porta
+rostopic pub --once /sliding_door_control/<door_name>/command std_msgs/String "data: 'close'"
