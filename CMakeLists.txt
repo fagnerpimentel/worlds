@@ -21,3 +21,6 @@ target_link_libraries(actor_control ${GAZEBO_LIBRARIES} ${roscpp_LIBRARIES})
 
 add_library(sliding_door_control SHARED plugins/sliding_door_control.cc)
 target_link_libraries(sliding_door_control ${GAZEBO_LIBRARIES} ${roscpp_LIBRARIES})
+
+add_library(recepcionist SHARED plugins/task_control__recepcionist.cc)
+target_link_libraries(recepcionist ${GAZEBO_LIBRARIES} ${roscpp_LIBRARIES})

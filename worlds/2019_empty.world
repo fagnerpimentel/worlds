@@ -114,49 +114,40 @@
       <pose>2.7 -5.55 0 0 0 -1.5707</pose>
       <plugin name="sliding_door_1" filename="libsliding_door_control.so"/>
     </include>
-    <!-- <plugin name="auto_sliding_door_1" filename="libauto_sliding_door.so">
-      <door_name>door1</door_name>
-    </plugin> -->
 
     <!-- Sliding Door 2 -->
     <include>
       <uri>model://sliding_door</uri>
       <name>door_2</name>
       <pose>2.9 -0.65 0 0 0 -1.5707</pose>
+      <plugin name="sliding_door_1" filename="libsliding_door_control.so"/>
     </include>
-    <!-- <plugin name="auto_sliding_door_2" filename="libauto_sliding_door.so">
-      <door_name>door2</door_name>
-    </plugin> -->
 
     <!-- Sliding Door 3 -->
     <include>
       <uri>model://sliding_door</uri>
       <name>door_3</name>
       <pose>0.65 -1.75 0 0 0 3.1415</pose>
+      <plugin name="sliding_door_1" filename="libsliding_door_control.so"/>
     </include>
-    <!-- <plugin name="auto_sliding_door_3" filename="libauto_sliding_door.so">
-      <door_name>door3</door_name>
-    </plugin> -->
 
     <!-- Sliding Door 4 -->
     <include>
       <uri>model://sliding_door</uri>
       <name>door_4</name>
       <pose>-1 -0.65 0 0 0 -1.5707</pose>
+      <plugin name="sliding_door_1" filename="libsliding_door_control.so"/>
     </include>
-    <!-- <plugin name="auto_sliding_door_4" filename="libauto_sliding_door.so">
-      <door_name>door4</door_name>
-    </plugin> -->
 
     <!-- Sliding Door 5 -->
     <include>
       <uri>model://sliding_door</uri>
       <name>door_5</name>
       <pose>-5 3.5 0 0 0 0</pose>
+      <plugin name="sliding_door_1" filename="libsliding_door_control.so"/>
     </include>
-    <!-- <plugin name="auto_sliding_door_5" filename="libauto_sliding_door.so">
-      <door_name>door5</door_name>
-    </plugin> -->
+
+    <plugin name="recepcionist" filename="librecepcionist.so"/>
 
   </world>
 </sdf>
