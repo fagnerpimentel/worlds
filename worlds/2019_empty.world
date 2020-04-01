@@ -49,7 +49,7 @@
     <!-- Human 2 -->
 
     <actor name="human_2">
-      <pose>4 -8 1.05 0 0 3.1415</pose>
+      <pose>2.7 -8 1.05 0 0 1.5707</pose>
       <link name="link">
         <collision name="collision">
           <pose>0 0 0.05 0 -1.5707 0</pose>
@@ -63,24 +63,30 @@
       <skin>
         <filename>walk.dae</filename>
       </skin>
+      <animation name="stand">
+        <filename>stand.dae</filename>
+        <scale>1.0</scale>
+      </animation>
+      <animation name="walking">
+        <filename>walk.dae</filename>
+        <scale>1.0</scale>
+        <interpolate_x>true</interpolate_x>
+      </animation>
+      <animation name="running">
+        <filename>run.dae</filename>
+        <scale>1.0</scale>
+        <interpolate_x>true</interpolate_x>
+      </animation>
+      <animation name="sit_down">
+        <filename>sit_down.dae</filename>
+        <scale>1.0</scale>
+      </animation>
       <script>
         <loop>false</loop>
         <trajectory id="1" type="walking">
           <waypoint>
-            <time>1</time>
-            <pose>4 -8 0 0 0 3.1415</pose>
-          </waypoint>
-          <waypoint>
-            <time>2</time>
-            <pose>2.7 -8 0 0 0 3.1415</pose>
-          </waypoint>
-          <waypoint>
-            <time>3</time>
-            <pose>2.7 -8 0 0 0 1.5707</pose>
-          </waypoint>
-          <waypoint>
-            <time>6</time>
-            <pose>2.7 -3 0 0 0 1.5707</pose>
+            <time>0.0</time>
+            <pose>2.7 -8 1.05 0 0 1.5707</pose>
           </waypoint>
         </trajectory>
       </script>
@@ -89,20 +95,96 @@
 
     <!-- Human 3 -->
     <actor name="human_3">
-      <pose>5 -8 1.05 0 0 3.1415</pose>
+      <pose>2.7 -9 1.05 0 0 1.5707</pose>
       <skin>
         <filename>walk.dae</filename>
+        <scale>1.0</scale>
       </skin>
+      <animation name="stand">
+        <filename>stand.dae</filename>
+        <scale>1.0</scale>
+      </animation>
+      <animation name="sit_down">
+        <filename>sit_down.dae</filename>
+        <scale>1.0</scale>
+      </animation>
+      <animation name="sitting">
+        <filename>sitting.dae</filename>
+        <scale>1.0</scale>
+      </animation>
+      <animation name="stand_up">
+        <filename>stand_up.dae</filename>
+        <scale>1.0</scale>
+      </animation>
+      <animation name="stand">
+        <filename>stand.dae</filename>
+        <scale>1.0</scale>
+      </animation>
+      <animation name="walking">
+        <filename>walk.dae</filename>
+        <scale>1.0</scale>
+        <interpolate_x>true</interpolate_x>
+      </animation>
+      <animation name="running">
+        <filename>run.dae</filename>
+        <scale>1.0</scale>
+        <interpolate_x>true</interpolate_x>
+      </animation>
+      <animation name="moonwalking">
+        <filename>moonwalk.dae</filename>
+        <scale>1.0</scale>
+        <interpolate_x>true</interpolate_x>
+      </animation>
       <script>
-        <trajectory id="1" type="walking">
+        <loop>true</loop>
+        <delay_start>0.0</delay_start>
+        <auto_start>true</auto_start>
+        <trajectory id="0" type="stand">
           <waypoint>
-            <time>0</time>
-            <pose>5 -8 0 0 0 3.1415</pose>
+            <time>0.0</time>
+            <pose>2.7 -9 1.05 0 0 1.5707</pose>
+          </waypoint>
+          <!-- <waypoint>
+            <time>0.0</time>
+            <pose>0 0 0 0 0 0</pose>
           </waypoint>
           <waypoint>
-            <time>3</time>
-            <pose>5 -8 0 0 0 3.1415</pose>
+            <time>10.0</time>
+            <pose>0 0 0 0 0 0</pose>
           </waypoint>
+        </trajectory>
+        <trajectory id="1" type="sit_down" />
+        <trajectory id="2" type="sitting" />
+        <trajectory id="3" type="stand_up" />
+        <trajectory id="4" type="walking">
+          <waypoint>
+            <time>0.0</time>
+            <pose>0 0 0 0 0 0</pose>
+          </waypoint>
+          <waypoint>
+            <time>10.0</time>
+            <pose>5 0 0 0 0 0</pose>
+          </waypoint>
+        </trajectory>
+        <trajectory id="5" type="running">
+          <waypoint>
+            <time>0.0</time>
+            <pose>5 0 0 0 0 0</pose>
+          </waypoint>
+          <waypoint>
+            <time>5.0</time>
+            <pose>10 0 0 0 0 0</pose>
+          </waypoint>
+        </trajectory>
+        <trajectory id="6" type="moonwalking">
+          <waypoint>
+            <time>0.0</time>
+            <pose>10 0 0 0 0 3.14159</pose>
+          </waypoint>
+          <waypoint>
+            <time>20.0</time>
+            <pose>0 0 0 0 0 3.14159</pose>
+          </waypoint> -->
         </trajectory>
       </script>
     </actor>

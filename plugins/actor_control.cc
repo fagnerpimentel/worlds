@@ -2,37 +2,32 @@
 #define GAZEBO_PLUGINS_ACTORCONTROL_HH_
 
 #include <gazebo/common/Plugin.hh>
+#include <gazebo/common/KeyFrame.hh>
 #include <gazebo/physics/Model.hh>
 #include <gazebo/physics/Actor.hh>
-
-
-#include <iostream>
-#include <thread>
 
 #include <ros/ros.h>
 #include <ros/callback_queue.h>
 #include <ros/subscribe_options.h>
-// #include <std_msgs/Float32.h>
+
 #include <geometry_msgs/Pose.h>
+#include <social_worlds/ActorTrajectory.h>
+
+#include <thread>
+#include <iostream>
 
 namespace gazebo
 {
   class GAZEBO_VISIBLE ActorControl : public ModelPlugin
   {
-    /// \brief Pointer to the actor.
+    /// Pointer to the actor.
     private: physics::ActorPtr actor{nullptr};
 
-    /// \brief A node use for ROS transport
+    // ros node
     private: std::unique_ptr<ros::NodeHandle> rosNode;
 
-    /// \brief A ROS subscriber
-    private: ros::Subscriber rosSub;
-
-    /// \brief A ROS callbackqueue that helps process messages
-    private: ros::CallbackQueue rosQueue;
-
-    /// \brief A thread the keeps running the rosQueue
-    private: std::thread rosQueueThread;
+    // services
+    private: ros::ServiceServer srv_server;
 
     public: ActorControl()
     {
@@ -41,10 +36,11 @@ namespace gazebo
     public: void Load(physics::ModelPtr _model, sdf::ElementPtr _sdf)
     {
       this->actor = boost::reinterpret_pointer_cast<physics::Actor>(_model);
+      this->actor->Reset();
 
       std::cout << "starting actor control: " << this->actor->GetName() << std::endl;
 
-      // Initialize ros, if it has not already bee initialized.
+      // start ROS
       if (!ros::isInitialized())
       {
         int argc = 0;
@@ -52,36 +48,25 @@ namespace gazebo
         ros::init(argc, argv, "gazebo_client",
             ros::init_options::NoSigintHandler);
       }
+      this->rosNode.reset(new ros::NodeHandle());
 
-      // Create our ROS node. This acts in a similar manner to
-      // the Gazebo node
-      this->rosNode.reset(new ros::NodeHandle("gazebo_client"));
-
-      // Create a named topic, and subscribe to it.
-      ros::SubscribeOptions so =
-        ros::SubscribeOptions::create<geometry_msgs::Pose>(
-            "/actor_control/" + _model->GetName() + "/pose",
-            1,
-            boost::bind(&ActorControl::OnRosMsg, this, _1),
-            ros::VoidPtr(), &this->rosQueue);
-      this->rosSub = this->rosNode->subscribe(so);
-
-      // Spin up the queue helper thread.
-      this->rosQueueThread =
-        std::thread(std::bind(&ActorControl::QueueThread, this));
+      // Service server
+      this->srv_server = this->rosNode->advertiseService(
+          "/actor_control/" + this->actor->GetName() + "/action",
+          &ActorControl::OnService_Start, this);
     }
 
-    /// \brief Handle an incoming message from ROS
-    /// \param[in] _msg A float value that is used to set the velocity
-    /// of the Velodyne.
-    public: void OnRosMsg(const geometry_msgs::PoseConstPtr &_msg)
+    private: bool OnService_Start(
+        social_worlds::ActorTrajectory::Request &_req,
+        social_worlds::ActorTrajectory::Response &_res)
     {
-      std::cout << this->actor->ScriptTime() << std::endl;
+      std::cout << "Actor control - "
+                << "(animation: " << _req.animation.data << ",  "
+                << "trajectory size: " << _req.waypoints.size() << ")" << std::endl;
 
       // Set custom trajectory
       gazebo::physics::TrajectoryInfoPtr trajectoryInfo(new physics::TrajectoryInfo());
-      trajectoryInfo->type = "walking";
-      trajectoryInfo->duration = 5.0;
+      trajectoryInfo->type = _req.animation.data;
       this->actor->SetCustomTrajectory(trajectoryInfo);
 
       //
@@ -89,26 +74,24 @@ namespace gazebo
       double distanceTraveled = 0.0;
       auto actorPose = this->actor->WorldPose();
 
-      // Current pose - actor is oriented Y-up and Z-front
-      actorPose = this->actor->WorldPose();
-      actorPose.Pos().X() = _msg->position.x;
-      actorPose.Pos().Y() = _msg->position.y;
-      actorPose.Pos().Z() = _msg->position.z;
-      distanceTraveled = (actorPose.Pos() - this->actor->WorldPose().Pos()).Length();
-      this->actor->SetWorldPose(actorPose, false, false);
-      this->actor->SetScriptTime(this->actor->ScriptTime() +
-        (distanceTraveled * animationFactor));
-
-    }
-
-    /// \brief ROS helper function that processes messages
-    private: void QueueThread()
-    {
-      static const double timeout = 0.01;
-      while (this->rosNode->ok())
-      {
-        this->rosQueue.callAvailable(ros::WallDuration(timeout));
+      for (size_t i = 0; i < _req.waypoints.size(); i++) {
+        // Current pose - actor is oriented Y-up and Z-front
+        actorPose = this->actor->WorldPose();
+        actorPose.Pos().X() = _req.waypoints[i].position.x;
+        actorPose.Pos().Y() = _req.waypoints[i].position.y;
+        actorPose.Pos().Z() = _req.waypoints[i].position.z;
+        actorPose.Rot().X() = _req.waypoints[i].orientation.x;
+        actorPose.Rot().Y() = _req.waypoints[i].orientation.y;
+        actorPose.Rot().Z() = _req.waypoints[i].orientation.z;
+        actorPose.Rot().W() = _req.waypoints[i].orientation.w;
+        distanceTraveled = (actorPose.Pos() - this->actor->WorldPose().Pos()).Length();
+        this->actor->SetWorldPose(actorPose, false, false);
+        this->actor->SetScriptTime(this->actor->ScriptTime() +
+          (distanceTraveled * animationFactor));
+        gazebo::common::Time::MSleep(500);
       }
+
+      return true;
     }
   };
 
