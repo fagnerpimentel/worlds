@@ -1,0 +1,45 @@
+<?xml version='1.0'?>
+<sdf version='1.6'>
+  <world name='default'>
+
+    <!-- Camera Pose -->
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose frame=''>2 -26.1 5.5 0 1 3.1415</pose>
+      </camera>
+    </gui>
+
+    <!-- sun -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <!-- Ground Plane -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <!-- fei_k5__forniture -->
+    <include>
+      <uri>model://fei_k5__forniture</uri>
+      <pose>0.621469 1.46181 0 0 -0 0</pose>
+    </include>
+
+    <!-- Sliding Door 1 -->
+    <include>
+      <uri>model://sliding_door</uri>
+      <name>door_1</name>
+      <pose>-0.9 -26 0 0 -0 0</pose>
+      <plugin name="sliding_door_1" filename="libsliding_door_control.so"/>
+    </include>
+
+    <!-- Sliding Door 2 -->
+    <include>
+      <uri>model://sliding_door</uri>
+      <name>door_2</name>
+      <pose>-0.9 -20.2 0 0 -0 0</pose>
+      <plugin name="sliding_door_2" filename="libsliding_door_control.so"/>
+    </include>
+
+  </world>
+</sdf>

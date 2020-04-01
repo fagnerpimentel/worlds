@@ -2,6 +2,7 @@
 <sdf version='1.6'>
   <world name='default'>
 
+    <!-- Camera Pose -->
     <gui fullscreen='0'>
       <camera name='user_camera'>
         <pose frame=''>-5 -1 11 0 0.7853 0</pose>
@@ -21,7 +22,7 @@
     <!-- @HOME 2019 - forniture -->
     <include>
       <name>Robocup@HOME</name>
-      <uri>model://at_home_2019__forniture</uri>
+      <uri>model://robocup_2019__forniture</uri>
       <pose>0 0 0.1 0 0 0</pose>
     </include>
 
@@ -202,7 +203,7 @@
       <uri>model://sliding_door</uri>
       <name>door_2</name>
       <pose>2.9 -0.65 0 0 0 -1.5707</pose>
-      <plugin name="sliding_door_1" filename="libsliding_door_control.so"/>
+      <plugin name="sliding_door_2" filename="libsliding_door_control.so"/>
     </include>
 
     <!-- Sliding Door 3 -->
@@ -210,7 +211,7 @@
       <uri>model://sliding_door</uri>
       <name>door_3</name>
       <pose>0.65 -1.75 0 0 0 3.1415</pose>
-      <plugin name="sliding_door_1" filename="libsliding_door_control.so"/>
+      <plugin name="sliding_door_3" filename="libsliding_door_control.so"/>
     </include>
 
     <!-- Sliding Door 4 -->
@@ -218,7 +219,7 @@
       <uri>model://sliding_door</uri>
       <name>door_4</name>
       <pose>-1 -0.65 0 0 0 -1.5707</pose>
-      <plugin name="sliding_door_1" filename="libsliding_door_control.so"/>
+      <plugin name="sliding_door_4" filename="libsliding_door_control.so"/>
     </include>
 
     <!-- Sliding Door 5 -->
@@ -226,7 +227,7 @@
       <uri>model://sliding_door</uri>
       <name>door_5</name>
       <pose>-5 3.5 0 0 0 0</pose>
-      <plugin name="sliding_door_1" filename="libsliding_door_control.so"/>
+      <plugin name="sliding_door_5" filename="libsliding_door_control.so"/>
     </include>
 
     <plugin name="recepcionist" filename="librecepcionist.so"/>

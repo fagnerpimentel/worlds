@@ -34,3 +34,4 @@ sliding_door com exclusão de colisão no cenário e centralizado no vão da por
 ActorControl.msg -> passa std_msgs/String para string
 melhorar performance temporal
 trocar skin do actor dinamicamente
+passar forniture de fei_k5_forniture para models

@@ -2,32 +2,10 @@
 <sdf version='1.6'>
   <world name='default'>
 
-    <gravity>0 0 -9.8</gravity>
-    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
-    <atmosphere type='adiabatic'/>
-    <physics name='default_physics' default='0' type='ode'>
-      <max_step_size>0.001</max_step_size>
-      <real_time_factor>1</real_time_factor>
-      <real_time_update_rate>1000</real_time_update_rate>
-    </physics>
-    <scene>
-      <ambient>0.4 0.4 0.4 1</ambient>
-      <background>0.7 0.7 0.7 1</background>
-      <shadows>1</shadows>
-    </scene>
-    <wind/>
-    <spherical_coordinates>
-      <surface_model>EARTH_WGS84</surface_model>
-      <latitude_deg>0</latitude_deg>
-      <longitude_deg>0</longitude_deg>
-      <elevation>0</elevation>
-      <heading_deg>0</heading_deg>
-    </spherical_coordinates>
+    <!-- Camera Pose -->
     <gui fullscreen='0'>
       <camera name='user_camera'>
         <pose frame=''>2 -26.1 5.5 0 1 3.1415</pose>
-        <view_controller>orbit</view_controller>
-        <projection_type>perspective</projection_type>
       </camera>
     </gui>
 
@@ -41,9 +19,9 @@
       <uri>model://ground_plane</uri>
     </include>
 
-    <!-- FEI K5 -->
+    <!-- fei_k5__empty -->
     <include>
-      <uri>model://fei_k5</uri>
+      <uri>model://fei_k5__empty</uri>
       <pose>0.621469 1.46181 0 0 -0 0</pose>
     </include>
 
@@ -66,6 +44,19 @@
     <plugin name="auto_sliding_door_2" filename="libauto_sliding_door.so">
       <door_name>door2</door_name>
     </plugin>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -8713,6 +8704,6 @@
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
       <pose frame=''>8.86472 -20.831 0 0 -0 0</pose>
-    </model>s
+    </model>
   </world>
 </sdf>
