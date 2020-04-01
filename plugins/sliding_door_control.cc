@@ -88,25 +88,21 @@ namespace gazebo
       std::string jointDoorName = this->door->GetName() + "::door_joint";
       physics::JointPtr jointDoor = this->door->GetJoint(jointDoorName);
 
-      std::cout << _msg->data << std::endl;
-      std::cout << jointDoorName << std::endl;
-      std::cout << jointDoor->GetName() << std::endl;
-
       if(_msg->data == "open")
       {
         // jointDoor->SetForce(0, 1);
         jointDoor->SetVelocity(0, 0.7);
-        std::cout << "sliding_door control: Open " << jointDoor->GetName() << std::endl;
+        std::cout << "sliding_door control: Open " << this->door->GetName() << std::endl;
       }
       else if(_msg->data == "close")
       {
         // jointDoor->SetForce(0, -1);
         jointDoor->SetVelocity(0, -0.7);
-        std::cout << "sliding_door control: Close " << jointDoor->GetName() << std::endl;
+        std::cout << "sliding_door control: Close " << this->door->GetName() << std::endl;
       }
       else
       {
-        std::cout << "sliding_door control: Error " << jointDoor->GetName() << std::endl;
+        std::cout << "sliding_door control: Error " << this->door->GetName() << std::endl;
       }
     }
   };
