@@ -9,6 +9,13 @@
       </camera>
     </gui>
 
+    <!-- physics -->
+    <physics type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>0</real_time_update_rate>
+    </physics>
+
     <!-- sun -->
     <include>
       <uri>model://sun</uri>
@@ -22,7 +29,7 @@
     <!-- simple_room -->
     <include>
       <uri>model://simple_room</uri>
-      <pose>0 0 1 0 0 0</pose>
+      <pose>0 0 0 0 0 0</pose>
     </include>
 
   </world>
