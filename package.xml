@@ -1,7 +1,7 @@
 <package>
 
   <name>social_worlds</name>
-  <version>1.0.0</version>
+  <version>0.1.0</version>
   <description>
     <p>Description package for social_worlds</p>
     <p>This package contains configuration data, 3D models and launch files
