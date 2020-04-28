@@ -9,6 +9,13 @@
       </camera>
     </gui>
 
+    <!-- physics -->
+    <physics type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>0</real_time_update_rate>
+    </physics>
+
     <!-- sun -->
     <include>
       <uri>model://sun</uri>
@@ -21,6 +28,7 @@
 
     <!-- simple_room -->
     <include>
+      <name>simple_room__static_people</name>
       <uri>model://simple_room</uri>
       <pose>0 0 1 0 0 0</pose>
     </include>
@@ -47,7 +55,7 @@
 
     <!-- Human 2 -->
     <actor name="human_2">
-      <pose>-3.0 0 1.1 0 0 -1.5707</pose>
+      <pose>-5 -1.5 1.1 0 0 -1.5707</pose>
       <skin>
         <filename>stand.dae</filename>
       </skin>
@@ -55,11 +63,11 @@
         <trajectory id="0" type="stand">
           <waypoint>
             <time>0</time>
-            <pose>-3.0 0 0 0 0 0</pose>
+            <pose>-5 -1.5 0 0 0 0</pose>
           </waypoint>
           <waypoint>
             <time>3</time>
-            <pose>-3.0 0 0 0 0 0</pose>
+            <pose>-5 -1.5 0 0 0 0</pose>
           </waypoint>
         </trajectory>
       </script>
@@ -67,7 +75,7 @@
 
     <!-- Human 3 -->
     <actor name="human_3">
-      <pose>-1.0 -1.5 1.1 0 0 -1.5707</pose>
+      <pose>-2 0 1.1 0 0 -1.5707</pose>
       <skin>
         <filename>stand.dae</filename>
       </skin>
@@ -75,11 +83,11 @@
         <trajectory id="0" type="stand">
           <waypoint>
             <time>0</time>
-            <pose>-1.0 -1.5 0 0 0 0</pose>
+            <pose>-2 0 0 0 0 0</pose>
           </waypoint>
           <waypoint>
             <time>3</time>
-            <pose>-1.0 -1.5 0 0 0 0</pose>
+            <pose>-2 0 0 0 0 0</pose>
           </waypoint>
         </trajectory>
       </script>
@@ -87,7 +95,7 @@
 
     <!-- Human 4 -->
     <actor name="human_4">
-      <pose>1.0 0 1.1 0 0 -1.5707</pose>
+      <pose>2 0 1.1 0 0 -1.5707</pose>
       <skin>
         <filename>stand.dae</filename>
       </skin>
@@ -95,11 +103,11 @@
         <trajectory id="0" type="stand">
           <waypoint>
             <time>0</time>
-            <pose>1.0 0 0 0 0 0</pose>
+            <pose>2 0 0 0 0 0</pose>
           </waypoint>
           <waypoint>
             <time>3</time>
-            <pose>1.0 0 0 0 0 0</pose>
+            <pose>2 0 0 0 0 0</pose>
           </waypoint>
         </trajectory>
       </script>
@@ -107,7 +115,7 @@
 
     <!-- Human 5 -->
     <actor name="human_5">
-      <pose>3.0 1.5 1.1 0 0 -1.5707</pose>
+      <pose>5 1.5 1.1 0 0 -1.5707</pose>
       <skin>
         <filename>stand.dae</filename>
       </skin>
@@ -115,11 +123,11 @@
         <trajectory id="0" type="stand">
           <waypoint>
             <time>0</time>
-            <pose>3.0 1.5 0 0 0 0</pose>
+            <pose>5 1.5 0 0 0 0</pose>
           </waypoint>
           <waypoint>
             <time>3</time>
-            <pose>3.0 1.5 0 0 0 0</pose>
+            <pose>5 1.5 0 0 0 0</pose>
           </waypoint>
         </trajectory>
       </script>
@@ -127,7 +135,7 @@
 
     <!-- Human 6 -->
     <actor name="human_6">
-      <pose>5.0 1.5 1.1 0 0 -1.5707</pose>
+      <pose>5 -1.5 1.1 0 0 -1.5707</pose>
       <skin>
         <filename>stand.dae</filename>
       </skin>
@@ -135,31 +143,11 @@
         <trajectory id="0" type="stand">
           <waypoint>
             <time>0</time>
-            <pose>5.0 1.5 0 0 0 0</pose>
+            <pose>5 -1.5 0 0 0 0</pose>
           </waypoint>
           <waypoint>
             <time>3</time>
-            <pose>5.0 1.5 0 0 0 0</pose>
-          </waypoint>
-        </trajectory>
-      </script>
-    </actor>
-
-    <!-- Human 7 -->
-    <actor name="human_7">
-      <pose>5.0 -1.5 1.1 0 0 -1.5707</pose>
-      <skin>
-        <filename>stand.dae</filename>
-      </skin>
-      <script>
-        <trajectory id="0" type="stand">
-          <waypoint>
-            <time>0</time>
-            <pose>5.0 -1.5 0 0 0 0</pose>
-          </waypoint>
-          <waypoint>
-            <time>3</time>
-            <pose>5.0 -1.5 0 0 0 0</pose>
+            <pose>5 -1.5 0 0 0 0</pose>
           </waypoint>
         </trajectory>
       </script>

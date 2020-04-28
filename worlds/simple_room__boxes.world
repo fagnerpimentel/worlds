@@ -14,6 +14,13 @@
       <uri>model://sun</uri>
     </include>
 
+    <!-- physics -->
+    <physics type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>0</real_time_update_rate>
+    </physics>
+
     <!-- Ground Plane -->
     <include>
       <uri>model://ground_plane</uri>
@@ -21,6 +28,7 @@
 
     <!-- simple_room -->
     <include>
+      <name>simple_room__boxes</name>
       <uri>model://simple_room</uri>
       <pose>0 0 1 0 0 0</pose>
     </include>
@@ -36,40 +44,33 @@
     <include>
       <name>box_2</name>
       <uri>model://box</uri>
-      <pose>-3 0 0 0 -0 1.5707</pose>
+      <pose>-5 -1.5 0 0 -0 1.5707</pose>
     </include>
 
     <!-- box 3 -->
     <include>
       <name>box_3</name>
       <uri>model://box</uri>
-      <pose>-1 -1.5 0 0 -0 1.5707</pose>
+      <pose>-2 0 0 0 -0 1.5707</pose>
     </include>
 
     <!-- box 4 -->
     <include>
       <name>box_4</name>
       <uri>model://box</uri>
-      <pose>1 0 0 0 -0 1.5707</pose>
+      <pose>2 0 0 0 -0 1.5707</pose>
     </include>
 
     <!-- box 5 -->
     <include>
       <name>box_5</name>
       <uri>model://box</uri>
-      <pose>3 1.5 0 0 -0 1.5707</pose>
+      <pose>5 1.5 0 0 -0 1.5707</pose>
     </include>
 
     <!-- box 6 -->
     <include>
       <name>box_6</name>
-      <uri>model://box</uri>
-      <pose>5 1.5 0 0 -0 1.5707</pose>
-    </include>
-
-    <!-- box 7 -->
-    <include>
-      <name>box_7</name>
       <uri>model://box</uri>
       <pose>5 -1.5 0 0 -0 1.5707</pose>
     </include>
