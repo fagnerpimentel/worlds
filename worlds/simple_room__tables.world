@@ -1,0 +1,79 @@
+<?xml version='1.0'?>
+<sdf version='1.6'>
+  <world name='default'>
+
+    <!-- Camera Pose -->
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose frame=''>-15 0 15 0 0.785398 -0</pose>
+      </camera>
+    </gui>
+
+    <!-- physics -->
+    <physics type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>0</real_time_update_rate>
+    </physics>
+
+    <!-- sun -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <!-- Ground Plane -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <!-- simple_room -->
+    <include>
+      <name>simple_room__tables</name>
+      <uri>model://simple_room</uri>
+      <pose>0 0 1 0 0 0</pose>
+    </include>
+
+    <!-- table 1 -->
+    <include>
+      <name>table_1</name>
+      <uri>model://table</uri>
+      <pose>-5 1.5 0 0 -0 1.5707</pose>
+    </include>
+
+    <!-- table 2 -->
+    <include>
+      <name>table_1</name>
+      <uri>model://table</uri>
+      <pose>-5 -1.5 0 0 -0 1.5707</pose>
+    </include>
+
+    <!-- table 3 -->
+    <include>
+      <name>table_3</name>
+      <uri>model://table</uri>
+      <pose>-2 0 0 0 -0 1.5707</pose>
+    </include>
+
+    <!-- table 4 -->
+    <include>
+      <name>table_4</name>
+      <uri>model://table</uri>
+      <pose>2 0 0 0 -0 1.5707</pose>
+    </include>
+
+    <!-- table 5 -->
+    <include>
+      <name>table_5</name>
+      <uri>model://table</uri>
+      <pose>5 1.5 0 0 -0 1.5707</pose>
+    </include>
+
+    <!-- table 6 -->
+    <include>
+      <name>table_7</name>
+      <uri>model://table</uri>
+      <pose>5 -1.5 0 0 -0 1.5707</pose>
+    </include>
+
+  </world>
+</sdf>
