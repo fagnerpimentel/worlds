@@ -20,7 +20,7 @@
 
 namespace gazebo
 {
-  class GAZEBO_VISIBLE TaskControl_Recepcionist : public WorldPlugin
+  class GAZEBO_VISIBLE TaskControl_Receptionist : public WorldPlugin
   {
 
     // ros node
@@ -56,13 +56,13 @@ namespace gazebo
     // state
     private: int state;
 
-    public: TaskControl_Recepcionist()
+    public: TaskControl_Receptionist()
     {
     }
 
     public: void Load(gazebo::physics::WorldPtr _world, sdf::ElementPtr _sdf)
     {
-      std::cout << "Starting task simulation: Recepcionist!" << std::endl;
+      std::cout << "Starting task simulation: Receptionist!" << std::endl;
       this->world = _world;
       this->state = 0;
 
@@ -78,8 +78,8 @@ namespace gazebo
 
       // Service server: task
       this->srv_server = this->rosNode->advertiseService(
-          "/task_control/recepcionist/start",
-          &TaskControl_Recepcionist::OnService_Start, this);
+          "/task_control/receptionist/start",
+          &TaskControl_Receptionist::OnService_Start, this);
 
       // Service clients: actors
       this->srv_client_human_1 = this->rosNode->serviceClient
@@ -119,7 +119,7 @@ namespace gazebo
 
       // Spin up the queue helper thread.
       this->rosQueueThread =
-        std::thread(std::bind(&TaskControl_Recepcionist::QueueThread, this));
+        std::thread(std::bind(&TaskControl_Receptionist::QueueThread, this));
 
     }
 
@@ -138,7 +138,7 @@ namespace gazebo
         social_worlds::Start::Response &_res)
     {
       // strat task
-      std::cout << "Recepcionist task: Start." << std::endl;
+      std::cout << "Receptionist task: Start." << std::endl;
       this->world->SetPaused(false);
 
       // open inside doors
@@ -148,13 +148,13 @@ namespace gazebo
       this->pub_door_3.publish(msg);
       this->pub_door_4.publish(msg);
 
-      std::cout << "Recepcionist task: Phase 1." << std::endl;
+      std::cout << "Receptionist task: Phase 1." << std::endl;
       this->state = 1;
       this->phase_1();
-      std::cout << "Recepcionist task: Phase 2." << std::endl;
+      std::cout << "Receptionist task: Phase 2." << std::endl;
       this->state = 2;
       this->phase_2();
-      std::cout << "Recepcionist task: Phase 3." << std::endl;
+      std::cout << "Receptionist task: Phase 3." << std::endl;
       this->state = 3;
       this->phase_3();
 
@@ -275,5 +275,5 @@ namespace gazebo
 
   };
 
-  GZ_REGISTER_WORLD_PLUGIN(TaskControl_Recepcionist)
+  GZ_REGISTER_WORLD_PLUGIN(TaskControl_Receptionist)
 }

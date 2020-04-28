@@ -230,7 +230,7 @@
       <plugin name="sliding_door_5" filename="libsliding_door_control.so"/>
     </include>
 
-    <plugin name="recepcionist" filename="librecepcionist.so"/>
+    <plugin name="receptionist" filename="libreceptionist.so"/>
 
   </world>
 </sdf>
