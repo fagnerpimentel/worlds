@@ -62,7 +62,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${GAZEBO_CXX_FLAGS}")
 
 ################################################################################
 
-# Build plugins
+# Build libraries
 
 add_library(actor_control SHARED plugins/actor_control.cc)
 target_link_libraries(actor_control ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${roscpp_LIBRARIES})
@@ -72,6 +72,12 @@ add_library(sliding_door_control SHARED plugins/sliding_door_control.cc)
 target_link_libraries(sliding_door_control ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${roscpp_LIBRARIES})
 add_dependencies(sliding_door_control ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
-add_library(recepcionist SHARED plugins/task_control__recepcionist.cc)
-target_link_libraries(recepcionist ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${roscpp_LIBRARIES})
-add_dependencies(recepcionist ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_library(receptionist SHARED plugins/task_control__receptionist.cc)
+target_link_libraries(receptionist ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${roscpp_LIBRARIES})
+add_dependencies(receptionist ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+
+
+# Build executable
+
+add_executable(real_time_factor_publisher_node src/real_time_factor_publisher_node.cpp)
+target_link_libraries(real_time_factor_publisher_node ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES})
