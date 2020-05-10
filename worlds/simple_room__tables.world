@@ -36,42 +36,42 @@
     <!-- table 1 -->
     <include>
       <name>table_1</name>
-      <uri>model://table</uri>
+      <uri>model://cafe_table</uri>
       <pose>-5 1.5 0 0 -0 1.5707</pose>
     </include>
 
     <!-- table 2 -->
     <include>
       <name>table_1</name>
-      <uri>model://table</uri>
+      <uri>model://cafe_table</uri>
       <pose>-5 -1.5 0 0 -0 1.5707</pose>
     </include>
 
     <!-- table 3 -->
     <include>
       <name>table_3</name>
-      <uri>model://table</uri>
+      <uri>model://cafe_table</uri>
       <pose>-2 0 0 0 -0 1.5707</pose>
     </include>
 
     <!-- table 4 -->
     <include>
       <name>table_4</name>
-      <uri>model://table</uri>
+      <uri>model://cafe_table</uri>
       <pose>2 0 0 0 -0 1.5707</pose>
     </include>
 
     <!-- table 5 -->
     <include>
       <name>table_5</name>
-      <uri>model://table</uri>
+      <uri>model://cafe_table</uri>
       <pose>5 1.5 0 0 -0 1.5707</pose>
     </include>
 
     <!-- table 6 -->
     <include>
       <name>table_7</name>
-      <uri>model://table</uri>
+      <uri>model://cafe_table</uri>
       <pose>5 -1.5 0 0 -0 1.5707</pose>
     </include>
 

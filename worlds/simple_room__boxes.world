@@ -37,42 +37,42 @@
     <include>
       <name>box_1</name>
       <uri>model://box</uri>
-      <pose>-5 1.5 0 0 -0 1.5707</pose>
+      <pose>-5 1.5 0 0 -0 0</pose>
     </include>
 
     <!-- box 2 -->
     <include>
       <name>box_2</name>
       <uri>model://box</uri>
-      <pose>-5 -1.5 0 0 -0 1.5707</pose>
+      <pose>-5 -1.5 0 0 -0 0</pose>
     </include>
 
     <!-- box 3 -->
     <include>
       <name>box_3</name>
       <uri>model://box</uri>
-      <pose>-2 0 0 0 -0 1.5707</pose>
+      <pose>-2 0 0 0 -0 0</pose>
     </include>
 
     <!-- box 4 -->
     <include>
       <name>box_4</name>
       <uri>model://box</uri>
-      <pose>2 0 0 0 -0 1.5707</pose>
+      <pose>2 0 0 0 -0 0</pose>
     </include>
 
     <!-- box 5 -->
     <include>
       <name>box_5</name>
       <uri>model://box</uri>
-      <pose>5 1.5 0 0 -0 1.5707</pose>
+      <pose>5 1.5 0 0 -0 0</pose>
     </include>
 
     <!-- box 6 -->
     <include>
       <name>box_6</name>
       <uri>model://box</uri>
-      <pose>5 -1.5 0 0 -0 1.5707</pose>
+      <pose>5 -1.5 0 0 -0 0</pose>
     </include>
 
   </world>
