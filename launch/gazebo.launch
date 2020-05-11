@@ -20,6 +20,10 @@
     <!-- <env name="GAZEBO_PLUGIN_PATH" value="/home/fagner/gazebo_plugin_tutorial/build"/> -->
   </node>
 
+  <group if="$(arg enable_gui)" >
+    <node name="gzclient" pkg="gazebo_ros" type="gzclient" output="screen"/>
+  </group>
+
 
   <!-- <include file="$(find gazebo_ros)/launch/empty_world.launch" >
     <arg name="paused" default="$(arg paused)"/>
