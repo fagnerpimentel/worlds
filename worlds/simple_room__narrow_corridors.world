@@ -1,0 +1,120 @@
+<?xml version='1.0'?>
+<sdf version='1.6'>
+  <world name='default'>
+
+    <!-- Camera Pose -->
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose frame=''>-15 0 15 0 0.785398 -0</pose>
+      </camera>
+    </gui>
+
+    <!-- physics -->
+    <physics type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+
+    <!-- sun -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <!-- Ground Plane -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <!-- simple_room -->
+    <include>
+      <name>simple_room__narrow_corridors</name>
+      <uri>model://simple_room</uri>
+      <pose>0 0 1 0 0 0</pose>
+    </include>
+
+    <!-- box 1-1 -->
+    <include>
+      <name>box_1-1</name>
+      <uri>model://box</uri>
+      <pose>-5 1 0 0 -0 0</pose>
+    </include>
+
+    <!-- box 1-2 -->
+    <include>
+      <name>box_1-2</name>
+      <uri>model://box</uri>
+      <pose>-5 -1 0 0 -0 0</pose>
+    </include>
+
+    <!-- box 2-1 -->
+    <include>
+      <name>box_2-1</name>
+      <uri>model://box</uri>
+      <pose>-3 1 0 0 -0 0</pose>
+    </include>
+
+    <!-- box 2-2 -->
+    <include>
+      <name>box_2-2</name>
+      <uri>model://box</uri>
+      <pose>-3 -1 0 0 -0 0</pose>
+    </include>
+
+    <!-- box 3-1 -->
+    <include>
+      <name>box_3-1</name>
+      <uri>model://box</uri>
+      <pose>-1 1 0 0 -0 0</pose>
+    </include>
+
+    <!-- box 3-2 -->
+    <include>
+      <name>box_3-2</name>
+      <uri>model://box</uri>
+      <pose>-1 -1 0 0 -0 0</pose>
+    </include>
+
+    <!-- box 4-1 -->
+    <include>
+      <name>box_4-1</name>
+      <uri>model://box</uri>
+      <pose>1 1 0 0 -0 0</pose>
+    </include>
+
+    <!-- box 4-2 -->
+    <include>
+      <name>box_4-2</name>
+      <uri>model://box</uri>
+      <pose>1 -1 0 0 -0 0</pose>
+    </include>
+
+    <!-- box 5-1 -->
+    <include>
+      <name>box_5-1</name>
+      <uri>model://box</uri>
+      <pose>3 1 0 0 -0 0</pose>
+    </include>
+
+    <!-- box 5-2 -->
+    <include>
+      <name>box_5-2</name>
+      <uri>model://box</uri>
+      <pose>3 -1 0 0 -0 0</pose>
+    </include>
+
+    <!-- box 6-1 -->
+    <include>
+      <name>box_6-1</name>
+      <uri>model://box</uri>
+      <pose>5 1 0 0 -0 0</pose>
+    </include>
+
+    <!-- box 6-2 -->
+    <include>
+      <name>box_6-2</name>
+      <uri>model://box</uri>
+      <pose>5 -1 0 0 -0 0</pose>
+    </include>
+
+  </world>
+</sdf>
