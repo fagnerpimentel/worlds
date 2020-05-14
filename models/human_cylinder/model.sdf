@@ -1,0 +1,29 @@
+<?xml version='1.0'?>
+<sdf version='1.6'>
+
+  <model name='human_cylinder'>
+    <pose frame=''>0 0 0 0 0 0</pose>
+    <link name='link'>
+      <inertial>
+        <mass>70</mass>
+        <inertia>
+          <ixx>0.166667</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.166667</iyy>
+          <iyz>0</iyz>
+          <izz>0.166667</izz>
+        </inertia>
+      </inertial>
+      <collision name='collision'>
+        <geometry>
+          <cylinder>
+            <radius>0.30</radius>
+            <length>1.70</length>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+
+</sdf>

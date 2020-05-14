@@ -29,11 +29,16 @@
     <include>
       <name>simple_room__static_people</name>
       <uri>model://simple_room</uri>
-      <pose>0 0 1 0 0 0</pose>
+      <pose>0 0 0 0 0 0</pose>
     </include>
 
     <!-- Human 1 -->
-    <actor name="human_1">
+    <include>
+      <pose>-5.0 1.5 1.1 0 0 -1.5707</pose>
+      <name>human_model_1</name>
+      <uri>model://human_cylinder</uri>
+    </include>
+    <actor name="human_actor_1">
       <pose>-5.0 1.5 1.1 0 0 -1.5707</pose>
       <skin>
         <filename>stand.dae</filename>
@@ -53,7 +58,12 @@
     </actor>
 
     <!-- Human 2 -->
-    <actor name="human_2">
+    <include>
+      <pose>-5 -1.5 1.1 0 0 -1.5707</pose>
+      <name>human_model_2</name>
+      <uri>model://human_cylinder</uri>
+    </include>
+    <actor name="human_actor_2">
       <pose>-5 -1.5 1.1 0 0 -1.5707</pose>
       <skin>
         <filename>stand.dae</filename>
@@ -73,7 +83,12 @@
     </actor>
 
     <!-- Human 3 -->
-    <actor name="human_3">
+    <include>
+      <pose>-2 0 1.1 0 0 -1.5707</pose>
+      <name>human_model_3</name>
+      <uri>model://human_cylinder</uri>
+    </include>
+    <actor name="human_actor_3">
       <pose>-2 0 1.1 0 0 -1.5707</pose>
       <skin>
         <filename>stand.dae</filename>
@@ -93,7 +108,12 @@
     </actor>
 
     <!-- Human 4 -->
-    <actor name="human_4">
+    <include>
+      <pose>2 0 1.1 0 0 -1.5707</pose>
+      <name>human_model_4</name>
+      <uri>model://human_cylinder</uri>
+    </include>
+    <actor name="human_actor_4">
       <pose>2 0 1.1 0 0 -1.5707</pose>
       <skin>
         <filename>stand.dae</filename>
@@ -113,7 +133,12 @@
     </actor>
 
     <!-- Human 5 -->
-    <actor name="human_5">
+    <include>
+      <pose>5 1.5 1.1 0 0 -1.5707</pose>
+      <name>human_model_5</name>
+      <uri>model://human_cylinder</uri>
+    </include>
+    <actor name="human_actor_5">
       <pose>5 1.5 1.1 0 0 -1.5707</pose>
       <skin>
         <filename>stand.dae</filename>
@@ -133,7 +158,12 @@
     </actor>
 
     <!-- Human 6 -->
-    <actor name="human_6">
+    <include>
+      <pose>5 -1.5 1.1 0 0 -1.5707</pose>
+      <name>human_model_6</name>
+      <uri>model://human_cylinder</uri>
+    </include>
+    <actor name="human_actor_6">
       <pose>5 -1.5 1.1 0 0 -1.5707</pose>
       <skin>
         <filename>stand.dae</filename>
