@@ -236,12 +236,7 @@
     <include>
       <uri>model://table</uri>
       <name>at_home_table_2</name>
-      <pose>-5.5 -18 0 0 -0 1.5707</pose>
-    </include>
-    <include>
-      <uri>model://table</uri>
-      <name>at_home_table_3</name>
-      <pose>-5.5 -15 0 0 -0 1.5707</pose>
+      <pose>-5 -20 0 0 -0 1.5707</pose>
     </include>
 
   </model>

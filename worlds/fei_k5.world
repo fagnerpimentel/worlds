@@ -5,7 +5,7 @@
     <!-- Camera Pose -->
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose frame=''>2 -26.1 5.5 0 1 3.1415</pose>
+        <pose frame=''>-5 -20 20 0 1.5707 0</pose>
       </camera>
     </gui>
 
@@ -51,6 +51,81 @@
     <plugin name="auto_sliding_door_2" filename="libauto_sliding_door.so">
       <door_name>door2</door_name>
     </plugin> -->
+
+    <!-- small boxes -->
+    <include>
+      <name>box_0</name>
+      <uri>model://box_small</uri>
+      <pose>-2.5 -20 0 0 -0 0</pose>
+    </include>
+    <include>
+      <name>box_1</name>
+      <uri>model://box_small</uri>
+      <pose>-2 -20 0 0 -0 0</pose>
+    </include>
+    <include>
+      <name>box_2</name>
+      <uri>model://box_small</uri>
+      <pose>-1.5 -20 0 0 -0 0</pose>
+    </include>
+    <include>
+      <name>box_3</name>
+      <uri>model://box_small</uri>
+      <pose>-1 -20 0 0 -0 0</pose>
+    </include>
+    <include>
+      <name>box_4</name>
+      <uri>model://box_small</uri>
+      <pose>-0.5 -20 0 0 -0 0</pose>
+    </include>
+
+    <!-- Human 1 -->
+    <include>
+      <pose>-5.0 -17 1.1 0 0 -1.5707</pose>
+      <name>human_model_1</name>
+      <uri>model://human_cylinder</uri>
+    </include>
+    <actor name="human_actor_1">
+      <skin>
+        <filename>stand.dae</filename>
+      </skin>
+      <script>
+        <trajectory id="0" type="stand">
+          <waypoint>
+            <time>0</time>
+            <pose>-4.5 -17.5 0 0 0 1.5707</pose>
+          </waypoint>
+          <waypoint>
+            <time>3</time>
+            <pose>-4.5 -17.5 0 0 0 1.5707</pose>
+          </waypoint>
+        </trajectory>
+      </script>
+    </actor>
+
+    <!-- Human 2 -->
+    <include>
+      <pose>-5.0 -15 1.1 0 0 0</pose>
+      <name>human_model_2</name>
+      <uri>model://human_cylinder</uri>
+    </include>
+    <actor name="human_actor_2">
+      <skin>
+        <filename>stand.dae</filename>
+      </skin>
+      <script>
+        <trajectory id="0" type="stand">
+          <waypoint>
+            <time>0</time>
+            <pose>-4.5 -16 0 0 0 -1.5707</pose>
+          </waypoint>
+          <waypoint>
+            <time>3</time>
+            <pose>-4.5 -16 0 0 0 -1.5707</pose>
+          </waypoint>
+        </trajectory>
+      </script>
+    </actor>
 
   </world>
 </sdf>

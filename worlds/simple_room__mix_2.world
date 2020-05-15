@@ -27,7 +27,7 @@
 
     <!-- simple_room -->
     <include>
-      <name>simple_room__mix</name>
+      <name>simple_room__mix_2</name>
       <uri>model://simple_room</uri>
       <pose>0 0 1 0 0 0</pose>
     </include>
