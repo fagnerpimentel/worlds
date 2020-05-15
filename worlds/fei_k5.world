@@ -28,24 +28,29 @@
     <!-- fei_k5__forniture -->
     <include>
       <uri>model://fei_k5__forniture</uri>
+      <!-- <pose>0 0 0 0 -0 0</pose> -->
       <pose>0.621469 1.46181 0 0 -0 0</pose>
     </include>
 
     <!-- Sliding Door 1 -->
-    <include>
+    <!-- <include>
       <uri>model://sliding_door</uri>
-      <name>door_1</name>
+      <name>door1</name>
       <pose>-0.9 -26 0 0 -0 0</pose>
-      <plugin name="sliding_door_1" filename="libsliding_door_control.so"/>
     </include>
+    <plugin name="auto_sliding_door_1" filename="libauto_sliding_door.so">
+      <door_name>door1</door_name>
+    </plugin> -->
 
     <!-- Sliding Door 2 -->
-    <include>
+    <!-- <include>
       <uri>model://sliding_door</uri>
-      <name>door_2</name>
+      <name>door2</name>
       <pose>-0.9 -20.2 0 0 -0 0</pose>
-      <plugin name="sliding_door_2" filename="libsliding_door_control.so"/>
     </include>
+    <plugin name="auto_sliding_door_2" filename="libauto_sliding_door.so">
+      <door_name>door2</door_name>
+    </plugin> -->
 
   </world>
 </sdf>

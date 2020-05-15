@@ -1936,7 +1936,7 @@
       <kinematic>0</kinematic>
     </link>
     <link name='Wall_66'>
-      <pose frame=''>2.73511 -24.3281 0 0 -0 0</pose>
+      <pose frame=''>2.7 -24.5 0 0 -0 0</pose>
       <visual name='Wall_66_Visual_0'>
         <pose frame=''>-0.540442 0 1.25 0 -0 0</pose>
         <geometry>
@@ -2272,7 +2272,7 @@
       <kinematic>0</kinematic>
     </link>
     <link name='Wall_74'>
-      <pose frame=''>3.41885 -27.1579 0 0 -0 0</pose>
+      <pose frame=''>3.41885 -27 0 0 -0 0</pose>
       <visual name='Wall_74_Visual_0'>
         <pose frame=''>-0.516807 0 1.25 0 -0 0</pose>
         <geometry>

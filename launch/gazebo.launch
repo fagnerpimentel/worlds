@@ -13,23 +13,13 @@
   <param name="/use_sim_time" value="true"/>
   <param name="gazebo/enable_ros_network" value="true" />
 
-
+  <env name="GAZEBO_MODEL_PATH" value="$GAZEBO_MODEL_PATH:$(find social_worlds)/models/:$(find social_worlds)/models/3dparty/"/>
   <node name="gazebo" pkg="gazebo_ros" type="gzserver" output="screen"
 	required="true" args="$(arg command_arg1) $(arg world_path)" >
-    <env name="GAZEBO_MODEL_PATH" value="$GAZEBO_MODEL_PATH:$(find social_worlds)/models/:$(find social_worlds)/models/3dparty/"/>
-    <!-- <env name="GAZEBO_PLUGIN_PATH" value="/home/fagner/gazebo_plugin_tutorial/build"/> -->
   </node>
 
   <group if="$(arg enable_gui)" >
     <node name="gzclient" pkg="gazebo_ros" type="gzclient" output="screen"/>
   </group>
-
-
-  <!-- <include file="$(find gazebo_ros)/launch/empty_world.launch" >
-    <arg name="paused" default="$(arg paused)"/>
-    <env name="GAZEBO_MODEL_PATH" value="$GAZEBO_MODEL_PATH:$(find social_worlds)/models/:$(find social_worlds)/models/3dparty/"/>
-    <arg name="world_name" default="$(find social_worlds)/worlds/$(arg model).world"/>
-    <arg name="gui" default="$(arg enable_gui)"/>
-  </include> -->
 
 </launch>
