@@ -95,14 +95,14 @@
     <!-- sofa 1 -->
     <include>
       <name>sofa_1</name>
-      <uri>model://sofa_set_2</uri>
+      <uri>model://sofa_set</uri>
       <pose>4.4 3 0 0 0 -1.5707</pose>
     </include>
 
     <!-- sofa 2 -->
     <include>
       <name>sofa_2</name>
-      <uri>model://sofa_set_2</uri>
+      <uri>model://sofa_set</uri>
       <pose>2.5 4.8 0 0 0 0</pose>
     </include>
 
