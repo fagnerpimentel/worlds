@@ -11,6 +11,10 @@
 #include <ros/callback_queue.h>
 #include <ros/subscribe_options.h>
 
+#include <std_msgs/Header.h>
+#include <people_msgs/Person.h>
+#include <people_msgs/People.h>
+#include <geometry_msgs/Point.h>
 #include <geometry_msgs/Pose.h>
 #include <social_worlds/ActorTrajectory.h>
 
@@ -68,6 +72,9 @@ namespace gazebo
     private: std::vector<physics::ActorPtr> actor;
     private: std::vector<physics::ModelPtr> model;
 
+    // Publishers
+    private: ros::Publisher people;
+
     public: ActorProxecmics()
     {
     }
@@ -104,18 +111,42 @@ namespace gazebo
         }
       }
 
+      // people publisher
+      this->people =
+          this->rosNode->advertise<people_msgs::People>(
+          "/people", 1000);
+
       std::cout << "starting proxecmics." << std::endl;
     }
 
     private: void update_actor_collision_model()
     {
+
+      people_msgs::People msg;
+      msg.header.seq = 0;
+      msg.header.stamp = ros::Time::now();
+      msg.header.frame_id = "map";
       for (size_t i = 0; i < this->actor.size(); i++) {
+        people_msgs::Person p;
+        p.name = this->actor.at(i)->GetName();
+        p.position.x = actor.at(i)->WorldPose().Pos().X();
+        p.position.y = actor.at(i)->WorldPose().Pos().Y();
+        p.position.z = actor.at(i)->WorldPose().Pos().Z();
+        // p.velocity
+        // p.reliability
+        // p.tagnames
+        // p.tags
+        msg.people.push_back(p);
+
         ignition::math::Pose3d pose = ignition::math::Pose3d();
         pose.Pos().X(this->actor.at(i)->WorldPose().Pos().X());
         pose.Pos().Y(this->actor.at(i)->WorldPose().Pos().Y());
         pose.Pos().Z(this->actor.at(i)->WorldPose().Pos().Z());
         this->model.at(i)->SetWorldPose(pose);
       }
+
+      this->people.publish(msg);
+
     }
 
   };
