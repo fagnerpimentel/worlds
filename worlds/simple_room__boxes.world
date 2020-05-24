@@ -29,7 +29,7 @@
     <include>
       <name>simple_room__boxes</name>
       <uri>model://simple_room</uri>
-      <pose>0 0 1 0 0 0</pose>
+      <pose>0 0 0 0 0 0</pose>
     </include>
 
     <!-- box 1 -->
