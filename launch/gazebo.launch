@@ -15,7 +15,7 @@
 
   <env name="GAZEBO_MODEL_PATH" value="$GAZEBO_MODEL_PATH:$(find social_worlds)/models/:$(find social_worlds)/models/3dparty/"/>
   <node name="gazebo" pkg="gazebo_ros" type="gzserver" output="screen"
-	required="true" args="$(arg command_arg1) $(arg world_path)" >
+	required="true" args="$(arg command_arg1) $(arg world_path) --verbose" >
   </node>
 
   <group if="$(arg enable_gui)" >
