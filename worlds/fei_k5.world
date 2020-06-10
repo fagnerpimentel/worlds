@@ -27,6 +27,7 @@
 
     <!-- fei_k5__forniture -->
     <include>
+      <name>fei_k5</name>
       <uri>model://fei_k5__forniture</uri>
       <!-- <pose>0 0 0 0 -0 0</pose> -->
       <pose>0.621469 1.46181 0 0 -0 0</pose>
