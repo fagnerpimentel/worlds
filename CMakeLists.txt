@@ -1,6 +1,9 @@
 cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
 project(social_worlds)
 
+## Compile as C++11, supported in ROS Kinetic and newer
+add_compile_options(-std=c++11)
+
 find_package(catkin REQUIRED COMPONENTS
   roscpp
   actionlib
@@ -23,6 +26,7 @@ add_service_files(
   FILES
   Start.srv
   ActorTrajectory.srv
+  Regions.srv
 )
 
 #add_message_files(
@@ -79,6 +83,10 @@ add_dependencies(sliding_door_control ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catk
 add_library(receptionist SHARED plugins/task_control__receptionist.cc)
 target_link_libraries(receptionist ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${roscpp_LIBRARIES})
 add_dependencies(receptionist ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+
+add_library(regions SHARED plugins/regions.cc)
+target_link_libraries(regions ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${roscpp_LIBRARIES})
+add_dependencies(regions ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 
 # Build executable
