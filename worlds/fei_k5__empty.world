@@ -5,7 +5,7 @@
     <!-- Camera Pose -->
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose frame=''>-5 -20 20 0 1.5707 0</pose>
+        <pose>-5 -20 20 0 1.5707 0</pose>
       </camera>
     </gui>
 
@@ -29,8 +29,6 @@
     <include>
       <name>fei_k5__empty</name>
       <uri>model://fei_k5__empty</uri>
-      <!-- <pose>0 0 0 0 -0 0</pose> -->
-      <pose>0.621469 1.46181 0 0 -0 0</pose>
     </include>
 
   </world>

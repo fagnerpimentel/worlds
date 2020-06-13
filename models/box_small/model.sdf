@@ -2,7 +2,7 @@
 <sdf version='1.6'>
 
   <model name='box_small'>
-    <pose frame=''>0 0 0 0 0 0</pose>
+    <pose>0 0 0 0 0 0</pose>
     <link name='link'>
       <inertial>
         <mass>0.1</mass>
@@ -43,8 +43,8 @@
         </geometry>
         <material>
           <script>
-            <name>Gazebo/Red</name>
             <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
           </script>
         </material>
       </visual>

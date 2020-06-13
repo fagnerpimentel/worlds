@@ -5,7 +5,7 @@
     <!-- Camera Pose -->
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose frame=''>-15 0 15 0 0.785398 -0</pose>
+        <pose>-15 0 15 0 0.785398 -0</pose>
       </camera>
     </gui>
 
@@ -73,6 +73,20 @@
       <uri>model://cafe_table</uri>
       <pose>5 -1.5 0 0 -0 1.5707</pose>
     </include>
+
+    <plugin name="region_start" filename="libregions.so">
+      <name>start</name>
+      <layer>1</layer>
+      <color>Green</color>
+      <region>-7.5 -2.0 -6.0 2</region>
+    </plugin>
+
+    <plugin name="region_goal" filename="libregions.so">
+      <name>goal</name>
+      <layer>2</layer>
+      <color>Red</color>
+      <region>6.0 -2.0 7.5 2</region>
+    </plugin>
 
   </world>
 </sdf>

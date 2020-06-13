@@ -5,119 +5,118 @@
     <!-- robocup_2019__empty -->
     <include>
       <uri>model://robocup_2019__empty</uri>
-      <pose>0 0 0 0 -0 0</pose>
     </include>
 
     <!-- table 1 -->
     <include>
       <name>table_1</name>
       <uri>model://table</uri>
-      <pose>4 -5 0 0 0 0</pose>
+      <pose frame="robocup_2019__empty">4 -5 0 0 0 0</pose>
     </include>
 
     <!-- table 2 -->
     <include>
       <name>table_2</name>
       <uri>model://table</uri>
-      <pose>1.35 -4.5 0 0 0 1.5707</pose>
+      <pose frame="robocup_2019__empty">1.35 -4.5 0 0 0 1.5707</pose>
     </include>
 
     <!-- table 3 -->
     <include>
       <name>table_3</name>
       <uri>model://table</uri>
-      <pose>00.5 0 0 0 0 0</pose>
+      <pose frame="robocup_2019__empty">00.5 0 0 0 0 0</pose>
     </include>
 
     <!-- table 4 -->
     <include>
       <name>table_4</name>
       <uri>model://table</uri>
-      <pose>-2.5 -1 0 0 0 0</pose>
+      <pose frame="robocup_2019__empty">-2.5 -1 0 0 0 0</pose>
     </include>
 
     <!-- table 5 -->
     <include>
       <name>table_5</name>
       <uri>model://table</uri>
-      <pose>-2.5 0 0 0 0 0</pose>
+      <pose frame="robocup_2019__empty">-2.5 0 0 0 0 0</pose>
     </include>
 
     <!-- table 6 -->
     <include>
       <name>table_6</name>
       <uri>model://table</uri>
-      <pose>-4.3 2 0 0 0 1.5707</pose>
+      <pose frame="robocup_2019__empty">-4.3 2 0 0 0 1.5707</pose>
     </include>
 
     <!-- table 7 -->
     <include>
       <name>table_7</name>
       <uri>model://table</uri>
-      <pose>2.5 3 0 0 0 1.5707</pose>
+      <pose frame="robocup_2019__empty">2.5 3 0 0 0 1.5707</pose>
     </include>
 
     <!-- table 8 -->
     <include>
       <name>table_8</name>
       <uri>model://table</uri>
-      <pose>-2.5 4 0 0 0 0</pose>
+      <pose frame="robocup_2019__empty">-2.5 4 0 0 0 0</pose>
     </include>
 
     <!-- bookshelf 1 -->
     <include>
       <name>bookshelf_1</name>
       <uri>model://bookshelf</uri>
-      <pose>-4.7 4.5 0 0 0 1.5707</pose>
+      <pose frame="robocup_2019__empty">-4.7 4.5 0 0 0 1.5707</pose>
     </include>
 
     <!-- bookshelf 2 -->
     <include>
       <name>bookshelf_2</name>
       <uri>model://bookshelf</uri>
-      <pose>-4 -0.6 0 0 0 0</pose>
+      <pose frame="robocup_2019__empty">-4 -0.6 0 0 0 0</pose>
     </include>
 
     <!-- office clair 1 -->
     <include>
       <name>office_chair_1</name>
       <uri>model://office_chair</uri>
-      <pose>-2.5 -1.5 0 0 0 3.1415</pose>
+      <pose frame="robocup_2019__empty">-2.5 -1.5 0 0 0 3.1415</pose>
     </include>
 
     <!-- office clair 2 -->
     <include>
       <name>office_chair_2</name>
       <uri>model://office_chair</uri>
-      <pose>4 -4.5 0 0 0 0</pose>
+      <pose frame="robocup_2019__empty">4 -4.5 0 0 0 0</pose>
     </include>
 
     <!-- sofa 1 -->
     <include>
       <name>sofa_1</name>
       <uri>model://sofa_set</uri>
-      <pose>4.4 3 0 0 0 -1.5707</pose>
+      <pose frame="robocup_2019__empty">4.4 3 0 0 0 -1.5707</pose>
     </include>
 
     <!-- sofa 2 -->
     <include>
       <name>sofa_2</name>
       <uri>model://sofa_set</uri>
-      <pose>2.5 4.8 0 0 0 0</pose>
+      <pose frame="robocup_2019__empty">2.5 4.8 0 0 0 0</pose>
     </include>
 
     <!-- trash 1 -->
     <include>
       <name>trash_1</name>
       <uri>model://trash_bin</uri>
-      <pose>2 0 0 0 0 0</pose>
+      <pose frame="robocup_2019__empty">2 0 0 0 0 0</pose>
     </include>
 
     <!-- trash 2   -->
     <include>
       <name>trash_2</name>
       <uri>model://trash_bin</uri>
-      <pose>0 -5 0 0 0 0</pose>
+      <pose frame="robocup_2019__empty">0 -5 0 0 0 0</pose>
     </include>
 
 

@@ -5,238 +5,209 @@
     <!-- fei_k5__empty -->
     <include>
       <uri>model://fei_k5__empty</uri>
-      <!-- <pose>0 0 0 0 -0 0</pose> -->
-      <pose>0.621469 1.46181 0 0 -0 0</pose>
-    </include>
-
-    <!-- K5-20_B -->
-    <include>
-      <uri>model://bookshelf</uri>
-      <name>K5-20_B_bookshelf_1</name>
-      <pose>1.85241 -23.8 0 0 -0 1.5707</pose>
-    </include>
-    <include>
-      <uri>model://bookshelf</uri>
-      <name>K5-20_B_bookshelf_2</name>
-      <pose>1.85241 -24.8 0 0 -0 1.5707</pose>
     </include>
 
     <!-- K5-20_D -->
     <include>
       <uri>model://desk_yellow</uri>
       <name>K5-20_D_desk_yellow_1</name>
-      <pose>11 -26.3 0 0 -0 0</pose>
+      <pose frame="fei_k5__empty">10.4 -27.7 0 0 -0 0</pose>
     </include>
     <include>
       <uri>model://desk_yellow</uri>
       <name>K5-20_D_desk_yellow_2</name>
-      <pose>9.25 -26.3 0 0 -0 0</pose>
+      <pose frame="fei_k5__empty">8.6 -27.7 0 0 -0 0</pose>
     </include>
     <include>
       <uri>model://desk_yellow</uri>
       <name>K5-20_D_desk_yellow_3</name>
-      <pose>10.2 -22.1 0 0 -0 3.1415</pose>
+      <pose frame="fei_k5__empty">9.6 -23.6 0 0 -0 3.1415</pose>
     </include>
     <include>
       <uri>model://desk_yellow</uri>
       <name>K5-20_D_desk_yellow_4</name>
-      <pose>8.4 -22.1 0 0 -0 3.1415</pose>
+      <pose frame="fei_k5__empty">7.8 -23.6 0 0 -0 3.1415</pose>
     </include>
     <include>
       <uri>model://office_chair</uri>
       <name>K5-20_D_office_chair_1</name>
-      <pose>11.2 -26 0 0 -0 0</pose>
+      <pose frame="fei_k5__empty">10.6 -27.4 0 0 -0 0</pose>
     </include>
     <include>
       <uri>model://office_chair</uri>
       <name>K5-20_D_office_chair_2</name>
-      <pose>10.3 -26 0 0 -0 0</pose>
+      <pose frame="fei_k5__empty">9.7 -27.4 0 0 -0 0</pose>
     </include>
     <include>
       <uri>model://office_chair</uri>
       <name>K5-20_D_office_chair_3</name>
-      <pose>9.4 -26 0 0 -0 0</pose>
+      <pose frame="fei_k5__empty">8.8 -27.4 0 0 -0 0</pose>
     </include>
     <include>
       <uri>model://office_chair</uri>
       <name>K5-20_D_office_chair_4</name>
-      <pose>8.5 -26 0 0 -0 0</pose>
+      <pose frame="fei_k5__empty">7.9 -27.4 0 0 -0 0</pose>
     </include>
     <include>
       <uri>model://office_chair</uri>
       <name>K5-20_D_office_chair_5</name>
-      <pose>10.9 -22.5 0 0 -0 3.1415</pose>
+      <pose frame="fei_k5__empty">10.3 -23.9 0 0 -0 3.1415</pose>
     </include>
     <include>
       <uri>model://office_chair</uri>
       <name>K5-20_D_office_chair_6</name>
-      <pose>10.0 -22.5 0 0 -0 3.1415</pose>
+      <pose frame="fei_k5__empty">9.4 -23.9 0 0 -0 3.1415</pose>
     </include>
     <include>
       <uri>model://office_chair</uri>
       <name>K5-20_D_office_chair_7</name>
-      <pose>9.1 -22.5 0 0 -0 3.1415</pose>
+      <pose frame="fei_k5__empty">8.5 -23.9 0 0 -0 3.1415</pose>
     </include>
     <include>
       <uri>model://office_chair</uri>
       <name>K5-20_D_office_chair_8</name>
-      <pose>8.2 -22.5 0 0 -0 3.1415</pose>
+      <pose frame="fei_k5__empty">7.6 -23.9 0 0 -0 3.1415</pose>
     </include>
     <include>
       <uri>model://monitor</uri>
       <name>K5-20_D_monitor_1</name>
-      <pose>11.4 -26.5 0.8 0 -0 3.1415</pose>
+      <pose frame="fei_k5__empty">10.8 -27.9 0.8 0 -0 3.1415</pose>
     </include>
     <include>
       <uri>model://monitor</uri>
       <name>K5-20_D_monitor_2</name>
-      <pose>10.5 -26.5 0.8 0 -0 3.1415</pose>
+      <pose frame="fei_k5__empty">9.9 -27.9 0.8 0 -0 3.1415</pose>
     </include>
     <include>
       <uri>model://monitor</uri>
       <name>K5-20_D_monitor_3</name>
-      <pose>9.6 -26.5 0.8 0 -0 3.1415</pose>
+      <pose frame="fei_k5__empty">9.0 -27.9 0.8 0 -0 3.1415</pose>
     </include>
     <include>
       <uri>model://monitor</uri>
       <name>K5-20_D_monitor_4</name>
-      <pose>8.7 -26.5 0.8 0 -0 3.1415</pose>
+      <pose frame="fei_k5__empty">8.1 -27.9 0.8 0 -0 3.1415</pose>
     </include>
     <include>
       <uri>model://monitor</uri>
       <name>K5-20_D_monitor_5</name>
-      <pose>10.8 -22 0.8 0 -0 0</pose>
+      <pose frame="fei_k5__empty">10.2 -23.4 0.8 0 -0 0</pose>
     </include>
     <include>
       <uri>model://monitor</uri>
       <name>K5-20_D_monitor_6</name>
-      <pose>9.9 -22 0.8 0 -0 0</pose>
+      <pose frame="fei_k5__empty">9.3 -23.4 0.8 0 -0 0</pose>
     </include>
     <include>
       <uri>model://monitor</uri>
       <name>K5-20_D_monitor_7</name>
-      <pose>9.0 -22 0.8 0 -0 0</pose>
+      <pose frame="fei_k5__empty">8.4 -23.4 0.8 0 -0 0</pose>
     </include>
     <include>
       <uri>model://monitor</uri>
       <name>K5-20_D_monitor_8</name>
-      <pose>8.1 -22 0.8 0 -0 0</pose>
+      <pose frame="fei_k5__empty">7.5 -23.4 0.8 0 -0 0</pose>
     </include>
     <include>
       <uri>model://keyboard</uri>
       <name>K5-20_D_keyboard_1</name>
-      <pose>11.4 -26.2 0.8 0 -0 3.1415</pose>
+      <pose frame="fei_k5__empty">10.8 -27.6 0.8 0 -0 3.1415</pose>
     </include>
     <include>
       <uri>model://keyboard</uri>
       <name>K5-20_D_keyboard_2</name>
-      <pose>10.5 -26.2 0.8 0 -0 3.1415</pose>
+      <pose frame="fei_k5__empty">9.9 -27.6 0.8 0 -0 3.1415</pose>
     </include>
     <include>
       <uri>model://keyboard</uri>
       <name>K5-20_D_keyboard_3</name>
-      <pose>9.6 -26.2 0.8 0 -0 3.1415</pose>
+      <pose frame="fei_k5__empty">9.0 -27.6 0.8 0 -0 3.1415</pose>
     </include>
     <include>
       <uri>model://keyboard</uri>
       <name>K5-20_D_keyboard_4</name>
-      <pose>8.7 -26.2 0.8 0 -0 3.1415</pose>
+      <pose frame="fei_k5__empty">8.1 -27.6 0.8 0 -0 3.1415</pose>
     </include>
     <include>
       <uri>model://keyboard</uri>
       <name>K5-20_D_keyboard_5</name>
-      <pose>10.8 -22.3 0.8 0 -0 0</pose>
+      <pose frame="fei_k5__empty">10.2 -23.7 0.8 0 -0 0</pose>
     </include>
     <include>
       <uri>model://keyboard</uri>
       <name>K5-20_D_keyboard_6</name>
-      <pose>9.9 -22.3 0.8 0 -0 0</pose>
+      <pose frame="fei_k5__empty">9.3 -23.7 0.8 0 -0 0</pose>
     </include>
     <include>
       <uri>model://keyboard</uri>
       <name>K5-20_D_keyboard_7</name>
-      <pose>9.0 -22.3 0.8 0 -0 0</pose>
+      <pose frame="fei_k5__empty">8.4 -23.7 0.8 0 -0 0</pose>
     </include>
     <include>
       <uri>model://keyboard</uri>
       <name>K5-20_D_keyboard_8</name>
-      <pose>8.1 -22.3 0.8 0 -0 0</pose>
+      <pose frame="fei_k5__empty">7.5 -23.7 0.8 0 -0 0</pose>
     </include>
 
     <!-- K5-20_E -->
     <include>
       <uri>model://desk_yellow</uri>
       <name>K5-20_E_desk_yellow_1</name>
-      <pose>9.2 -21 0 0 -0 0</pose>
+      <pose frame="fei_k5__empty">8.6 -22.5 0 0 -0 0</pose>
     </include>
     <include>
       <uri>model://office_chair</uri>
       <name>K5-20_E_office_chair_1</name>
-      <pose>9.5 -20.5 0 0 -0 0</pose>
+      <pose frame="fei_k5__empty">8.9 -21.9 0 0 -0 0</pose>
     </include>
     <include>
       <uri>model://office_chair</uri>
       <name>K5-20_E_office_chair_2</name>
-      <pose>8.6 -20.5 0 0 -0 0</pose>
+      <pose frame="fei_k5__empty">8.0 -21.9 0 0 -0 0</pose>
     </include>
     <include>
       <uri>model://laptop_pc</uri>
       <name>K5-20_E_laptop_pc_1</name>
-      <pose>9.6 -21 0.8 0 -0 3.1415</pose>
+      <pose frame="fei_k5__empty">9.0 -22.4 0.8 0 -0 3.1415</pose>
     </include>
     <include>
       <uri>model://laptop_pc</uri>
       <name>K5-20_E_laptop_pc_2</name>
-      <pose>8.6 -21 0.8 0 -0 3.1415</pose>
+      <pose frame="fei_k5__empty">8.0 -22.4 0.8 0 -0 3.1415</pose>
     </include>
 
     <!-- KITCHEN -->
     <include>
       <uri>model://table</uri>
       <name>kitchen_tabke_1</name>
-      <pose>-0.2 -21.5 0 0 -0 1.5707</pose>
-    </include>
-    <include>
-      <uri>model://table</uri>
-      <name>kitchen_tabke_2</name>
-      <pose>1.7 -20.4 0 0 -0 1.5707</pose>
-    </include>
-    <include>
-      <uri>model://table</uri>
-      <name>kitchen_tabke_3</name>
-      <pose>1.7 -22.1 0 0 -0 1.5707</pose>
+      <pose frame="fei_k5__empty">-0.8 -22.9 0 0 -0 1.5707</pose>
     </include>
 
     <!-- at_home -->
     <include>
       <uri>model://sofa_set</uri>
       <name>at_home_sofa_set_1</name>
-      <pose>-4.5 -25 0 0 -0 3.1415</pose>
+      <pose frame="fei_k5__empty">-5.2 -26.5 0 0 -0 3.1415</pose>
     </include>
     <include>
       <uri>model://sofa_set</uri>
       <name>at_home_sofa_set_2</name>
-      <pose>-7.4 -23.4 0 0 -0 1.5707</pose>
+      <pose frame="fei_k5__empty">-8.0 -24.9 0 0 -0 1.5707</pose>
     </include>
     <include>
       <uri>model://bookshelf</uri>
       <name>at_home_bookshelf_1</name>
-      <pose>-7.8 -25 0 0 -0 1.5707</pose>
+      <pose frame="fei_k5__empty">-8.4 -26.5 0 0 -0 1.5707</pose>
     </include>
     <include>
       <uri>model://trash_bin</uri>
       <name>at_home_trash_bin_1</name>
-      <pose>-5.8 -25.2 0 0 -0 0</pose>
+      <pose frame="fei_k5__empty">-6.5 -26.6 0 0 -0 0</pose>
     </include>
     <include>
       <uri>model://table</uri>
       <name>at_home_table_1</name>
-      <pose>-4.1 -22.1 0 0 -0 1.5707</pose>
-    </include>
-    <include>
-      <uri>model://table</uri>
-      <name>at_home_table_2</name>
-      <pose>-5 -20 0 0 -0 1.5707</pose>
+      <pose frame="fei_k5__empty">-4.8 -23.6 0 0 -0 1.5707</pose>
     </include>
 
   </model>

@@ -2,10 +2,10 @@
 <sdf version='1.6'>
 
   <model name='simple_room'>
-    <pose frame=''>0 0 0 0 -0 0</pose>
+    <pose>0 0 0 0 -0 0</pose>
 
     <link name='Wall_0'>
-      <pose frame=''>0 -2.5 1 0 -0 0</pose>
+      <pose>0 -2.5 1 0 -0 0</pose>
       <collision name='Wall_0_Collision'>
         <geometry>
           <box>
@@ -49,7 +49,7 @@
     </link>
 
     <link name='Wall_1'>
-      <pose frame=''>8 -0 1 0 -0 1.5708</pose>
+      <pose>8 -0 1 0 -0 1.5708</pose>
       <collision name='Wall_1_Collision'>
         <geometry>
           <box>
@@ -93,7 +93,7 @@
     </link>
 
     <link name='Wall_2'>
-      <pose frame=''>0 2.5 1 0 0 3.14159</pose>
+      <pose>0 2.5 1 0 0 3.14159</pose>
       <collision name='Wall_2_Collision'>
         <geometry>
           <box>
@@ -137,7 +137,7 @@
     </link>
 
     <link name='Wall_3'>
-      <pose frame=''>-8 0 1 0 -0 -1.5708</pose>
+      <pose>-8 0 1 0 -0 -1.5708</pose>
       <collision name='Wall_3_Collision'>
         <geometry>
           <box>

@@ -27,19 +27,19 @@
 
     <!-- simple_room -->
     <include>
-      <name>simple_room__static_people</name>
+      <name>simple_room__interaction_object</name>
       <uri>model://simple_room</uri>
       <pose>0 0 0 0 0 0</pose>
     </include>
 
-    <!-- Human 1 -->
+    <!-- Human 1_1-->
     <include>
-      <pose>-5.0 1.5 1.1 0 0 -1.5707</pose>
-      <name>human_model_1</name>
+      <pose>-5.0 0.75 1.1 0 0 -1.5707</pose>
+      <name>human_model_1_1</name>
       <uri>model://human_cylinder</uri>
     </include>
-    <actor name="human_actor_1">
-      <pose>-5.0 1.5 1.1 0 0 -1.5707</pose>
+    <actor name="human_actor_1_1">
+      <pose>-5.0 0.75 1.1 0 0 -1.5707</pose>
       <skin>
         <filename>stand.dae</filename>
       </skin>
@@ -47,24 +47,24 @@
         <trajectory id="0" type="stand">
           <waypoint>
             <time>0</time>
-            <pose>-5.0 1.5 0 0 0 0</pose>
+            <pose>-5.0 0.75 0 0 0 -1.5707</pose>
           </waypoint>
           <waypoint>
             <time>3</time>
-            <pose>-5.0 1.5 0 0 0 0</pose>
+            <pose>-5.0 0.75 0 0 0 -1.5707</pose>
           </waypoint>
         </trajectory>
       </script>
     </actor>
 
-    <!-- Human 2 -->
+    <!-- Human 1_2 -->
     <include>
-      <pose>-5 -1.5 1.1 0 0 -1.5707</pose>
-      <name>human_model_2</name>
+      <pose>-5 -0.75 1.1 0 0 1.5707</pose>
+      <name>human_model_1_2</name>
       <uri>model://human_cylinder</uri>
     </include>
-    <actor name="human_actor_2">
-      <pose>-5 -1.5 1.1 0 0 -1.5707</pose>
+    <actor name="human_actor_1_2">
+      <pose>-5 -0.75 1.1 0 0 1.5707</pose>
       <skin>
         <filename>stand.dae</filename>
       </skin>
@@ -72,24 +72,24 @@
         <trajectory id="0" type="stand">
           <waypoint>
             <time>0</time>
-            <pose>-5 -1.5 0 0 0 0</pose>
+            <pose>-5 -0.75 0 0 0 1.5707</pose>
           </waypoint>
           <waypoint>
             <time>3</time>
-            <pose>-5 -1.5 0 0 0 0</pose>
+            <pose>-5 -0.75 0 0 0 1.5707</pose>
           </waypoint>
         </trajectory>
       </script>
     </actor>
 
-    <!-- Human 3 -->
+    <!-- Human 2_1 -->
     <include>
-      <pose>-2 0 1.1 0 0 -1.5707</pose>
-      <name>human_model_3</name>
+      <pose>-2 2 1.1 0 0 -1.5707</pose>
+      <name>human_model_2_1</name>
       <uri>model://human_cylinder</uri>
     </include>
-    <actor name="human_actor_3">
-      <pose>-2 0 1.1 0 0 -1.5707</pose>
+    <actor name="human_actor_2_1">
+      <pose>-2 2 1.1 0 0 -1.5707</pose>
       <skin>
         <filename>stand.dae</filename>
       </skin>
@@ -97,23 +97,48 @@
         <trajectory id="0" type="stand">
           <waypoint>
             <time>0</time>
-            <pose>-2 0 0 0 0 0</pose>
+            <pose>-2 2 0 0 0 -1.5707</pose>
           </waypoint>
           <waypoint>
             <time>3</time>
-            <pose>-2 0 0 0 0 0</pose>
+            <pose>-2 2 0 0 0 -1.5707</pose>
           </waypoint>
         </trajectory>
       </script>
     </actor>
 
-    <!-- Human 4 -->
+    <!-- Human 2_2 -->
+    <include>
+      <pose>-2 0 1.1 0 0 1.5707</pose>
+      <name>human_model_2_2</name>
+      <uri>model://human_cylinder</uri>
+    </include>
+    <actor name="human_actor_2_2">
+      <pose>-2 0 1.1 0 0 1.5707</pose>
+      <skin>
+        <filename>stand.dae</filename>
+      </skin>
+      <script>
+        <trajectory id="0" type="stand">
+          <waypoint>
+            <time>0</time>
+            <pose>-2 0 0 0 0 1.5707</pose>
+          </waypoint>
+          <waypoint>
+            <time>3</time>
+            <pose>-2 0 0 0 0 1.5707</pose>
+          </waypoint>
+        </trajectory>
+      </script>
+    </actor>
+
+    <!-- Human 3_1 -->
     <include>
       <pose>2 0 1.1 0 0 -1.5707</pose>
-      <name>human_model_4</name>
+      <name>human_model_3_1</name>
       <uri>model://human_cylinder</uri>
     </include>
-    <actor name="human_actor_4">
+    <actor name="human_actor_3_1">
       <pose>2 0 1.1 0 0 -1.5707</pose>
       <skin>
         <filename>stand.dae</filename>
@@ -122,24 +147,24 @@
         <trajectory id="0" type="stand">
           <waypoint>
             <time>0</time>
-            <pose>2 0 0 0 0 0</pose>
+            <pose>2 0 0 0 0 -1.5707</pose>
           </waypoint>
           <waypoint>
             <time>3</time>
-            <pose>2 0 0 0 0 0</pose>
+            <pose>2 0 0 0 0 -1.5707</pose>
           </waypoint>
         </trajectory>
       </script>
     </actor>
 
-    <!-- Human 5 -->
+    <!-- Human 3_2 -->
     <include>
-      <pose>5 1.5 1.1 0 0 -1.5707</pose>
-      <name>human_model_5</name>
+      <pose>2 -2 1.1 0 0 1.5707</pose>
+      <name>human_model_3_2</name>
       <uri>model://human_cylinder</uri>
     </include>
-    <actor name="human_actor_5">
-      <pose>5 1.5 1.1 0 0 -1.5707</pose>
+    <actor name="human_actor_3_2">
+      <pose>2 -2 1.1 0 0 1.5707</pose>
       <skin>
         <filename>stand.dae</filename>
       </skin>
@@ -147,24 +172,24 @@
         <trajectory id="0" type="stand">
           <waypoint>
             <time>0</time>
-            <pose>5 1.5 0 0 0 0</pose>
+            <pose>2 -2 0 0 0 1.5707</pose>
           </waypoint>
           <waypoint>
             <time>3</time>
-            <pose>5 1.5 0 0 0 0</pose>
+            <pose>2 -2 0 0 0 1.5707</pose>
           </waypoint>
         </trajectory>
       </script>
     </actor>
 
-    <!-- Human 6 -->
+    <!-- Human 4_1 -->
     <include>
-      <pose>5 -1.5 1.1 0 0 -1.5707</pose>
-      <name>human_model_6</name>
+      <pose>5 0.75 1.1 0 0 -1.5707</pose>
+      <name>human_model_4_1</name>
       <uri>model://human_cylinder</uri>
     </include>
-    <actor name="human_actor_6">
-      <pose>5 -1.5 1.1 0 0 -1.5707</pose>
+    <actor name="human_actor_4_1">
+      <pose>5 0.75 1.1 0 0 -1.5707</pose>
       <skin>
         <filename>stand.dae</filename>
       </skin>
@@ -172,19 +197,44 @@
         <trajectory id="0" type="stand">
           <waypoint>
             <time>0</time>
-            <pose>5 -1.5 0 0 0 0</pose>
+            <pose>5 0.75 0 0 0 -1.5707</pose>
           </waypoint>
           <waypoint>
             <time>3</time>
-            <pose>5 -1.5 0 0 0 0</pose>
+            <pose>5 0.75 0 0 0 -1.5707</pose>
+          </waypoint>
+        </trajectory>
+      </script>
+    </actor>
+
+    <!-- Human 4_2 -->
+    <include>
+      <pose>5 -0.75 1.1 0 0 1.5707</pose>
+      <name>human_model_4_2</name>
+      <uri>model://human_cylinder</uri>
+    </include>
+    <actor name="human_actor_4_2">
+      <pose>5 -0.75 1.1 0 0 1.5707</pose>
+      <skin>
+        <filename>stand.dae</filename>
+      </skin>
+      <script>
+        <trajectory id="0" type="stand">
+          <waypoint>
+            <time>0</time>
+            <pose>5 -0.75 0 0 0 1.5707</pose>
+          </waypoint>
+          <waypoint>
+            <time>3</time>
+            <pose>5 -0.75 0 0 0 1.5707</pose>
           </waypoint>
         </trajectory>
       </script>
     </actor>
 
     <plugin name="proxemics" filename="libproxemics.so">
-      <actors>human_actor_1 human_actor_2 human_actor_3 human_actor_4 human_actor_5 human_actor_6</actors>
-      <models>human_model_1 human_model_2 human_model_3 human_model_4 human_model_5 human_model_6</models>
+      <actors>human_actor_1_1 human_actor_1_2 human_actor_2_1 human_actor_2_2 human_actor_3_1 human_actor_3_2 human_actor_4_1 human_actor_4_2</actors>
+      <models>human_model_1_1 human_model_1_2 human_model_2_1 human_model_2_2 human_model_3_1 human_model_3_2 human_model_4_1 human_model_4_2</models>
     </plugin>
 
     <plugin name="region_start" filename="libregions.so">
