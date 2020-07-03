@@ -27,7 +27,7 @@
 
     <!-- simple_room -->
     <include>
-      <name>simple_room__interaction_object</name>
+      <name>simple_room__interaction_people</name>
       <uri>model://simple_room</uri>
       <pose>0 0 0 0 0 0</pose>
     </include>
@@ -237,18 +237,25 @@
       <models>human_model_1_1 human_model_1_2 human_model_2_1 human_model_2_2 human_model_3_1 human_model_3_2 human_model_4_1 human_model_4_2</models>
     </plugin>
 
-    <plugin name="region_start" filename="libregions.so">
-      <name>start</name>
+    <plugin name="start" filename="libregions.so">
       <layer>1</layer>
       <color>Green</color>
       <region>-7.5 -2.0 -6.0 2</region>
     </plugin>
 
-    <plugin name="region_goal" filename="libregions.so">
-      <name>goal</name>
+    <plugin name="goal" filename="libregions.so">
       <layer>2</layer>
-      <color>Red</color>
+      <color>Blue</color>
       <region>6.0 -2.0 7.5 2</region>
+    </plugin>
+
+    <plugin name="forbidden" filename="libregions.so">
+      <layer>3</layer>
+      <color>Red</color>
+      <region>-5.25 -1 -4.75 1</region>
+      <region>-1.75 0 -2.25 2</region>
+      <region>1.75 -2 2.25 0</region>
+      <region>4.75 -1 5.25 1</region>
     </plugin>
 
   </world>

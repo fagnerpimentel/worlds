@@ -5,7 +5,7 @@
     <!-- Camera Pose -->
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose>-5 -24 21 0 1.5707 0</pose>
+        <pose>-18 -24 21 0 1 0</pose>
       </camera>
     </gui>
 
@@ -245,60 +245,59 @@
       <models>human_model_1 human_model_2 human_model_3 human_model_4 human_model_5</models>
     </plugin>
 
-    <plugin name="region_start" filename="libregions.so">
-      <name>start</name>
+    <plugin name="start" filename="libregions.so">
       <layer>1</layer>
       <color>Green</color>
-      <region>-3.5 -35 -2.5 -34</region>
+      <region>-4 -35 -2 -34</region>
     </plugin>
 
-    <plugin name="region_goal" filename="libregions.so">
-      <name>goal</name>
+    <plugin name="goal" filename="libregions.so">
       <layer>2</layer>
-      <color>Red</color>
-      <region>-10.5 -35 -9.5 -34</region>
+      <color>Blue</color>
+      <region>-11 -35 -9 -34</region>
     </plugin>
 
     <plugin name="region_checkpoint_1" filename="libregions.so">
-      <name>cp1</name>
       <layer>3</layer>
-      <color>Blue</color>
+      <color>Orange</color>
       <region>-3.5 -28.5 -2.5 -27.5</region>
     </plugin>
 
     <plugin name="region_checkpoint_2" filename="libregions.so">
-      <name>cp2</name>
       <layer>3</layer>
-      <color>Blue</color>
+      <color>Orange</color>
       <region>-5 -21.5 -4 -20.5</region>
     </plugin>
 
     <plugin name="region_checkpoint_3" filename="libregions.so">
-      <name>cp3</name>
       <layer>3</layer>
-      <color>Blue</color>
+      <color>Orange</color>
       <region>-5 -15 -4 -14</region>
     </plugin>
 
     <plugin name="region_checkpoint_4" filename="libregions.so">
-      <name>cp4</name>
       <layer>3</layer>
-      <color>Blue</color>
+      <color>Orange</color>
       <region>-10.5 -15 -9.5 -14</region>
     </plugin>
 
     <plugin name="region_checkpoint_5" filename="libregions.so">
-      <name>cp5</name>
       <layer>3</layer>
-      <color>Blue</color>
+      <color>Orange</color>
       <region>-10.5 -21.5 -9.5 -20.5</region>
     </plugin>
 
     <plugin name="region_checkpoint_6" filename="libregions.so">
-      <name>cp6</name>
       <layer>3</layer>
-      <color>Blue</color>
+      <color>Orange</color>
       <region>-10.5 -28.5 -9.5 -27.5</region>
+    </plugin>
+
+    <plugin name="forbidden" filename="libregions.so">
+      <layer>3</layer>
+      <color>Red</color>
+      <region>-3.5 -17.75 -5 -17.25</region>
+      <region>-6.75 -15.5 -6.25 -13.55</region>
     </plugin>
 
   </world>

@@ -187,17 +187,15 @@
       <models>human_model_1 human_model_2 human_model_3 human_model_4 human_model_5 human_model_6</models>
     </plugin>
 
-    <plugin name="region_start" filename="libregions.so">
-      <name>start</name>
+    <plugin name="start" filename="libregions.so">
       <layer>1</layer>
       <color>Green</color>
       <region>-7.5 -2.0 -6.0 2</region>
     </plugin>
 
-    <plugin name="region_goal" filename="libregions.so">
-      <name>goal</name>
+    <plugin name="goal" filename="libregions.so">
       <layer>2</layer>
-      <color>Red</color>
+      <color>Blue</color>
       <region>6.0 -2.0 7.5 2</region>
     </plugin>
 
