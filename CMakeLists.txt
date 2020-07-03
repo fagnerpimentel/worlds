@@ -6,11 +6,12 @@ add_compile_options(-std=c++11)
 
 find_package(catkin REQUIRED COMPONENTS
   roscpp
-  actionlib
-  message_generation
   std_msgs
+  actionlib
+  gazebo_msgs
   geometry_msgs
   actionlib_msgs
+  message_generation
 )
 find_package(gazebo REQUIRED)
 
@@ -90,6 +91,9 @@ add_dependencies(regions ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_T
 
 
 # Build executable
+
+add_executable(check_region_node src/check_region_node.cpp)
+target_link_libraries(check_region_node ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES})
 
 add_executable(real_time_factor_publisher_node src/real_time_factor_publisher_node.cpp)
 target_link_libraries(real_time_factor_publisher_node ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES})

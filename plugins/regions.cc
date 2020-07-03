@@ -62,7 +62,7 @@ namespace gazebo
 
     private: physics::WorldPtr world;
 
-    private: float region[4];
+    private: std::vector<std::vector<float>> regions;
 
     // service server
     private: ros::ServiceServer srv_server;
@@ -80,9 +80,9 @@ namespace gazebo
       int layer;
       std::string color;
 
-      if (_sdf->HasElement("name"))
+      if (_sdf->HasAttribute ("name"))
       {
-        region_name = _sdf->GetElement("name")->Get<std::string>();
+        region_name = _sdf->GetAttribute("name")->GetAsString();
       }
       if (_sdf->HasElement("layer"))
       {
@@ -93,19 +93,26 @@ namespace gazebo
         color = _sdf->GetElement("color")->Get<std::string>();
       }
 
-      if (_sdf->HasElement("region"))
-      {
-        std::string values = _sdf->GetElement("region")->Get<std::string>();
+      int n = 0;
+      while(_sdf->HasElement("region")){
+        n += 1;
+        sdf::ElementPtr el = _sdf->GetElement("region");
+        el->RemoveFromParent();
+
+        std::string values = el->Get<std::string>();
         std::vector<std::string> params;
         boost::split(params, values, boost::is_any_of("\t "));
-        this->region[0] = std::stof(params.at(0)); // x0
-        this->region[1] = std::stof(params.at(1)); // y0
-        this->region[2] = std::stof(params.at(2)); // x1
-        this->region[3] = std::stof(params.at(3)); // y1
-      }
+        std::vector<float> v;
+        v.push_back(std::stof(params.at(0))); // x0
+        v.push_back(std::stof(params.at(1))); // y0
+        v.push_back(std::stof(params.at(2))); // x1
+        v.push_back(std::stof(params.at(3))); // y1
+        this->regions.push_back(v);
 
-      AddRegion(region_name, layer, color,
-        this->region[0], this->region[1], this->region[2], this->region[3]);
+        AddRegion(region_name+"_"+std::to_string(n), layer, color,
+          v.at(0), v.at(1), v.at(2), v.at(3));
+
+      }
 
       // Service server: regions
       this->srv_server = this->rosNode->advertiseService(
@@ -157,14 +164,17 @@ namespace gazebo
         social_worlds::Regions::Request &_req,
         social_worlds::Regions::Response &_res)
     {
-      for (float x = this->region[0]; x <= this->region[2]; x+=0.05) {
-      for (float y = this->region[1]; y <= this->region[3]; y+=0.05) {
-        geometry_msgs::Point p;
-        p.x = x;
-        p.y = y;
-        _res.points.push_back(p);
-      }}
-
+      for(std::vector<std::vector<float>>::iterator iter = this->regions.begin();
+        iter != this->regions.end(); iter++)
+      {
+        for (float x = (*iter).at(0); x <= (*iter).at(2); x+=0.05) {
+        for (float y = (*iter).at(1); y <= (*iter).at(3); y+=0.05) {
+          geometry_msgs::Point p;
+          p.x = x;
+          p.y = y;
+          _res.points.push_back(p);
+        }}
+      }
       return true;
     }
 
