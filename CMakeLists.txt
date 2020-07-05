@@ -94,6 +94,8 @@ add_dependencies(regions ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_T
 
 add_executable(check_region_node src/check_region_node.cpp)
 target_link_libraries(check_region_node ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES})
+add_dependencies(check_region_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 add_executable(real_time_factor_publisher_node src/real_time_factor_publisher_node.cpp)
 target_link_libraries(real_time_factor_publisher_node ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES})
+add_dependencies(real_time_factor_publisher_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
