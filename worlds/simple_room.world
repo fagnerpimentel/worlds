@@ -32,7 +32,7 @@
       <pose>0 0 0 0 0 0</pose>
     </include>
 
-    <plugin name="start" filename="libregions.so">
+    <!-- <plugin name="start" filename="libregions.so">
       <layer>1</layer>
       <color>Green</color>
       <region>-7.5 -2.0 -6.0 2</region>
@@ -42,7 +42,21 @@
       <layer>2</layer>
       <color>Blue</color>
       <region>6.0 -2.0 7.5 2</region>
+    </plugin> -->
+
+    <plugin name="path" filename="libregions.so">
+      <region name="start">
+        <layer>1</layer>
+        <color>Green</color>
+        <area>-7.5 -2.0 -6.0 2</area>
+      </region>
+      <region name="goal">
+        <layer>2</layer>
+        <color>Blue</color>
+        <area>6.0 -2.0 7.5 2</area>
+      </region>
     </plugin>
+
 
   </world>
 </sdf>

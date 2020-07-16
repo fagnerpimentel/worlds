@@ -1,2 +1,2 @@
 ---
-geometry_msgs/Point[] points
+social_worlds/Region[] regions

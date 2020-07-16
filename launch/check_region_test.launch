@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="model" default="simple_room__interaction_object" />
+  <arg name="enable_gui" default="true" />
+  <arg name="paused" default="false" />
+
+  <include file="$(find social_worlds)/launch/gazebo.launch">
+    <arg name="model" default="$(arg model)" />
+    <arg name="enable_gui" default="$(arg enable_gui)" />
+    <arg name="paused" default="$(arg paused)" />
+  </include>
+
+  <node name="spawn_model" pkg="gazebo_ros" type="spawn_model" output="screen"
+    args="-file $(find social_worlds)/models/box/model.sdf -sdf -z 1 -model box" />
+
+  <node name="check_forbidden_region" pkg="social_worlds" type="check_region_node" output="screen">
+    <param name="robot_name" value="box"/>
+    <param name="region_name" value="forbidden_region"/>
+    <!-- <param name="region_name" value="start"/> -->
+  </node>
+
+</launch>

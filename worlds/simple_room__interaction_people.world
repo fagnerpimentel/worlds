@@ -237,25 +237,28 @@
       <models>human_model_1_1 human_model_1_2 human_model_2_1 human_model_2_2 human_model_3_1 human_model_3_2 human_model_4_1 human_model_4_2</models>
     </plugin>
 
-    <plugin name="start" filename="libregions.so">
-      <layer>1</layer>
-      <color>Green</color>
-      <region>-7.5 -2.0 -6.0 2</region>
+    <plugin name="path" filename="libregions.so">
+      <region name="start">
+        <layer>1</layer>
+        <color>Green</color>
+        <area>-7.5 -2.0 -6.0 2</area>
+      </region>
+      <region name="goal">
+        <layer>2</layer>
+        <color>Blue</color>
+        <area>6.0 -2.0 7.5 2</area>
+      </region>
     </plugin>
 
-    <plugin name="goal" filename="libregions.so">
-      <layer>2</layer>
-      <color>Blue</color>
-      <region>6.0 -2.0 7.5 2</region>
-    </plugin>
-
-    <plugin name="forbidden" filename="libregions.so">
-      <layer>3</layer>
-      <color>Red</color>
-      <region>-5.25 -1 -4.75 1</region>
-      <region>-1.75 0 -2.25 2</region>
-      <region>1.75 -2 2.25 0</region>
-      <region>4.75 -1 5.25 1</region>
+    <plugin name="forbidden_region" filename="libregions.so">
+      <region name="forbidden_region_object">
+        <layer>3</layer>
+        <color>Red</color>
+        <area>-5.25 -1 -4.75 1</area>
+        <area>-1.75 0 -2.25 2</area>
+        <area>1.75 -2 2.25 0</area>
+        <area>4.75 -1 5.25 1</area>
+      </region>
     </plugin>
 
   </world>

@@ -30,10 +30,10 @@ add_service_files(
   Regions.srv
 )
 
-#add_message_files(
-#  FILES
-#  ActorControl.msg
-#)
+add_message_files(
+ FILES
+ Region.msg
+)
 
 generate_messages(
  DEPENDENCIES
@@ -89,6 +89,9 @@ add_library(regions SHARED plugins/regions.cc)
 target_link_libraries(regions ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${roscpp_LIBRARIES})
 add_dependencies(regions ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
+add_library(load_human SHARED plugins/load_human.cc)
+target_link_libraries(load_human ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${roscpp_LIBRARIES})
+add_dependencies(load_human ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 # Build executable
 

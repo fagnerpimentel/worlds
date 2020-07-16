@@ -8,6 +8,7 @@
 #include <ros/callback_queue.h>
 
 #include <geometry_msgs/Point.h>
+#include <social_worlds/Region.h>
 #include <social_worlds/Regions.h>
 
 #include <boost/format.hpp>
@@ -62,7 +63,7 @@ namespace gazebo
 
     private: physics::WorldPtr world;
 
-    private: std::vector<std::vector<float>> regions;
+    private: std::vector<social_worlds::Region> regions;
 
     // service server
     private: ros::ServiceServer srv_server;
@@ -76,49 +77,80 @@ namespace gazebo
       this->world = _world;
       this->InitROS();
 
-      std::string region_name;
-      int layer;
-      std::string color;
+      std::string name;
 
       if (_sdf->HasAttribute ("name"))
       {
-        region_name = _sdf->GetAttribute("name")->GetAsString();
+        name = _sdf->GetAttribute("name")->GetAsString();
       }
-      if (_sdf->HasElement("layer"))
+
+      int i = 0;
+      while (_sdf->HasElement("region"))
       {
-        layer = _sdf->GetElement("layer")->Get<int>();
-      }
-      if (_sdf->HasElement("color"))
-      {
-        color = _sdf->GetElement("color")->Get<std::string>();
-      }
+        i += 1;
+        social_worlds::Region region;
 
-      int n = 0;
-      while(_sdf->HasElement("region")){
-        n += 1;
-        sdf::ElementPtr el = _sdf->GetElement("region");
-        el->RemoveFromParent();
+        sdf::ElementPtr region_sdf = _sdf->GetElement("region");
+        region_sdf->RemoveFromParent();
 
-        std::string values = el->Get<std::string>();
-        std::vector<std::string> params;
-        boost::split(params, values, boost::is_any_of("\t "));
-        std::vector<float> v;
-        v.push_back(std::stof(params.at(0))); // x0
-        v.push_back(std::stof(params.at(1))); // y0
-        v.push_back(std::stof(params.at(2))); // x1
-        v.push_back(std::stof(params.at(3))); // y1
-        this->regions.push_back(v);
+        std::string region_name;
+        int layer;
+        std::string color;
 
-        AddRegion(region_name+"_"+std::to_string(n), layer, color,
-          v.at(0), v.at(1), v.at(2), v.at(3));
+        if (region_sdf->HasAttribute ("name"))
+        {
+          region_name = region_sdf->GetAttribute("name")->GetAsString();
+        }
+        if (region_sdf->HasElement("layer"))
+        {
+          layer = region_sdf->GetElement("layer")->Get<int>();
+        }
+        if (region_sdf->HasElement("color"))
+        {
+          color = region_sdf->GetElement("color")->Get<std::string>();
+        }
+        int ii = 0;
+        while(region_sdf->HasElement("area")){
+          ii += 1;
+          sdf::ElementPtr el = region_sdf->GetElement("area");
+          el->RemoveFromParent();
+
+          std::string values = el->Get<std::string>();
+          std::vector<std::string> params;
+          boost::split(params, values, boost::is_any_of("\t "));
+          // std::vector<float> area;
+          // area.push_back(std::stof(params.at(0))); // x0
+          // area.push_back(std::stof(params.at(1))); // y0
+          // area.push_back(std::stof(params.at(2))); // x1
+          // area.push_back(std::stof(params.at(3))); // y1
+          float x0 = std::stof(params.at(0));
+          float y0 = std::stof(params.at(1));
+          float x1 = std::stof(params.at(2));
+          float y1 = std::stof(params.at(3));
+
+          region.name = region_name;
+          for (float x = x0; x <= x1; x+=0.05) {
+          for (float y = y0; y <= y1; y+=0.05) {
+            geometry_msgs::Point p;
+            p.x = x;
+            p.y = y;
+            region.points.push_back(p);
+          }}
+
+
+          AddRegion(region_name+"_"+std::to_string(ii),
+           layer, color, x0, y0, x1, y1);
+
+        }
+        this->regions.push_back(region);
 
       }
 
       // Service server: regions
       this->srv_server = this->rosNode->advertiseService(
-          "/regions/"+region_name, &Regions::OnService_Regions, this);
+          "/regions/"+name, &Regions::OnService_Regions, this);
 
-      std::cout << "starting region '" << region_name <<"'."  << std::endl;
+      std::cout << "starting region '" << name <<"'."  << std::endl;
     }
 
     private: void AddRegion(std::string name, int layer, std::string color,
@@ -128,7 +160,7 @@ namespace gazebo
       float y = (y0+y1)/2;
       float w = abs(x0-x1);
       float h = abs(y0-y1);
-      sdf::SDF sphereSDF;
+      sdf::SDF regionSDF;
       std::string s = boost::str(boost::format(
       "<sdf version ='1.5'>\
         <model name='%1%'>\
@@ -155,8 +187,8 @@ namespace gazebo
          </link>\
         </model>\
       </sdf>") % name % layer % color % x % y % w % h);
-      sphereSDF.SetFromString(s);
-      this->world->InsertModelSDF(sphereSDF);
+      regionSDF.SetFromString(s);
+      this->world->InsertModelSDF(regionSDF);
 
     }
 
@@ -164,17 +196,27 @@ namespace gazebo
         social_worlds::Regions::Request &_req,
         social_worlds::Regions::Response &_res)
     {
-      for(std::vector<std::vector<float>>::iterator iter = this->regions.begin();
-        iter != this->regions.end(); iter++)
-      {
-        for (float x = (*iter).at(0); x <= (*iter).at(2); x+=0.05) {
-        for (float y = (*iter).at(1); y <= (*iter).at(3); y+=0.05) {
-          geometry_msgs::Point p;
-          p.x = x;
-          p.y = y;
-          _res.points.push_back(p);
-        }}
-      }
+      // social_worlds::Region region;
+      // std::vector<std::vector<std::vector<float>>>::iterator iter_1;
+      // for(iter_1 = this->regions.begin(); iter_1 != this->regions.end(); iter_1++)
+      // {
+      //   std::vector<geometry_msgs::Point> points;
+      //   std::vector<std::vector<float>>::iterator iter_2;
+      //   for(iter_2 = (*iter_1).begin(); iter_2 != (*iter_1).end(); iter_2++)
+      //   {
+      //     for (float x = (*iter_2).at(0); x <= (*iter_2).at(2); x+=0.05) {
+      //     for (float y = (*iter_2).at(1); y <= (*iter_2).at(3); y+=0.05) {
+      //       geometry_msgs::Point p;
+      //       p.x = x;
+      //       p.y = y;
+      //       points.push_back(p);
+      //     }}
+      //     region.name = "a";
+      //     region.points = points;
+      //   }
+      //   _res.regions.push_back(region);
+      // }
+      _res.regions = this->regions;
       return true;
     }
 

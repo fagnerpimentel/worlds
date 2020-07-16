@@ -21,7 +21,6 @@ class CheckRegion
 
   // variables
   geometry_msgs::Pose robot_pose;
-  std::vector<geometry_msgs::Point> region_points;
 
   // publisher
   ros::Publisher pub_check;
@@ -52,7 +51,7 @@ public:
     ROS_INFO_STREAM("robot_name: " << this->robot_name);
     ROS_INFO_STREAM("region_name: " << this->region_name);
 
-    this->pub_check = n.advertise<geometry_msgs::Point>
+    this->pub_check = n.advertise<social_worlds::Region>
       ("", 1000);
 
     // this->sub_models = node->Subscribe("/gazebo/model_states",
@@ -92,29 +91,34 @@ public:
       ok = this->srv_region.call(srv);
       ros::Rate(10).sleep();
     }while(!ok);
-    this->region_points = srv.response.points;
 
     while (ros::ok())
     {
 
-      std::vector<geometry_msgs::Point>::iterator it;
-      for (it = this->region_points.begin(); it < this->region_points.end(); it++)
-      {
-        double dist = sqrt(
-          pow(this->robot_pose.position.x - (*it).x,2)+
-          pow(this->robot_pose.position.y - (*it).y,2));
-        if(dist <= 0.05)
-        {
-          ROS_DEBUG_STREAM("dist to region: " << dist);
-          geometry_msgs::Point check_msg;
-          check_msg.x = (*it).x;
-          check_msg.y = (*it).y;
-          ROS_DEBUG_STREAM("point: (" << check_msg.x << "," << check_msg.y << "). Dist: " << dist << ".");
-          this->pub_check.publish(check_msg);
+      social_worlds::Region region;
 
-          break;
+      std::vector<social_worlds::Region>::iterator iter_1;
+      for (iter_1 = srv.response.regions.begin(); iter_1 < srv.response.regions.end(); iter_1++)
+      {
+        std::vector<geometry_msgs::Point>::iterator iter_2;
+        for (iter_2 = (*iter_1).points.begin(); iter_2 < (*iter_1).points.end(); iter_2++)
+        {
+          double dist = sqrt(
+            pow(this->robot_pose.position.x - (*iter_2).x,2)+
+            pow(this->robot_pose.position.y - (*iter_2).y,2));
+          if(dist <= 0.05)
+          {
+            geometry_msgs::Point p;
+            p.x = (*iter_2).x;
+            p.y = (*iter_2).y;
+            region.name = (*iter_1).name;
+            region.points.push_back(p);
+            ROS_DEBUG_STREAM("point: (" << p.x << "," << p.y << "). Dist: " << dist << ".");
+          }
         }
       }
+
+      if(region.points.size() > 0) this->pub_check.publish(region);
 
 
       ros::Rate(10).sleep();
