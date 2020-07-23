@@ -182,9 +182,33 @@
       </script>
     </actor>
 
-    <plugin name="proxemics" filename="libproxemics.so">
+    <!-- <plugin name="proxemics" filename="libproxemics.so">
       <actors>human_actor_1 human_actor_2 human_actor_3 human_actor_4 human_actor_5 human_actor_6</actors>
       <models>human_model_1 human_model_2 human_model_3 human_model_4 human_model_5 human_model_6</models>
+    </plugin> -->
+
+    <plugin name="link_human_1" filename="liblink_actor_to_model.so">
+      <actor>human_actor_1</actor>
+      <model>human_model_1</model>
+    </plugin>
+    <plugin name="link_human_2" filename="liblink_actor_to_model.so">
+      <actor>human_actor_2</actor>
+      <model>human_model_2</model>
+    </plugin>
+    <plugin name="link_human_3" filename="liblink_actor_to_model.so">
+      <actor>human_actor_3</actor>
+      <model>human_model_3</model>
+    </plugin>
+    <plugin name="link_human_4" filename="liblink_actor_to_model.so">
+      <actor>human_actor_4</actor>
+      <model>human_model_4</model>
+    </plugin>
+
+    <plugin name="people" filename="libpeople_publisher.so">
+      <model>human_actor_1</model>
+      <model>human_actor_2</model>
+      <model>human_actor_3</model>
+      <model>human_actor_4</model>
     </plugin>
 
     <plugin name="path" filename="libregions.so">

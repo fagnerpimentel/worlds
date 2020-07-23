@@ -232,9 +232,53 @@
       </script>
     </actor>
 
-    <plugin name="proxemics" filename="libproxemics.so">
+    <!-- <plugin name="proxemics" filename="libproxemics.so">
       <actors>human_actor_1_1 human_actor_1_2 human_actor_2_1 human_actor_2_2 human_actor_3_1 human_actor_3_2 human_actor_4_1 human_actor_4_2</actors>
       <models>human_model_1_1 human_model_1_2 human_model_2_1 human_model_2_2 human_model_3_1 human_model_3_2 human_model_4_1 human_model_4_2</models>
+    </plugin> -->
+
+    <plugin name="link_human_1_1" filename="liblink_actor_to_model.so">
+      <actor>human_actor_1_1</actor>
+      <model>human_model_1_1</model>
+    </plugin>
+    <plugin name="link_human_1_2" filename="liblink_actor_to_model.so">
+      <actor>human_actor_1_2</actor>
+      <model>human_model_1_2</model>
+    </plugin>
+    <plugin name="link_human_2_1" filename="liblink_actor_to_model.so">
+      <actor>human_actor_2_1</actor>
+      <model>human_model_2_1</model>
+    </plugin>
+    <plugin name="link_human_2_2" filename="liblink_actor_to_model.so">
+      <actor>human_actor_2_2</actor>
+      <model>human_model_2_2</model>
+    </plugin>
+    <plugin name="link_human_3_1" filename="liblink_actor_to_model.so">
+      <actor>human_actor_3_1</actor>
+      <model>human_model_3_1</model>
+    </plugin>
+    <plugin name="link_human_3_2" filename="liblink_actor_to_model.so">
+      <actor>human_actor_3_2</actor>
+      <model>human_model_3_2</model>
+    </plugin>
+    <plugin name="link_human_4_1" filename="liblink_actor_to_model.so">
+      <actor>human_actor_4_1</actor>
+      <model>human_model_4_1</model>
+    </plugin>
+    <plugin name="link_human_4_2" filename="liblink_actor_to_model.so">
+      <actor>human_actor_4_2</actor>
+      <model>human_model_4_2</model>
+    </plugin>
+
+    <plugin name="people" filename="libpeople_publisher.so">
+      <model>human_actor_1_1</model>
+      <model>human_actor_1_2</model>
+      <model>human_actor_2_1</model>
+      <model>human_actor_2_2</model>
+      <model>human_actor_3_1</model>
+      <model>human_actor_3_2</model>
+      <model>human_actor_4_1</model>
+      <model>human_actor_4_2</model>
     </plugin>
 
     <plugin name="path" filename="libregions.so">

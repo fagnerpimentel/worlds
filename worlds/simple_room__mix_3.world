@@ -194,10 +194,49 @@
       <pose>2 2.4 1.2 0 -0 -1.5707</pose>
     </include>
 
-    <plugin name="proxemics" filename="libproxemics.so">
+    <!-- <plugin name="proxemics" filename="libproxemics.so">
       <actors>human_actor_1_1 human_actor_1_2 human_actor_2 human_actor_3 human_actor_4_1 human_actor_4_2</actors>
       <models>human_model_1_1 human_model_1_2 human_model_2 human_model_3 human_model_4_1 human_model_4_2</models>
+    </plugin> -->
+
+    <plugin name="link_human_1_1" filename="liblink_actor_to_model.so">
+      <actor>human_actor_1_1</actor>
+      <model>human_model_1_1</model>
     </plugin>
+    <plugin name="link_human_1_2" filename="liblink_actor_to_model.so">
+      <actor>human_actor_1_2</actor>
+      <model>human_model_1_2</model>
+    </plugin>
+    <plugin name="link_human_2" filename="liblink_actor_to_model.so">
+      <actor>human_actor_2</actor>
+      <model>human_model_2</model>
+    </plugin>
+    <plugin name="link_human_3" filename="liblink_actor_to_model.so">
+      <actor>human_actor_3</actor>
+      <model>human_model_3</model>
+    </plugin>
+    <plugin name="link_human_4" filename="liblink_actor_to_model.so">
+      <actor>human_actor_4</actor>
+      <model>human_model_4</model>
+    </plugin>
+    <plugin name="link_human_4_1" filename="liblink_actor_to_model.so">
+      <actor>human_actor_4_1</actor>
+      <model>human_model_4_1</model>
+    </plugin>
+    <plugin name="link_human_4_2" filename="liblink_actor_to_model.so">
+      <actor>human_actor_4_2</actor>
+      <model>human_model_4_2</model>
+    </plugin>
+
+    <plugin name="people" filename="libpeople_publisher.so">
+      <model>human_actor_1_2</model>
+      <model>human_actor_1_2</model>
+      <model>human_actor_2</model>
+      <model>human_actor_3</model>
+      <model>human_actor_4_1</model>
+      <model>human_actor_4_2</model>
+    </plugin>
+
 
     <plugin name="start" filename="libregions.so">
       <layer>1</layer>
@@ -205,7 +244,7 @@
       <region>-7.5 -2.0 -6.0 2</region>
     </plugin>
 
-    <plugin name="goal" filename="libregions.so">
+    <!-- <plugin name="goal" filename="libregions.so">
       <layer>2</layer>
       <color>Blue</color>
       <region>6.0 -2.0 7.5 2</region>
@@ -218,8 +257,20 @@
       <region>-1.75 -2.4 -2.25 -0.5</region>
       <region>1.75 0.5 2.25 2.4</region>
       <region>4.75 -1 5.25 1</region>
-    </plugin>
+    </plugin> -->
 
+    <plugin name="path" filename="libregions.so">
+      <region name="start">
+        <layer>1</layer>
+        <color>Green</color>
+        <area>-7.5 -2.0 -6.0 2</area>
+      </region>
+      <region name="goal">
+        <layer>2</layer>
+        <color>Blue</color>
+        <area>6.0 -2.0 7.5 2</area>
+      </region>
+    </plugin>
 
   </world>
 </sdf>

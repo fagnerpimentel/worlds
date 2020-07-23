@@ -197,12 +197,41 @@
       </script>
     </actor>
 
-    <plugin name="proxemics" filename="libproxemics.so">
+    <!-- <plugin name="proxemics" filename="libproxemics.so">
       <actors>human_actor_1-1 human_actor_1-2 human_actor_2 human_actor_3 human_actor_4</actors>
       <models>human_model_1-1 human_model_1-2 human_model_2 human_model_3 human_model_4</models>
+    </plugin> -->
+
+    <plugin name="link_human_1-1" filename="liblink_actor_to_model.so">
+      <actor>human_actor_1-1</actor>
+      <model>human_model_1-1</model>
+    </plugin>
+    <plugin name="link_human_1-2" filename="liblink_actor_to_model.so">
+      <actor>human_actor_1-2</actor>
+      <model>human_model_1-2</model>
+    </plugin>
+    <plugin name="link_human_2" filename="liblink_actor_to_model.so">
+      <actor>human_actor_2</actor>
+      <model>human_model_2</model>
+    </plugin>
+    <plugin name="link_human_3" filename="liblink_actor_to_model.so">
+      <actor>human_actor_3</actor>
+      <model>human_model_3</model>
+    </plugin>
+    <plugin name="link_human_4" filename="liblink_actor_to_model.so">
+      <actor>human_actor_4</actor>
+      <model>human_model_4</model>
     </plugin>
 
-    <plugin name="start" filename="libregions.so">
+    <plugin name="people" filename="libpeople_publisher.so">
+      <model>human_actor_1-1</model>
+      <model>human_actor_1-2</model>
+      <model>human_actor_2</model>
+      <model>human_actor_3</model>
+      <model>human_actor_4</model>
+    </plugin>
+
+    <!-- <plugin name="start" filename="libregions.so">
       <layer>1</layer>
       <color>Green</color>
       <region>-7.5 -2.0 -6.0 2</region>
@@ -212,7 +241,20 @@
       <layer>2</layer>
       <color>Blue</color>
       <region>6.0 -2.0 7.5 2</region>
-    </plugin>
+    </plugin> -->
 
+    <plugin name="path" filename="libregions.so">
+      <region name="start">
+        <layer>1</layer>
+        <color>Green</color>
+        <area>-7.5 -2.0 -6.0 2</area>
+      </region>
+      <region name="goal">
+        <layer>2</layer>
+        <color>Blue</color>
+        <area>6.0 -2.0 7.5 2</area>
+      </region>
+    </plugin>
+    
   </world>
 </sdf>
