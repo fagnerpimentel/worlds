@@ -1,7 +1,7 @@
 <?xml version='1.0'?>
 <sdf version='1.6'>
-  <model name='robocup_2019__empty'>
-    <pose>0.5 -0.5 0 0 0 0</pose>
+  <model name='robocup_2019'>
+    <!-- <pose>0.5 -0.5 0 0 0 0</pose> -->
 
     <link name='box_link'>
       <pose>0.0 4 0.5 0 0 0</pose>

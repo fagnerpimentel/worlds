@@ -123,23 +123,27 @@ namespace gazebo
           // area.push_back(std::stof(params.at(1))); // y0
           // area.push_back(std::stof(params.at(2))); // x1
           // area.push_back(std::stof(params.at(3))); // y1
-          float x0 = std::stof(params.at(0));
-          float y0 = std::stof(params.at(1));
-          float x1 = std::stof(params.at(2));
-          float y1 = std::stof(params.at(3));
+          // float x0 = std::stof(params.at(0));
+          // float y0 = std::stof(params.at(1));
+          // float x1 = std::stof(params.at(2));
+          // float y1 = std::stof(params.at(3));
+          float x = std::stof(params.at(0));
+          float y = std::stof(params.at(1));
+          float w = std::stof(params.at(2));
+          float l = std::stof(params.at(3));
 
           region.name = region_name;
-          for (float x = x0; x <= x1; x+=0.05) {
-          for (float y = y0; y <= y1; y+=0.05) {
+          for (float px = x-(w/2); px <= x+(w/2); px+=0.05) {
+          for (float py = y-(l/2); py <= y+(l/2); py+=0.05) {
             geometry_msgs::Point p;
-            p.x = x;
-            p.y = y;
+            p.x = px;
+            p.y = py;
             region.points.push_back(p);
           }}
 
 
           AddRegion(region_name+"_"+std::to_string(ii),
-           layer, color, x0, y0, x1, y1);
+           layer, color, x, y, w, l);
 
         }
         this->regions.push_back(region);
@@ -154,12 +158,12 @@ namespace gazebo
     }
 
     private: void AddRegion(std::string name, int layer, std::string color,
-                            float x0, float y0, float x1, float y1){
+                            float x, float y, float w, float l){
 
-      float x = (x0+x1)/2;
-      float y = (y0+y1)/2;
-      float w = abs(x0-x1);
-      float h = abs(y0-y1);
+      // float x = (x0+x1)/2;
+      // float y = (y0+y1)/2;
+      // float w = abs(x0-x1);
+      // float l = abs(y0-y1);
       sdf::SDF regionSDF;
       std::string s = boost::str(boost::format(
       "<sdf version ='1.5'>\
@@ -186,7 +190,7 @@ namespace gazebo
            </visual>\
          </link>\
         </model>\
-      </sdf>") % name % layer % color % x % y % w % h);
+      </sdf>") % name % layer % color % x % y % w % l);
       regionSDF.SetFromString(s);
       this->world->InsertModelSDF(regionSDF);
 

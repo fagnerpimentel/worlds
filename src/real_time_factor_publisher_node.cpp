@@ -26,10 +26,10 @@ public:
     node->Init();
 
     // parameters
-    n.getParam("real_time_factor_publisher_node/world_name", world_name);
+    // n.getParam("real_time_factor_publisher_node/world_name", world_name);
 
     // subscribers
-    sub_world_stats = node->Subscribe("/gazebo/"+world_name+"/world_stats", &RealTimeFactorPublisher::statsCallback, this);
+    sub_world_stats = node->Subscribe("/gazebo/default/world_stats", &RealTimeFactorPublisher::statsCallback, this);
 
   }
 
@@ -40,7 +40,7 @@ public:
 
   void start()
   {
-    ROS_INFO_STREAM("world_name: " << world_name);
+    // ROS_INFO_STREAM("world_name: " << world_name);
     ros::spin();
   }
 

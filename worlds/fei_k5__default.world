@@ -1,0 +1,82 @@
+<?xml version='1.0'?>
+<sdf version='1.6'>
+  <world name='default'>
+
+    <!-- Camera Pose -->
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose>-12 -24 21 0 1.25 0</pose>
+      </camera>
+    </gui>
+
+    <!-- physics -->
+    <physics type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+
+    <!-- sun -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <!-- Ground Plane -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <!-- fei_k5__forniture -->
+    <include>
+      <name>fei_k5</name>
+      <uri>model://fei_k5__forniture</uri>
+    </include>
+
+    <!-- Sliding Door 1 -->
+    <!-- <include>
+      <uri>model://sliding_door</uri>
+      <name>door1</name>
+      <pose>-0.9 -26 0 0 -0 0</pose>
+    </include>
+    <plugin name="auto_sliding_door_1" filename="libauto_sliding_door.so">
+      <door_name>door1</door_name>
+    </plugin> -->
+
+    <!-- Sliding Door 2 -->
+    <!-- <include>
+      <uri>model://sliding_door</uri>
+      <name>door2</name>
+      <pose>-0.9 -20.2 0 0 -0 0</pose>
+    </include>
+    <plugin name="auto_sliding_door_2" filename="libauto_sliding_door.so">
+      <door_name>door2</door_name>
+    </plugin> -->
+
+    <!-- small boxes -->
+    <!-- <include>
+      <name>box_0</name>
+      <uri>model://box_small</uri>
+      <pose>-2.5 -20 0 0 -0 0</pose>
+    </include>
+    <include>
+      <name>box_1</name>
+      <uri>model://box_small</uri>
+      <pose>-2 -20 0 0 -0 0</pose>
+    </include>
+    <include>
+      <name>box_2</name>
+      <uri>model://box_small</uri>
+      <pose>-1.5 -20 0 0 -0 0</pose>
+    </include>
+    <include>
+      <name>box_3</name>
+      <uri>model://box_small</uri>
+      <pose>-1 -20 0 0 -0 0</pose>
+    </include>
+    <include>
+      <name>box_4</name>
+      <uri>model://box_small</uri>
+      <pose>-0.5 -20 0 0 -0 0</pose>
+    </include> -->
+
+  </world>
+</sdf>

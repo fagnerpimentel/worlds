@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="world_name" default="simple_room" />
+
+  <include file="$(find social_worlds)/launch/start_world.launch">
+    <arg name="world_name" default="$(arg world_name)" />
+  </include>
+
+  <!-- real time factor publisher -->
+  <node name="real_time_factor_publisher_node" pkg="social_worlds" type="real_time_factor_publisher_node" output="screen"/>
+
+</launch>

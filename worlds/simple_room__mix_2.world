@@ -202,28 +202,28 @@
       <models>human_model_1-1 human_model_1-2 human_model_2 human_model_3 human_model_4</models>
     </plugin> -->
 
-    <plugin name="link_human_1-1" filename="liblink_actor_to_model.so">
+    <plugin name="link_human_1-1" filename="lib_link_actor_to_model.so">
       <actor>human_actor_1-1</actor>
       <model>human_model_1-1</model>
     </plugin>
-    <plugin name="link_human_1-2" filename="liblink_actor_to_model.so">
+    <plugin name="link_human_1-2" filename="lib_link_actor_to_model.so">
       <actor>human_actor_1-2</actor>
       <model>human_model_1-2</model>
     </plugin>
-    <plugin name="link_human_2" filename="liblink_actor_to_model.so">
+    <plugin name="link_human_2" filename="lib_link_actor_to_model.so">
       <actor>human_actor_2</actor>
       <model>human_model_2</model>
     </plugin>
-    <plugin name="link_human_3" filename="liblink_actor_to_model.so">
+    <plugin name="link_human_3" filename="lib_link_actor_to_model.so">
       <actor>human_actor_3</actor>
       <model>human_model_3</model>
     </plugin>
-    <plugin name="link_human_4" filename="liblink_actor_to_model.so">
+    <plugin name="link_human_4" filename="lib_link_actor_to_model.so">
       <actor>human_actor_4</actor>
       <model>human_model_4</model>
     </plugin>
 
-    <plugin name="people" filename="libpeople_publisher.so">
+    <plugin name="people" filename="lib_people_publisher.so">
       <model>human_actor_1-1</model>
       <model>human_actor_1-2</model>
       <model>human_actor_2</model>
@@ -231,30 +231,30 @@
       <model>human_actor_4</model>
     </plugin>
 
-    <!-- <plugin name="start" filename="libregions.so">
+    <!-- <plugin name="start" filename="lib_regions.so">
       <layer>1</layer>
       <color>Green</color>
       <region>-7.5 -2.0 -6.0 2</region>
     </plugin>
 
-    <plugin name="goal" filename="libregions.so">
+    <plugin name="goal" filename="lib_regions.so">
       <layer>2</layer>
       <color>Blue</color>
       <region>6.0 -2.0 7.5 2</region>
     </plugin> -->
 
-    <plugin name="path" filename="libregions.so">
+    <plugin name="path" filename="lib_regions.so">
       <region name="start">
         <layer>1</layer>
         <color>Green</color>
-        <area>-7.5 -2.0 -6.0 2</area>
+        <area>-6.75 0 1.5 4</area>
       </region>
       <region name="goal">
         <layer>2</layer>
         <color>Blue</color>
-        <area>6.0 -2.0 7.5 2</area>
+        <area>6.75 0 1.5 4</area>
       </region>
     </plugin>
-    
+
   </world>
 </sdf>

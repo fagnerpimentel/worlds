@@ -28,47 +28,26 @@
     <!-- fei_k5__marathon -->
     <include>
       <name>fei_k5__marathon</name>
-      <uri>model://fei_k5__empty</uri>
-    </include>
-
-    <!-- small boxes -->
-    <include>
-      <name>box_small_0</name>
-      <uri>model://box_small</uri>
-      <pose>-3.8 -24.5 0 0 -0 0</pose>
-    </include>
-    <include>
-      <name>box_small_1</name>
-      <uri>model://box_small</uri>
-      <pose>-3.3 -24.5 0 0 -0 0</pose>
-    </include>
-    <include>
-      <name>box_small_2</name>
-      <uri>model://box_small</uri>
-      <pose>-2.8 -24.5 0 0 -0 0</pose>
+      <uri>model://fei_k5</uri>
     </include>
 
     <!-- box 1 -->
     <include>
       <name>box_1</name>
       <uri>model://box</uri>
-      <pose>-2 -24.5 0 0 -0 0</pose>
+      <pose>-3 -31 0 0 -0 0</pose>
     </include>
 
-    <!-- <include>
-      <name>box_small_3</name>
-      <uri>model://box_small</uri>
-      <pose>-2.3 -24.5 0 0 -0 0</pose>
-    </include>
+    <!-- cafe_table -->
     <include>
-      <name>box_small_4</name>
-      <uri>model://box_small</uri>
-      <pose>-1.8 -24.5 0 0 -0 0</pose>
-    </include> -->
+      <name>cafe_table</name>
+      <uri>model://cafe_table</uri>
+      <pose>-3 -24.5 0 0 -0 0</pose>
+    </include>
 
     <!-- Human 1 -->
-    <!-- <include>
-      <pose>-5.7 -24.7 0 0 0 -1.5707</pose>
+    <include>
+      <pose>-4.5 -17.5 0 0 0 -1.5707</pose>
       <name>human_model_1</name>
       <uri>model://human_cylinder</uri>
     </include>
@@ -80,71 +59,23 @@
         <trajectory id="0" type="stand">
           <waypoint>
             <time>0</time>
-            <pose>-5.7 -24.7 0 0 0 -1.5707</pose>
+            <pose>-4.5 -17.5 0 0 0 -1.5707</pose>
           </waypoint>
           <waypoint>
             <time>3</time>
-            <pose>-5.7 -24.7 0 0 0 -1.5707</pose>
+            <pose>-4.5 -17.5 0 0 0 -1.5707</pose>
           </waypoint>
         </trajectory>
       </script>
-    </actor> -->
+    </actor>
 
     <!-- Human 2 -->
     <include>
-      <pose>-3.5 -17.5 0 0 0 3.1415</pose>
+      <pose>-6.5 -15.5 0 0 0 1.5707</pose>
       <name>human_model_2</name>
       <uri>model://human_cylinder</uri>
     </include>
     <actor name="human_actor_2">
-      <skin>
-        <filename>stand.dae</filename>
-      </skin>
-      <script>
-        <trajectory id="0" type="stand">
-          <waypoint>
-            <time>0</time>
-            <pose>-3.5 -17.5 0 0 0 3.1415</pose>
-          </waypoint>
-          <waypoint>
-            <time>3</time>
-            <pose>-3.5 -17.5 0 0 0 3.1415</pose>
-          </waypoint>
-        </trajectory>
-      </script>
-    </actor>
-
-    <!-- Human 3 -->
-    <include>
-      <pose>-5 -17.5 0 0 0 0</pose>
-      <name>human_model_3</name>
-      <uri>model://human_cylinder</uri>
-    </include>
-    <actor name="human_actor_3">
-      <skin>
-        <filename>stand.dae</filename>
-      </skin>
-      <script>
-        <trajectory id="0" type="stand">
-          <waypoint>
-            <time>0</time>
-            <pose>-5 -17.5 0 0 0 0</pose>
-          </waypoint>
-          <waypoint>
-            <time>3</time>
-            <pose>-5 -17.5 0 0 0 0</pose>
-          </waypoint>
-        </trajectory>
-      </script>
-    </actor>
-
-    <!-- Human 4 -->
-    <include>
-      <pose>-6.5 -15.5 0 0 0 1.5707</pose>
-      <name>human_model_4</name>
-      <uri>model://human_cylinder</uri>
-    </include>
-    <actor name="human_actor_4">
       <skin>
         <filename>stand.dae</filename>
       </skin>
@@ -169,136 +100,179 @@
       <pose>-6.5 -13.55 1.2 0 -0 -1.5707</pose>
     </include>
 
-    <!-- Human 5 -->
+    <!-- Human 3 -->
     <include>
-      <pose>-7.5 -17.5 0 0 0 3.1415</pose>
-      <name>human_model_5</name>
+      <pose>-9 -17.5 0 0 0 3.1415</pose>
+      <name>human_model_3</name>
       <uri>model://human_cylinder</uri>
     </include>
-    <actor name="human_actor_5">
+    <actor name="human_actor_3">
       <skin>
-        <filename>walk.dae</filename>
+        <filename>stand.dae</filename>
       </skin>
       <script>
-        <trajectory id="0" type="walking">
+        <trajectory id="0" type="stand">
           <waypoint>
             <time>0</time>
-            <pose>-8.5 -17.5 0 0 0 3.1415</pose>
+            <pose>-9 -17.5 0 0 0 3.1415</pose>
           </waypoint>
           <waypoint>
-            <time>2</time>
-            <pose>-8.5 -17.5 0 0 0 3.1415</pose>
-          </waypoint>
-          <waypoint>
-            <time>10</time>
-            <pose>-10.5 -17.5 0 0 0 3.1415</pose>
-          </waypoint>
-          <waypoint>
-            <time>12</time>
-            <pose>-10.5 -17.5 0 0 0 0</pose>
-          </waypoint>
-          <waypoint>
-            <time>14</time>
-            <pose>-10.5 -17.5 0 0 0 0</pose>
-          </waypoint>
-          <waypoint>
-            <time>22</time>
-            <pose>-8.5 -17.5 0 0 0 0</pose>
-          </waypoint>
-          <waypoint>
-            <time>24</time>
-            <pose>-8.5 -17.5 0 0 0 3.1415</pose>
+            <time>3</time>
+            <pose>-9 -17.5 0 0 0 3.1415</pose>
           </waypoint>
         </trajectory>
       </script>
     </actor>
 
+    <!-- Human 4 -->
+    <include>
+      <pose>-11 -17.5 0 0 0 0</pose>
+      <name>human_model_4</name>
+      <uri>model://human_cylinder</uri>
+    </include>
+    <actor name="human_actor_4">
+      <skin>
+        <filename>stand.dae</filename>
+      </skin>
+      <script>
+        <trajectory id="0" type="stand">
+          <waypoint>
+            <time>0</time>
+            <pose>-11 -17.5 0 0 0 0</pose>
+          </waypoint>
+          <waypoint>
+            <time>3</time>
+            <pose>-11 -17.5 0 0 0 0</pose>
+          </waypoint>
+        </trajectory>
+      </script>
+    </actor>
+
+
+    <!-- small boxes -->
+    <include>
+      <name>box_small_1</name>
+      <uri>model://box_small</uri>
+      <pose>-10 -22.5 0 0 -0 0</pose>
+    </include>
+    <include>
+      <name>box_small_2</name>
+      <uri>model://box_small</uri>
+      <pose>-9.5 -25 0 0 -0 0</pose>
+    </include>
+    <include>
+      <name>box_small_3</name>
+      <uri>model://box_small</uri>
+      <pose>-10.5 -25 0 0 -0 0</pose>
+    </include>
+
     <!-- box 2 -->
     <include>
       <name>box_2</name>
       <uri>model://box</uri>
-      <pose>-9.2 -24.2 0 0 -0 0</pose>
+      <pose>-9 -31 0 0 -0 0</pose>
     </include>
-
     <!-- box 3 -->
     <include>
       <name>box_3</name>
       <uri>model://box</uri>
-      <pose>-9.2 -25.2 0 0 -0 0</pose>
+      <pose>-11 -31 0 0 -0 0</pose>
     </include>
 
-    <!-- box 4 -->
-    <include>
-      <name>box_4</name>
-      <uri>model://box</uri>
-      <pose>-9.2 -26.2 0 0 -0 0</pose>
-    </include>
 
-    <!-- cafe_table -->
-    <include>
-      <name>cafe_table</name>
-      <uri>model://cafe_table</uri>
-      <pose>-10 -31 0 0 -0 0</pose>
-    </include>
+    <!-- <plugin name="proxemics" filename="libproxemics.so">
+      <actors>human_actor_1 human_actor_2 human_actor_3 human_actor_4</actors>
+      <models>human_model_1 human_model_2 human_model_3 human_model_4</models>
+    </plugin> -->
 
-    <plugin name="proxemics" filename="libproxemics.so">
-      <actors>human_actor_2 human_actor_3 human_actor_4 human_actor_5</actors>
-      <models>human_model_2 human_model_3 human_model_4 human_model_5</models>
+    <plugin name="link_human_1" filename="lib_link_actor_to_model.so">
+      <actor>human_actor_1</actor>
+      <model>human_model_1</model>
+    </plugin>
+    <plugin name="link_human_2" filename="lib_link_actor_to_model.so">
+      <actor>human_actor_2</actor>
+      <model>human_model_2</model>
+    </plugin>
+    <plugin name="link_human_3" filename="lib_link_actor_to_model.so">
+      <actor>human_actor_3</actor>
+      <model>human_model_3</model>
+    </plugin>
+    <plugin name="link_human_4" filename="lib_link_actor_to_model.so">
+      <actor>human_actor_4</actor>
+      <model>human_model_4</model>
     </plugin>
 
-    <plugin name="path" filename="libregions.so">
+    <plugin name="people" filename="lib_people_publisher.so">
+      <model>human_actor_1</model>
+      <model>human_actor_2</model>
+      <model>human_actor_3</model>
+      <model>human_actor_4</model>
+    </plugin>
+
+    <plugin name="objects" filename="lib_objects_publisher.so">
+      <model type="box">box_1</model>
+      <model type="cafe_table">cafe_table</model>
+      <model type="picture_frame">picture_frame</model>
+      <model type="box_small">box_small_1</model>
+      <model type="box_small">box_small_2</model>
+      <model type="box_small">box_small_3</model>
+      <model type="box">box_2</model>
+      <model type="box">box_3</model>
+    </plugin>
+
+    <plugin name="path" filename="lib_regions.so">
       <region name="start">
         <layer>1</layer>
         <color>Green</color>
-        <area>-3.5 -35 -2.5 -34</area>
+        <area>-3 -34.5 1 1</area>
       </region>
       <region name="checkpoint_1">
         <layer>2</layer>
         <color>Orange</color>
-        <area>-3.5 -28.5 -2.5 -27.5</area>
+        <area>-3 -27 1 1</area>
       </region>
       <region name="checkpoint_2">
         <layer>2</layer>
         <color>Orange</color>
-        <area>-5 -21.5 -4 -20.5</area>
+        <area>-4.5 -20 1 1</area>
       </region>
       <region name="checkpoint_3">
         <layer>2</layer>
         <color>Orange</color>
-        <area>-5 -15 -4 -14</area>
+        <area>-4.5 -14.5 1 1</area>
       </region>
       <region name="checkpoint_4">
         <layer>2</layer>
         <color>Orange</color>
-        <area>-10.5 -15 -9.5 -14</area>
+        <area>-10 -14.5 1 1</area>
       </region>
       <region name="checkpoint_5">
         <layer>2</layer>
         <color>Orange</color>
-        <area>-10.5 -21.5 -9.5 -20.5</area>
+        <area>-10 -20 1 1</area>
       </region>
       <region name="checkpoint_6">
         <layer>2</layer>
         <color>Orange</color>
-        <area>-10.5 -28.5 -9.5 -27.5</area>
+        <area>-10 -27 1 1</area>
       </region>
       <region name="goal">
         <layer>3</layer>
         <color>Blue</color>
-        <area>-10.5 -35 -9.5 -34</area>
+        <area>-10 -34.5 1 1</area>
       </region>
     </plugin>
 
-    <plugin name="forbidden_region" filename="libregions.so">
-      <region name="forbidden_region_people">
-        <layer>3</layer>
-        <color>Red</color>
-        <area>-3.5 -17.75 -5 -17.25</area>
-      </region>
+    <plugin name="forbidden_region" filename="lib_regions.so">
       <region name="forbidden_region_object">
         <layer>3</layer>
         <color>Red</color>
-        <area>-6.75 -15.5 -6.25 -13.55</area>
+        <area>-6.5 -14.5 0.5 2</area>
+      </region>
+      <region name="forbidden_region_people">
+        <layer>3</layer>
+        <color>Red</color>
+        <area>-10 -17.5 2 0.5</area>
       </region>
     </plugin>
 

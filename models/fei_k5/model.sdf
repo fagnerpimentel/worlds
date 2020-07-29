@@ -1,9 +1,9 @@
 <?xml version='1.0'?>
 <sdf version='1.6'>
 
-  <model name='fei_k5__empty'>
+  <model name='fei_k5'>
     <pose>0 0 0 0 0 0</pose>
-    
+
     <link name='Wall_10'>
       <collision name='Wall_10_Collision'>
         <geometry>

@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <launch>
-  <arg name="model" default="empty" />
+  <arg name="world_name" default="empty" />
   <arg name="enable_gui" default="true" />
   <arg name="paused" default="false" />
 
-  <arg name="world_path" default="$(find social_worlds)/worlds/$(arg model).world"/>
+  <arg name="world_path" default="$(find social_worlds)/worlds/$(arg world_name).world"/>
   <arg unless="$(arg paused)" name="command_arg1" value=""/>
   <arg     if="$(arg paused)" name="command_arg1" value="-u"/>
 

@@ -87,6 +87,13 @@ namespace gazebo
       this->world = _world;
       this->InitROS();
 
+      std::string name;
+
+      if (_sdf->HasAttribute ("name"))
+      {
+        name = _sdf->GetAttribute("name")->GetAsString();
+      }
+
       while(_sdf->HasElement("model"))
       {
         sdf::ElementPtr el = _sdf->GetElement("model");
@@ -111,7 +118,7 @@ namespace gazebo
       // people publisher
       this->pub_people =
           this->rosNode->advertise<people_msgs::People>(
-          "/people", 1000);
+          "/"+name, 1000);
 
       this->last_time = this->world->SimTime().Float();
 

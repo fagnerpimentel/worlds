@@ -83,6 +83,13 @@ namespace gazebo
       this->world = _world;
       this->InitROS();
 
+      std::string name;
+
+      if (_sdf->HasAttribute ("name"))
+      {
+        name = _sdf->GetAttribute("name")->GetAsString();
+      }
+
       while(_sdf->HasElement("model"))
       {
         sdf::ElementPtr el = _sdf->GetElement("model");
@@ -98,7 +105,7 @@ namespace gazebo
       // people publisher
       this->pub_objects =
           this->rosNode->advertise<object_recognition_msgs::RecognizedObjectArray>(
-          "/objects", 1000);
+          "/"+name, 1000);
 
       std::cout << "starting objects publisher." << std::endl;
     }

@@ -5,7 +5,7 @@
     <!-- Camera Pose -->
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose>-5 -1 11 0 0.7853 0</pose>
+        <pose>-11 -0 11 0 0.7853 0</pose>
       </camera>
     </gui>
 
@@ -27,7 +27,7 @@
 
     <!-- @HOME 2019 - forniture -->
     <include>
-      <name>Robocup@HOME</name>
+      <name>robocup_2019__receptionist</name>
       <uri>model://robocup_2019__forniture</uri>
       <pose>0 0 0.1 0 0 0</pose>
     </include>
@@ -236,12 +236,12 @@
       <plugin name="sliding_door_5" filename="libsliding_door_control.so"/>
     </include>
 
-    <plugin name="receptionist" filename="libreceptionist.so"/>
+    <!-- <plugin name="receptionist" filename="libreceptionist.so"/> -->
 
-    <plugin name="regions" filename="libregions.so">
+    <!-- <plugin name="regions" filename="libregions.so">
       <start_region>-7.5 -2.0 -6.0 2</start_region>
       <goal_region>6.0 -2.0 7.5 2</goal_region>
-    </plugin>
+    </plugin> -->
 
   </world>
 </sdf>

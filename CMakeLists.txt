@@ -70,41 +70,37 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${GAZEBO_CXX_FLAGS}")
 
 # Build libraries
 
+add_library(_regions SHARED plugins/regions.cc)
+target_link_libraries(_regions ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${roscpp_LIBRARIES})
+add_dependencies(_regions ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+
+# add_library(load_human SHARED plugins/load_human.cc)
+# target_link_libraries(load_human ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${roscpp_LIBRARIES})
+# add_dependencies(load_human ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+
 add_library(actor_control SHARED plugins/actor_control.cc)
 target_link_libraries(actor_control ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${roscpp_LIBRARIES})
 add_dependencies(actor_control ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
-add_library(proxemics SHARED plugins/proxemics.cc)
-target_link_libraries(proxemics ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${roscpp_LIBRARIES})
-add_dependencies(proxemics ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_library(_link_actor_to_model SHARED plugins/link_actor_to_model.cc)
+target_link_libraries(_link_actor_to_model ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${roscpp_LIBRARIES})
+add_dependencies(_link_actor_to_model ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
-add_library(sliding_door_control SHARED plugins/sliding_door_control.cc)
-target_link_libraries(sliding_door_control ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${roscpp_LIBRARIES})
-add_dependencies(sliding_door_control ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_library(_objects_publisher SHARED plugins/objects_publisher.cc)
+target_link_libraries(_objects_publisher ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${roscpp_LIBRARIES})
+add_dependencies(_objects_publisher ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
-add_library(receptionist SHARED plugins/task_control__receptionist.cc)
-target_link_libraries(receptionist ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${roscpp_LIBRARIES})
-add_dependencies(receptionist ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_library(_people_publisher SHARED plugins/people_publisher.cc)
+target_link_libraries(_people_publisher ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${roscpp_LIBRARIES})
+add_dependencies(_people_publisher ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
-add_library(regions SHARED plugins/regions.cc)
-target_link_libraries(regions ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${roscpp_LIBRARIES})
-add_dependencies(regions ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+# add_library(sliding_door_control SHARED plugins/sliding_door_control.cc)
+# target_link_libraries(sliding_door_control ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${roscpp_LIBRARIES})
+# add_dependencies(sliding_door_control ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
-add_library(load_human SHARED plugins/load_human.cc)
-target_link_libraries(load_human ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${roscpp_LIBRARIES})
-add_dependencies(load_human ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-
-add_library(objects_publisher SHARED plugins/objects_publisher.cc)
-target_link_libraries(objects_publisher ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${roscpp_LIBRARIES})
-add_dependencies(objects_publisher ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-
-add_library(people_publisher SHARED plugins/people_publisher.cc)
-target_link_libraries(people_publisher ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${roscpp_LIBRARIES})
-add_dependencies(people_publisher ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-
-add_library(link_actor_to_model SHARED plugins/link_actor_to_model.cc)
-target_link_libraries(link_actor_to_model ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${roscpp_LIBRARIES})
-add_dependencies(link_actor_to_model ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+# add_library(receptionist SHARED plugins/task_control__receptionist.cc)
+# target_link_libraries(receptionist ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${roscpp_LIBRARIES})
+# add_dependencies(receptionist ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 # Build executable
 

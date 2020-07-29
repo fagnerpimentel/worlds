@@ -25,5 +25,28 @@
       <uri>model://ground_plane</uri>
     </include>
 
+
+    <!-- <actor name="human_actor">
+      <pose>0 0 1.05 1.5707 0 1.5707</pose>
+      <skin>
+        <filename>walk.dae</filename>
+      </skin>
+      <animation name="stand">
+        <filename>stand.dae</filename>
+        <scale>1.0</scale>
+      </animation>
+      <animation name="walking">
+        <filename>walk.dae</filename>
+        <scale>1.0</scale>
+        <interpolate_x>true</interpolate_x>
+      </animation>
+      <animation name="running">
+        <filename>run.dae</filename>
+        <scale>1.0</scale>
+        <interpolate_x>true</interpolate_x>
+      </animation>
+      <plugin name="actor_control" filename="libactor_control.so"/>
+    </actor> -->
+
   </world>
 </sdf>

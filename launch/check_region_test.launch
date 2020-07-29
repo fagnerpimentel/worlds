@@ -1,22 +1,18 @@
 <?xml version="1.0"?>
 <launch>
-  <arg name="model" default="simple_room__interaction_object" />
-  <arg name="enable_gui" default="true" />
-  <arg name="paused" default="false" />
+  <arg name="world_name" default="simple_room" />
+  <arg name="region_name" default="path" />
 
-  <include file="$(find social_worlds)/launch/gazebo.launch">
-    <arg name="model" default="$(arg model)" />
-    <arg name="enable_gui" default="$(arg enable_gui)" />
-    <arg name="paused" default="$(arg paused)" />
+  <include file="$(find social_worlds)/launch/start_world.launch">
+    <arg name="world_name" default="$(arg world_name)" />
   </include>
 
   <node name="spawn_model" pkg="gazebo_ros" type="spawn_model" output="screen"
     args="-file $(find social_worlds)/models/box/model.sdf -sdf -z 1 -model box" />
 
-  <node name="check_forbidden_region" pkg="social_worlds" type="check_region_node" output="screen">
-    <param name="robot_name" value="box"/>
-    <param name="region_name" value="forbidden_region"/>
-    <!-- <param name="region_name" value="start"/> -->
+  <node name="check_$(arg region_name)" pkg="social_worlds" type="check_region_node" output="screen">
+    <param name="region_name" value="$(arg region_name)"/>
+    <param name="model_name" value="box"/>
   </node>
 
 </launch>
