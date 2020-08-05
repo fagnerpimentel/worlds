@@ -1,0 +1,288 @@
+<?xml version='1.0'?>
+<sdf version='1.6'>
+  <world name='default'>
+
+    <!-- Camera Pose -->
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose>-12 -24 21 0 1.25 0</pose>
+      </camera>
+    </gui>
+
+    <!-- physics -->
+    <physics type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+
+    <!-- sun -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <!-- Ground Plane -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <!-- fei_k5__marathon -->
+    <include>
+      <name>fei_k5__marathon_3</name>
+      <uri>model://fei_k5</uri>
+    </include>
+
+    <!-- box 1 -->
+    <include>
+      <name>box_1</name>
+      <uri>model://box</uri>
+      <pose>-3 -31 0 0 -0 0</pose>
+    </include>
+
+    <!-- Human 0 -->
+    <include>
+      <pose>-3 -23 0 0 0 -1.5707</pose>
+      <name>human_model_0</name>
+      <uri>model://human_cylinder</uri>
+    </include>
+    <actor name="human_actor_0">
+      <skin>
+        <filename>stand.dae</filename>
+      </skin>
+      <script>
+        <trajectory id="0" type="stand">
+          <waypoint>
+            <time>0</time>
+            <pose>-3 -23 0 0 0 -1.5707</pose>
+          </waypoint>
+          <waypoint>
+            <time>3</time>
+            <pose>-3 -23 0 0 0 -1.5707</pose>
+          </waypoint>
+        </trajectory>
+      </script>
+    </actor>
+
+    <!-- Human 1 -->
+    <include>
+      <pose>-3.5 -18.5 0 0 0 3.1415</pose>
+      <name>human_model_1</name>
+      <uri>model://human_cylinder</uri>
+    </include>
+    <actor name="human_actor_1">
+      <skin>
+        <filename>stand.dae</filename>
+      </skin>
+      <script>
+        <trajectory id="0" type="stand">
+          <waypoint>
+            <time>0</time>
+            <pose>-3.5 -18.5 0 0 0 3.1415</pose>
+          </waypoint>
+          <waypoint>
+            <time>3</time>
+            <pose>-3.5 -18.5 0 0 0 3.1415</pose>
+          </waypoint>
+        </trajectory>
+      </script>
+    </actor>
+
+    <!-- Human 2 -->
+    <include>
+      <pose>-5.5 -18.5 0 0 0 0</pose>
+      <name>human_model_2</name>
+      <uri>model://human_cylinder</uri>
+    </include>
+    <actor name="human_actor_2">
+      <skin>
+        <filename>stand.dae</filename>
+      </skin>
+      <script>
+        <trajectory id="0" type="stand">
+          <waypoint>
+            <time>0</time>
+            <pose>-5.5 -18.5 0 0 0 0</pose>
+          </waypoint>
+          <waypoint>
+            <time>3</time>
+            <pose>-5.5 -18.5 0 0 0 0</pose>
+          </waypoint>
+        </trajectory>
+      </script>
+    </actor>
+
+    <!-- Human 3 -->
+    <include>
+      <pose>-6.5 -15.5 0 0 0 1.5707</pose>
+      <name>human_model_3</name>
+      <uri>model://human_cylinder</uri>
+    </include>
+    <actor name="human_actor_3">
+      <skin>
+        <filename>stand.dae</filename>
+      </skin>
+      <script>
+        <trajectory id="0" type="stand">
+          <waypoint>
+            <time>0</time>
+            <pose>-6.5 -15.5 0 0 0 1.5707</pose>
+          </waypoint>
+          <waypoint>
+            <time>3</time>
+            <pose>-6.5 -15.5 0 0 0 1.5707</pose>
+          </waypoint>
+        </trajectory>
+      </script>
+    </actor>
+
+    <!-- picture_frame -->
+    <include>
+      <name>picture_frame</name>
+      <uri>model://picture_frame</uri>
+      <pose>-6.5 -13.55 1.2 0 -0 -1.5707</pose>
+    </include>
+
+
+    <!-- Human 4 -->
+    <include>
+      <pose>-10 -17.5 0 0 0 -1.5707</pose>
+      <name>human_model_4</name>
+      <uri>model://human_cylinder</uri>
+    </include>
+    <actor name="human_actor_4">
+      <skin>
+        <filename>stand.dae</filename>
+      </skin>
+      <script>
+        <trajectory id="0" type="stand">
+          <waypoint>
+            <time>0</time>
+            <pose>-10 -17.5 0 0 0 -1.5707</pose>
+          </waypoint>
+          <waypoint>
+            <time>3</time>
+            <pose>-10 -17.5 0 0 0 -1.5707</pose>
+          </waypoint>
+        </trajectory>
+      </script>
+    </actor>
+
+    <!-- cafe_table -->
+    <include>
+      <name>cafe_table</name>
+      <uri>model://cafe_table</uri>
+      <pose>-10 -23.5 0 0 -0 0</pose>
+    </include>
+
+    <!-- small boxes -->
+    <include>
+      <name>box_small_1</name>
+      <uri>model://box_small</uri>
+      <pose>-10 -29.5 0 0 -0 0</pose>
+    </include>
+    <include>
+      <name>box_small_2</name>
+      <uri>model://box_small</uri>
+      <pose>-9.5 -31.5 0 0 -0 0</pose>
+    </include>
+    <include>
+      <name>box_small_3</name>
+      <uri>model://box_small</uri>
+      <pose>-10.5 -31.5 0 0 -0 0</pose>
+    </include>
+
+    <plugin name="link_human_0" filename="lib_link_actor_to_model.so">
+      <actor>human_actor_0</actor>
+      <model>human_model_0</model>
+    </plugin>
+    <plugin name="link_human_1" filename="lib_link_actor_to_model.so">
+      <actor>human_actor_1</actor>
+      <model>human_model_1</model>
+    </plugin>
+    <plugin name="link_human_2" filename="lib_link_actor_to_model.so">
+      <actor>human_actor_2</actor>
+      <model>human_model_2</model>
+    </plugin>
+    <plugin name="link_human_3" filename="lib_link_actor_to_model.so">
+      <actor>human_actor_3</actor>
+      <model>human_model_3</model>
+    </plugin>
+    <plugin name="link_human_4" filename="lib_link_actor_to_model.so">
+      <actor>human_actor_4</actor>
+      <model>human_model_4</model>
+    </plugin>
+
+    <plugin name="people" filename="lib_people_publisher.so">
+      <model>human_actor_0</model>
+      <model>human_actor_1</model>
+      <model>human_actor_2</model>
+      <model>human_actor_3</model>
+      <model>human_actor_4</model>
+    </plugin>
+
+    <plugin name="objects" filename="lib_objects_publisher.so">
+      <model type="box">box_1</model>
+      <model type="picture_frame">picture_frame</model>
+      <model type="cafe_table">cafe_table</model>
+      <model type="box_small">box_small_1</model>
+      <model type="box_small">box_small_2</model>
+      <model type="box_small">box_small_3</model>
+    </plugin>
+
+    <plugin name="path" filename="lib_regions.so">
+      <region name="start">
+        <layer>1</layer>
+        <color>Green</color>
+        <area>-3 -34.5 1 1</area>
+      </region>
+      <region name="checkpoint_1">
+        <layer>2</layer>
+        <color>Orange</color>
+        <area>-3 -27 1 1</area>
+      </region>
+      <region name="checkpoint_2">
+        <layer>2</layer>
+        <color>Orange</color>
+        <area>-4.5 -20 1 1</area>
+      </region>
+      <region name="checkpoint_3">
+        <layer>2</layer>
+        <color>Orange</color>
+        <area>-4.5 -14.5 1 1</area>
+      </region>
+      <region name="checkpoint_4">
+        <layer>2</layer>
+        <color>Orange</color>
+        <area>-10 -14.5 1 1</area>
+      </region>
+      <region name="checkpoint_5">
+        <layer>2</layer>
+        <color>Orange</color>
+        <area>-10 -20 1 1</area>
+      </region>
+      <region name="checkpoint_6">
+        <layer>2</layer>
+        <color>Orange</color>
+        <area>-10 -27 1 1</area>
+      </region>
+      <region name="goal">
+        <layer>3</layer>
+        <color>Blue</color>
+        <area>-10 -34.5 1 1</area>
+      </region>
+    </plugin>
+
+    <plugin name="forbidden_region" filename="lib_regions.so">
+      <!-- <region name="forbidden_region_object">
+        <layer>3</layer>
+        <color>Red</color>
+        <area>-6.5 -14.5 0.5 2</area>
+      </region> -->
+      <region name="forbidden_region_people">
+        <layer>3</layer>
+        <color>Red</color>
+        <area>-4.5 -18.5 2 0.5</area>
+      </region>
+    </plugin>
+
+  </world>
+</sdf>
