@@ -20,11 +20,6 @@
       <uri>model://sun</uri>
     </include>
 
-    <!-- Ground Plane -->
-    <include>
-      <uri>model://ground_plane</uri>
-    </include>
-
     <!-- fei_k5__marathon -->
     <include>
       <name>fei_k5__marathon_2</name>

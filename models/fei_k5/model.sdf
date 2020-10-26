@@ -4,6 +4,43 @@
   <model name='fei_k5'>
     <pose>0 0 0 0 0 0</pose>
 
+    <link name="ground_plane">
+      <collision name="ground_plane_collision">
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>100 100</size>
+          </plane>
+        </geometry>
+        <surface>
+          <contact>
+             <collide_bitmask>0xffff</collide_bitmask>
+          </contact>
+          <friction>
+            <ode>
+              <mu>100</mu>
+              <mu2>50</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="ground_plane_visual">
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>100 100</size>
+          </plane>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/GreyTransparent</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
     <link name='Wall_10'>
       <collision name='Wall_10_Collision'>
         <geometry>
@@ -36,7 +73,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -81,7 +118,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -126,7 +163,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -171,7 +208,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -216,7 +253,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -261,7 +298,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -306,7 +343,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -331,7 +368,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -370,7 +407,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -409,7 +446,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -448,7 +485,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -487,7 +524,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -552,7 +589,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -597,7 +634,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -642,7 +679,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -687,7 +724,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -732,7 +769,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -777,7 +814,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -822,7 +859,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -867,7 +904,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -912,7 +949,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -937,7 +974,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -976,7 +1013,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -1015,7 +1052,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -1080,7 +1117,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -1105,7 +1142,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -1144,7 +1181,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -1183,7 +1220,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -1248,7 +1285,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -1293,7 +1330,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -1338,7 +1375,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -1383,7 +1420,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -1428,7 +1465,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -1473,7 +1510,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -1518,7 +1555,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -1563,7 +1600,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -1608,7 +1645,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -1653,7 +1690,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -1698,7 +1735,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -1743,7 +1780,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -1788,7 +1825,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -1833,7 +1870,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -1878,7 +1915,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -1923,7 +1960,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -1948,7 +1985,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -1987,7 +2024,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -2026,7 +2063,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -2091,7 +2128,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -2116,7 +2153,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -2155,7 +2192,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -2194,7 +2231,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -2259,7 +2296,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -2284,7 +2321,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -2323,7 +2360,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -2362,7 +2399,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -2427,7 +2464,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -2472,7 +2509,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -2517,7 +2554,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -2562,7 +2599,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -2587,7 +2624,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -2626,7 +2663,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -2665,7 +2702,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -2710,7 +2747,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -2749,7 +2786,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -2788,7 +2825,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -2827,7 +2864,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>
@@ -2892,7 +2929,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <name>Gazebo/Wood</name>
           </script>
           <ambient>1 1 1 1</ambient>
         </material>

@@ -20,11 +20,6 @@
       <uri>model://sun</uri>
     </include>
 
-    <!-- Ground Plane -->
-    <include>
-      <uri>model://ground_plane</uri>
-    </include>
-
     <!-- simple_room -->
     <include>
       <name>simple_room__mix_2</name>
