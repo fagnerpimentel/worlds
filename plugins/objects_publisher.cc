@@ -14,8 +14,8 @@
 #include <std_msgs/Header.h>
 #include <geometry_msgs/Point.h>
 #include <geometry_msgs/Pose.h>
-#include <object_recognition_msgs/RecognizedObjectArray.h>
-#include <object_recognition_msgs/RecognizedObject.h>
+#include <social_msgs/Objects.h>
+#include <social_msgs/Object.h>
 
 #include <thread>
 #include <iostream>
@@ -23,6 +23,14 @@
 
 namespace gazebo
 {
+
+  struct object_info {
+    std::string name;
+    physics::ModelPtr model;
+    std::string type;
+    // std::string mesh;
+  } ;
+
   class GAZEBO_VISIBLE ObjectsPublisher : public WorldPlugin
   {
     ////////////////////////////////////////////////////////////////////
@@ -69,7 +77,7 @@ namespace gazebo
 
     /// Pointers.
     private: physics::WorldPtr world;
-    private: std::vector<std::pair<std::string,physics::ModelPtr>> objects_pair;
+    private: std::vector<object_info> objects_info;
 
     // Publishers
     private: ros::Publisher pub_objects;
@@ -94,17 +102,19 @@ namespace gazebo
       {
         sdf::ElementPtr el = _sdf->GetElement("model");
         el->RemoveFromParent();
-        std::string model_type = el->GetAttribute("type")->GetAsString();
-        std::string model_name = el->Get<std::string>();
-        std::pair<std::string,physics::ModelPtr> p;
-        p.first = model_type;
-        p.second = _world->ModelByName(model_name);
-        this->objects_pair.push_back(p);
+
+        object_info oi;
+        oi.name = el->Get<std::string>();
+        oi.model = _world->ModelByName(oi.name);
+        oi.type = el->GetAttribute("type")->GetAsString();
+        // oi.mesh = el->GetAttribute("mesh")->GetAsString();
+        this->objects_info.push_back(oi);
+
       }
 
       // people publisher
       this->pub_objects =
-          this->rosNode->advertise<object_recognition_msgs::RecognizedObjectArray>(
+          this->rosNode->advertise<social_msgs::Objects>(
           "/"+name, 1000);
 
       std::cout << "starting objects publisher." << std::endl;
@@ -112,37 +122,34 @@ namespace gazebo
 
     private: void publish_objects()
     {
-      object_recognition_msgs::RecognizedObjectArray msg;
+      social_msgs::Objects msg;
       msg.header.seq = 0;
       msg.header.stamp = ros::Time::now();
       msg.header.frame_id = "map";
 
-      for (size_t i = 0; i < this->objects_pair.size(); i++)
+      for (size_t i = 0; i < this->objects_info.size(); i++)
       {
 
-        double x = this->objects_pair.at(i).second->WorldPose().Pos().X();
-        double y = this->objects_pair.at(i).second->WorldPose().Pos().Y();
-        double z = this->objects_pair.at(i).second->WorldPose().Pos().Z();
-        double qx = this->objects_pair.at(i).second->WorldPose().Rot().X();
-        double qy = this->objects_pair.at(i).second->WorldPose().Rot().Y();
-        double qz = this->objects_pair.at(i).second->WorldPose().Rot().Z();
-        double qw = this->objects_pair.at(i).second->WorldPose().Rot().W();
+        double x = this->objects_info.at(i).model->WorldPose().Pos().X();
+        double y = this->objects_info.at(i).model->WorldPose().Pos().Y();
+        double z = this->objects_info.at(i).model->WorldPose().Pos().Z();
+        double qx = this->objects_info.at(i).model->WorldPose().Rot().X();
+        double qy = this->objects_info.at(i).model->WorldPose().Rot().Y();
+        double qz = this->objects_info.at(i).model->WorldPose().Rot().Z();
+        double qw = this->objects_info.at(i).model->WorldPose().Rot().W();
 
-        object_recognition_msgs::RecognizedObject object;
-        object.header.seq = i;
-        object.header.stamp = ros::Time::now();
-        object.header.frame_id = "map";
-        object.type.key = this->objects_pair.at(i).first;
-        object.pose.header.seq = i;
-        object.pose.header.stamp = ros::Time::now();
-        object.pose.header.frame_id = "map";
-        object.pose.pose.pose.position.x = x;
-        object.pose.pose.pose.position.y = y;
-        object.pose.pose.pose.position.z = z;
-        object.pose.pose.pose.orientation.x = qx;
-        object.pose.pose.pose.orientation.x = qy;
-        object.pose.pose.pose.orientation.x = qz;
-        object.pose.pose.pose.orientation.x = qw;
+        social_msgs::Object object;
+        object.name = this->objects_info.at(i).name;
+        object.type = this->objects_info.at(i).type;
+        // object.mesh = this->objects_info.at(i).mesh;
+        object.pose.position.x = x;
+        object.pose.position.y = y;
+        object.pose.position.z = z;
+        object.pose.orientation.x = qx;
+        object.pose.orientation.y = qy;
+        object.pose.orientation.z = qz;
+        object.pose.orientation.w = qw;
+
         msg.objects.push_back(object);
       }
 

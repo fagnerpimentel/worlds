@@ -14,8 +14,8 @@
 #include <std_msgs/Header.h>
 #include <geometry_msgs/Point.h>
 #include <geometry_msgs/Pose.h>
-#include <people_msgs/People.h>
-#include <people_msgs/Person.h>
+#include <social_msgs/People.h>
+#include <social_msgs/Person.h>
 
 #include <thread>
 #include <iostream>
@@ -117,7 +117,7 @@ namespace gazebo
 
       // people publisher
       this->pub_people =
-          this->rosNode->advertise<people_msgs::People>(
+          this->rosNode->advertise<social_msgs::People>(
           "/"+name, 1000);
 
       this->last_time = this->world->SimTime().Float();
@@ -127,7 +127,7 @@ namespace gazebo
 
     private: void publish_people()
     {
-      people_msgs::People msg;
+      social_msgs::People msg;
       msg.header.seq = 0;
       msg.header.stamp = ros::Time::now();
       msg.header.frame_id = "map";
@@ -137,28 +137,29 @@ namespace gazebo
         double x = this->people_pair.at(i).second->WorldPose().Pos().X();
         double y = this->people_pair.at(i).second->WorldPose().Pos().Y();
         double z = this->people_pair.at(i).second->WorldPose().Pos().Z();
-        // double qx = this->people_pair.at(i).second->WorldPose().Rot().X();
-        // double qy = this->people_pair.at(i).second->WorldPose().Rot().Y();
-        // double qz = this->people_pair.at(i).second->WorldPose().Rot().Z();
-        // double qw = this->people_pair.at(i).second->WorldPose().Rot().W();
-        double vx = (x - this->last_pos.at(i).X())/
-          (this->world->SimTime().Float()-this->last_time);
-        double vy = (y - this->last_pos.at(i).Y())/
-          (this->world->SimTime().Float()-this->last_time);
-        double vz = (z - this->last_pos.at(i).Z())/
-          (this->world->SimTime().Float()-this->last_time);
+        double qx = this->people_pair.at(i).second->WorldPose().Rot().X();
+        double qy = this->people_pair.at(i).second->WorldPose().Rot().Y();
+        double qz = this->people_pair.at(i).second->WorldPose().Rot().Z();
+        double qw = this->people_pair.at(i).second->WorldPose().Rot().W();
+        // double vx = (x - this->last_pos.at(i).X())/
+        //   (this->world->SimTime().Float()-this->last_time);
+        // double vy = (y - this->last_pos.at(i).Y())/
+        //   (this->world->SimTime().Float()-this->last_time);
+        // double vz = (z - this->last_pos.at(i).Z())/
+        //   (this->world->SimTime().Float()-this->last_time);
         // double vx = this->people_pair.at(i).second->WorldLinearVel().X();
         // double vy = this->people_pair.at(i).second->WorldLinearVel().Y();
         // double vz = this->people_pair.at(i).second->WorldLinearVel().Z();
 
-        people_msgs::Person person;
+        social_msgs::Person person;
         person.name = this->people_pair.at(i).first;
-        person.position.x = x;
-        person.position.y = y;
-        person.position.z = z;
-        person.velocity.x = vx;
-        person.velocity.y = vy;
-        person.velocity.z = vz;
+        person.pose.position.x = x;
+        person.pose.position.y = y;
+        person.pose.position.z = z;
+        person.pose.orientation.x = qx;
+        person.pose.orientation.y = qy;
+        person.pose.orientation.z = qz;
+        person.pose.orientation.w = qw;
         msg.people.push_back(person);
 
         this->last_pos.at(i).Set(x,y,z);

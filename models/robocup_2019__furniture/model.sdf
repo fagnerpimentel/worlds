@@ -1,6 +1,6 @@
 <?xml version='1.0'?>
 <sdf version='1.6'>
-  <model name='robocup_2019__forniture'>
+  <model name='robocup_2019__furniture'>
 
     <!-- robocup_2019 -->
     <include>

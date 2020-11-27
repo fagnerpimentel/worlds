@@ -1,0 +1,190 @@
+<?xml version='1.0'?>
+<sdf version='1.6'>
+
+  <model name='fei_k5__cameras'>
+    <pose>0 0 0 0 0 0</pose>
+
+    <!-- fei_k5__empty -->
+    <include>
+      <uri>model://fei_k5</uri>
+    </include>
+
+    <!-- cameras -->
+
+    <!-- <link name="camera_1">
+      <pose>-2 -35.5 2 0 0.2617 1.9198</pose>
+      <gravity>false</gravity>
+      <sensor name="camera_1" type="camera">
+        <always_on>1</always_on>
+        <update_rate>30</update_rate>
+        <visualize>true</visualize>
+        <camera>
+          <image>
+            <width>640</width>
+            <height>480</height>
+            <format>R8G8B8</format>
+          </image>
+        </camera>
+        <plugin filename="libgazebo_ros_camera.so" name="camera_1">
+          <robotNamespace>world</robotNamespace>
+          <cameraName>camera_1</cameraName>
+          <imageTopicName>raw_image</imageTopicName>
+          <cameraInfoTopicName>info_image</cameraInfoTopicName>
+          <FrameName>cameraImage</FrameName>
+          <updateRate>30.0</updateRate>
+        </plugin>
+      </sensor>
+    </link>
+
+    <link name="camera_2">
+      <pose>-2 -20 2 0 0.2617 -1.9198</pose>
+      <gravity>false</gravity>
+      <sensor name="camera_2" type="camera">
+        <always_on>1</always_on>
+        <update_rate>30</update_rate>
+        <visualize>true</visualize>
+        <camera>
+          <image>
+            <width>640</width>
+            <height>480</height>
+            <format>R8G8B8</format>
+          </image>
+        </camera>
+        <plugin filename="libgazebo_ros_camera.so" name="camera_2">
+          <robotNamespace>world</robotNamespace>
+          <cameraName>camera_2</cameraName>
+          <imageTopicName>raw_image</imageTopicName>
+          <cameraInfoTopicName>info_image</cameraInfoTopicName>
+          <FrameName>cameraImage</FrameName>
+          <updateRate>30.0</updateRate>
+        </plugin>
+      </sensor>
+    </link>
+
+    <link name="camera_3">
+      <pose>-8.5 -27 2 0 0.2617 0.7853</pose>
+      <gravity>false</gravity>
+      <sensor name="camera_3" type="camera">
+        <always_on>1</always_on>
+        <update_rate>30</update_rate>
+        <visualize>true</visualize>
+        <camera>
+          <image>
+            <width>640</width>
+            <height>480</height>
+            <format>R8G8B8</format>
+          </image>
+        </camera>
+        <plugin filename="libgazebo_ros_camera.so" name="camera_3">
+          <robotNamespace>world</robotNamespace>
+          <cameraName>camera_3</cameraName>
+          <imageTopicName>raw_image</imageTopicName>
+          <cameraInfoTopicName>info_image</cameraInfoTopicName>
+          <FrameName>cameraImage</FrameName>
+          <updateRate>30.0</updateRate>
+        </plugin>
+      </sensor>
+    </link>
+
+    <link name="camera_4">
+      <pose>-3 -13.5 2 0 0.2617 -1.9198</pose>
+      <gravity>false</gravity>
+      <sensor name="camera_4" type="camera">
+        <always_on>1</always_on>
+        <update_rate>30</update_rate>
+        <visualize>true</visualize>
+        <camera>
+          <image>
+            <width>640</width>
+            <height>480</height>
+            <format>R8G8B8</format>
+          </image>
+        </camera>
+        <plugin filename="libgazebo_ros_camera.so" name="camera_4">
+          <robotNamespace>world</robotNamespace>
+          <cameraName>camera_4</cameraName>
+          <imageTopicName>raw_image</imageTopicName>
+          <cameraInfoTopicName>info_image</cameraInfoTopicName>
+          <FrameName>cameraImage</FrameName>
+          <updateRate>30.0</updateRate>
+        </plugin>
+      </sensor>
+    </link>
+
+    <link name="camera_5">
+      <pose>-3 -14 2 0 0.2617 -2.7925</pose>
+      <gravity>false</gravity>
+      <sensor name="camera_5" type="camera">
+        <always_on>1</always_on>
+        <update_rate>30</update_rate>
+        <visualize>true</visualize>
+        <camera>
+          <image>
+            <width>640</width>
+            <height>480</height>
+            <format>R8G8B8</format>
+          </image>
+        </camera>
+        <plugin filename="libgazebo_ros_camera.so" name="camera_5">
+          <robotNamespace>world</robotNamespace>
+          <cameraName>camera_5</cameraName>
+          <imageTopicName>raw_image</imageTopicName>
+          <cameraInfoTopicName>info_image</cameraInfoTopicName>
+          <FrameName>cameraImage</FrameName>
+          <updateRate>30.0</updateRate>
+        </plugin>
+      </sensor>
+    </link>
+
+    <link name="camera_6">
+      <pose>-11 -14 2 0 0.2617 -1.0472</pose>
+      <gravity>false</gravity>
+      <sensor name="camera_6" type="camera">
+        <always_on>1</always_on>
+        <update_rate>30</update_rate>
+        <visualize>true</visualize>
+        <camera>
+          <image>
+            <width>640</width>
+            <height>480</height>
+            <format>R8G8B8</format>
+          </image>
+        </camera>
+        <plugin filename="libgazebo_ros_camera.so" name="camera_6">
+          <robotNamespace>world</robotNamespace>
+          <cameraName>camera_6</cameraName>
+          <imageTopicName>raw_image</imageTopicName>
+          <cameraInfoTopicName>info_image</cameraInfoTopicName>
+          <FrameName>cameraImage</FrameName>
+          <updateRate>30.0</updateRate>
+        </plugin>
+      </sensor>
+    </link>
+
+    <link name="camera_7">
+      <pose>-10 -35.5 2 0 0.2617 1.5707</pose>
+      <gravity>false</gravity>
+      <sensor name="camera_7" type="camera">
+        <always_on>1</always_on>
+        <update_rate>30</update_rate>
+        <visualize>true</visualize>
+        <camera>
+          <image>
+            <width>640</width>
+            <height>480</height>
+            <format>R8G8B8</format>
+          </image>
+        </camera>
+        <plugin filename="libgazebo_ros_camera.so" name="camera_7">
+          <robotNamespace>world</robotNamespace>
+          <cameraName>camera_7</cameraName>
+          <imageTopicName>raw_image</imageTopicName>
+          <cameraInfoTopicName>info_image</cameraInfoTopicName>
+          <FrameName>cameraImage</FrameName>
+          <updateRate>30.0</updateRate>
+        </plugin>
+      </sensor>
+    </link> -->
+
+  </model>
+</sdf>

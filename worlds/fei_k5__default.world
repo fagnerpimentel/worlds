@@ -20,10 +20,10 @@
       <uri>model://sun</uri>
     </include>
 
-    <!-- fei_k5__forniture -->
+    <!-- fei_k5__furniture -->
     <include>
       <name>fei_k5</name>
-      <uri>model://fei_k5__forniture</uri>
+      <uri>model://fei_k5__furniture</uri>
     </include>
 
     <!-- Sliding Door 1 -->

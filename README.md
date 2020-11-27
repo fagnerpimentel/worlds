@@ -1,11 +1,13 @@
 
 # Social Worlds
-This is a [ROS](www.ros.org) package that contains a set of [gazebo](http://gazebosim.org/) worlds, plugins and nodes integrated with the [OpenAI Gym](https://gym.openai.com/) toolkit. This sets provides environments for a robot to learn social behaviors.
+This is a [ROS](www.ros.org) package that contains a set of [gazebo](http://gazebosim.org/) worlds, plugins and nodes.
+<!-- integrated with the [OpenAI Gym](https://gym.openai.com/) toolkit.  -->
+This sets provides environments for a robot to learn social behaviors.
 
 ## Dependencies:
 * [gazebo](http://gazebosim.org/) (9.0.0)
 * [ROS](https://www.ros.org/) (Melodic Morenia)
-* [OpenAI Gym](https://gym.openai.com/) (??)
+<!-- * [OpenAI Gym](https://gym.openai.com/) (??) -->
 
 ## Models:
 The models used in this package was developed by the author or imported from [3D Gazebo Models](http://data.nvision2.eecs.yorku.ca/3DGEMS/) and [OSRF Gazebo Models](https://github.com/osrf/gazebo_models).
@@ -36,6 +38,7 @@ The models used in this package was developed by the author or imported from [3D
 ``` -->
 
 ## Nodes:
+* **check_collision_node**: Node used to check if a model is in collision.
 * **check_region_node**: Node used to check if a region is occupied by a model.
 * **real_time_factor_publisher_node**: Node used to publish the gazebo real_time_factor on ROS ecosystem.
 

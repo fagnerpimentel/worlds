@@ -20,10 +20,15 @@
       <uri>model://sun</uri>
     </include>
 
+    <!-- Ground Plane -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
     <!-- fei_k5__marathon -->
     <include>
       <name>fei_k5__marathon_3</name>
-      <uri>model://fei_k5</uri>
+      <uri>model://fei_k5__cameras</uri>
     </include>
 
     <!-- box 1 -->
@@ -215,12 +220,12 @@
     </plugin>
 
     <plugin name="objects" filename="lib_objects_publisher.so">
-      <model type="box">box_1</model>
+      <!-- <model type="box">box_1</model> -->
       <model type="picture_frame">picture_frame</model>
-      <model type="cafe_table">cafe_table</model>
-      <model type="box_small">box_small_1</model>
-      <model type="box_small">box_small_2</model>
-      <model type="box_small">box_small_3</model>
+      <!-- <model type="cafe_table">cafe_table</model> -->
+      <!-- <model type="box_small">box_small_1</model> -->
+      <!-- <model type="box_small">box_small_2</model> -->
+      <!-- <model type="box_small">box_small_3</model> -->
     </plugin>
 
     <plugin name="path" filename="lib_regions.so">

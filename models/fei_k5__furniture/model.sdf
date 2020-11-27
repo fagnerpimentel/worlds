@@ -1,10 +1,10 @@
 <?xml version='1.0'?>
 <sdf version='1.6'>
-  <model name='robocup_2019__forniture'>
+  <model name='robocup_2019__furniture'>
 
-    <!-- fei_k5__empty -->
+    <!-- fei_k5__cameras -->
     <include>
-      <uri>model://fei_k5__empty</uri>
+      <uri>model://fei_k5__cameras</uri>
     </include>
 
     <!-- K5-20_D -->

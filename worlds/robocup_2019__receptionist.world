@@ -28,7 +28,7 @@
     <!-- @HOME 2019 - forniture -->
     <include>
       <name>robocup_2019__receptionist</name>
-      <uri>model://robocup_2019__forniture</uri>
+      <uri>model://robocup_2019__furniture</uri>
       <pose>0 0 0.1 0 0 0</pose>
     </include>
 

@@ -4,7 +4,7 @@
   <model name='fei_k5'>
     <pose>0 0 0 0 0 0</pose>
 
-    <link name="ground_plane">
+    <!-- <link name="ground_plane">
       <collision name="ground_plane_collision">
         <geometry>
           <plane>
@@ -39,7 +39,7 @@
           </script>
         </material>
       </visual>
-    </link>
+    </link> -->
 
     <link name='Wall_10'>
       <collision name='Wall_10_Collision'>

@@ -151,12 +151,13 @@
       <pose>5 -2.4 1.2 0 -0 1.5707</pose>
     </include>
 
-    <!--
-    <plugin name="proxemics" filename="libproxemics.so">
-      <actors>human_actor_1 human_actor_2 human_actor_3 human_actor_4</actors>
-      <models>human_model_1 human_model_2 human_model_3 human_model_4</models>
+    <plugin name="objects" filename="lib_objects_publisher.so">
+      <model type="picture_frame">picture_frame_1</model>
+      <model type="picture_frame">picture_frame_2</model>
+      <model type="picture_frame">picture_frame_3</model>
+      <model type="picture_frame">picture_frame_4</model>
     </plugin>
-    -->
+
 
     <plugin name="link_human_1" filename="lib_link_actor_to_model.so">
       <actor>human_actor_1</actor>
