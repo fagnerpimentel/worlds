@@ -247,6 +247,17 @@
       <!-- <model type="box_small">box_small_3</model> -->
     </plugin>
 
+    <plugin name="locals" filename="lib_locals_publisher.so">
+      <local name="start">-2.8 -34.5 0 0 0 1</local>
+      <local name="cp1">-2.8 -27 0 0 0 1</local>
+      <local name="cp2">-4.5 -20 0 0 0 1</local>
+      <local name="cp3">-4.5 -14.5 0 0 0 1</local>
+      <local name="cp4">-10 -14.5 0 0 0 1</local>
+      <local name="cp5">-10 -20 0 0 0 1</local>
+      <local name="cp6">-10 -27 0 0 0 1</local>
+      <local name="goal">-10 -34 0 0 0 1</local>
+    </plugin>
+
     <plugin name="path" filename="lib_regions.so">
       <region name="start">
         <layer>1</layer>

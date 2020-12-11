@@ -81,6 +81,11 @@
       <region>6.0 -2.0 7.5 2</region>
     </plugin> -->
 
+    <!-- locals -->
+    <plugin name="locals" filename="lib_locals_publisher.so">
+      <local name="start">-6.75 0 0 0 0 1</local>
+      <local name="goal">6.75 0 0 0 0 1</local>
+    </plugin>
 
     <plugin name="path" filename="lib_regions.so">
       <region name="start">

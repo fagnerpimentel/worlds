@@ -183,6 +183,12 @@
       <model>human_actor_4</model>
     </plugin>
 
+    <!-- locals -->
+    <plugin name="locals" filename="lib_locals_publisher.so">
+      <local name="start">-6.75 0 0 0 0 1</local>
+      <local name="goal">6.75 0 0 0 0 1</local>
+    </plugin>
+
     <plugin name="path" filename="lib_regions.so">
       <region name="start">
         <layer>1</layer>
