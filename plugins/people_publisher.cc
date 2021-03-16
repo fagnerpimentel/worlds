@@ -17,9 +17,32 @@
 #include <social_msgs/People.h>
 #include <social_msgs/Person.h>
 
+#include <math.h>
 #include <thread>
 #include <iostream>
 #include <boost/algorithm/string.hpp>
+
+void euler_to_quaternion(float roll, float pitch, float yaw, float *qx, float *qy, float *qz, float *qw)
+{
+  *qx = sin(roll/2) * cos(pitch/2) * cos(yaw/2) - cos(roll/2) * sin(pitch/2) * sin(yaw/2);
+  *qy = cos(roll/2) * sin(pitch/2) * cos(yaw/2) + sin(roll/2) * cos(pitch/2) * sin(yaw/2);
+  *qz = cos(roll/2) * cos(pitch/2) * sin(yaw/2) - sin(roll/2) * sin(pitch/2) * cos(yaw/2);
+  *qw = cos(roll/2) * cos(pitch/2) * cos(yaw/2) + sin(roll/2) * sin(pitch/2) * sin(yaw/2);
+}
+
+void quaternion_to_euler(float x, float y, float z, float w, float *yaw, float *pitch, float *roll)
+{
+  float t0 = +2.0 * (w * x + y * z);
+  float t1 = +1.0 - 2.0 * (x * x + y * y);
+  *roll = atan2(t0, t1);
+  float t2 = +2.0 * (w * y - z * x);
+  t2 = (t2 > +1.0)? +1.0 : t2;
+  t2 = (t2 < -1.0)? -1.0 : t2;
+  *pitch = asin(t2);
+  float t3 = +2.0 * (w * z + x * y);
+  float t4 = +1.0 - 2.0 * (y * y + z * z);
+  *yaw = atan2(t3, t4);
+}
 
 namespace gazebo
 {
@@ -134,13 +157,22 @@ namespace gazebo
 
       for (size_t i = 0; i < this->people_pair.size(); i++)
       {
-        double x = this->people_pair.at(i).second->WorldPose().Pos().X();
-        double y = this->people_pair.at(i).second->WorldPose().Pos().Y();
-        double z = this->people_pair.at(i).second->WorldPose().Pos().Z();
-        double qx = this->people_pair.at(i).second->WorldPose().Rot().X();
-        double qy = this->people_pair.at(i).second->WorldPose().Rot().Y();
-        double qz = this->people_pair.at(i).second->WorldPose().Rot().Z();
-        double qw = this->people_pair.at(i).second->WorldPose().Rot().W();
+
+        // std::cout <<
+        // this->people_pair.at(i).second->WorldPose().Rot().Euler().
+        // << std::endl;
+
+        float x = this->people_pair.at(i).second->WorldPose().Pos().X();
+        float y = this->people_pair.at(i).second->WorldPose().Pos().Y();
+        float z = this->people_pair.at(i).second->WorldPose().Pos().Z();
+        float qx = this->people_pair.at(i).second->WorldPose().Rot().X();
+        float qy = this->people_pair.at(i).second->WorldPose().Rot().Y();
+        float qz = this->people_pair.at(i).second->WorldPose().Rot().Z();
+        float qw = this->people_pair.at(i).second->WorldPose().Rot().W();
+
+        float yaw = this->people_pair.at(i).second->WorldPose().Rot().Euler().Z() - 89.55;
+        euler_to_quaternion(0,0,yaw,&qx,&qy,&qz,&qw);
+
         // double vx = (x - this->last_pos.at(i).X())/
         //   (this->world->SimTime().Float()-this->last_time);
         // double vy = (y - this->last_pos.at(i).Y())/

@@ -21,6 +21,29 @@
 #include <iostream>
 #include <boost/algorithm/string.hpp>
 
+
+void euler_to_quaternion(float roll, float pitch, float yaw, float *qx, float *qy, float *qz, float *qw)
+{
+  *qx = sin(roll/2) * cos(pitch/2) * cos(yaw/2) - cos(roll/2) * sin(pitch/2) * sin(yaw/2);
+  *qy = cos(roll/2) * sin(pitch/2) * cos(yaw/2) + sin(roll/2) * cos(pitch/2) * sin(yaw/2);
+  *qz = cos(roll/2) * cos(pitch/2) * sin(yaw/2) - sin(roll/2) * sin(pitch/2) * cos(yaw/2);
+  *qw = cos(roll/2) * cos(pitch/2) * cos(yaw/2) + sin(roll/2) * sin(pitch/2) * sin(yaw/2);
+}
+
+void quaternion_to_euler(float x, float y, float z, float w, float *yaw, float *pitch, float *roll)
+{
+  float t0 = +2.0 * (w * x + y * z);
+  float t1 = +1.0 - 2.0 * (x * x + y * y);
+  *roll = atan2(t0, t1);
+  float t2 = +2.0 * (w * y - z * x);
+  t2 = (t2 > +1.0)? +1.0 : t2;
+  t2 = (t2 < -1.0)? -1.0 : t2;
+  *pitch = asin(t2);
+  float t3 = +2.0 * (w * z + x * y);
+  float t4 = +1.0 - 2.0 * (y * y + z * z);
+  *yaw = atan2(t3, t4);
+}
+
 namespace gazebo
 {
 
@@ -109,13 +132,21 @@ namespace gazebo
         std::string values = el->Get<std::string>();
         std::vector<std::string> params;
         boost::split(params, values, boost::is_any_of("\t "));
+
+        float qx, qy, qz, qw;
+        euler_to_quaternion(
+          std::stof(params.at(3)),
+          std::stof(params.at(4)),
+          std::stof(params.at(5)),
+          &qx, &qy, &qz, &qw);
+
         li.pose.position.x = std::stof(params.at(0));
         li.pose.position.y = std::stof(params.at(1));
-        li.pose.orientation.x = std::stof(params.at(2));
-        li.pose.orientation.y = std::stof(params.at(3));
-        li.pose.orientation.z = std::stof(params.at(4));
-        li.pose.orientation.w = std::stof(params.at(5));
-
+        li.pose.position.z = std::stof(params.at(2));
+        li.pose.orientation.x = qx;
+        li.pose.orientation.y = qy;
+        li.pose.orientation.z = qz;
+        li.pose.orientation.w = qw;
         this->locals_info.push_back(li);
 
       }
