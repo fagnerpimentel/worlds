@@ -44,6 +44,21 @@ void quaternion_to_euler(float x, float y, float z, float w, float *yaw, float *
   *yaw = atan2(t3, t4);
 }
 
+double GenerateRandom(double min, double max)
+{
+    static bool first = true;
+    if (first)
+    {
+        srand(time(NULL));
+        first = false;
+    }
+    if (min > max)
+    {
+        std::swap(min, max);
+    }
+    return min + (double)rand() * (max - min) / (double)RAND_MAX;
+}
+
 namespace gazebo
 {
 
@@ -133,20 +148,13 @@ namespace gazebo
         std::vector<std::string> params;
         boost::split(params, values, boost::is_any_of("\t "));
 
-        float qx, qy, qz, qw;
-        euler_to_quaternion(
-          std::stof(params.at(3)),
-          std::stof(params.at(4)),
-          std::stof(params.at(5)),
-          &qx, &qy, &qz, &qw);
-
         li.pose.position.x = std::stof(params.at(0));
         li.pose.position.y = std::stof(params.at(1));
         li.pose.position.z = std::stof(params.at(2));
-        li.pose.orientation.x = qx;
-        li.pose.orientation.y = qy;
-        li.pose.orientation.z = qz;
-        li.pose.orientation.w = qw;
+        li.pose.orientation.x = std::stof(params.at(3));
+        li.pose.orientation.y = std::stof(params.at(4));
+        li.pose.orientation.z = std::stof(params.at(5));
+        // li.pose.orientation.w = ;
         this->locals_info.push_back(li);
 
       }
@@ -168,11 +176,49 @@ namespace gazebo
 
       for (size_t i = 0; i < this->locals_info.size(); i++)
       {
-
         social_msgs::Local local;
-        local.name = this->locals_info.at(i).name;
-        local.pose = this->locals_info.at(i).pose;
+        if(locals_info.at(i).name.rfind("_random_", 0) == 0)
+        {
 
+
+          double x = GenerateRandom(this->locals_info.at(i).pose.position.x - this->locals_info.at(i).pose.orientation.x/2,
+                             this->locals_info.at(i).pose.position.x + this->locals_info.at(i).pose.orientation.x/2);
+          double y = GenerateRandom(this->locals_info.at(i).pose.position.y - this->locals_info.at(i).pose.orientation.y/2,
+                             this->locals_info.at(i).pose.position.y + this->locals_info.at(i).pose.orientation.y/2);
+          double z = GenerateRandom(this->locals_info.at(i).pose.position.z - this->locals_info.at(i).pose.orientation.z/2,
+                             this->locals_info.at(i).pose.position.z + this->locals_info.at(i).pose.orientation.z/2);
+
+          double ang = GenerateRandom(-3.1415,3.1415);
+          float qx, qy, qz, qw;
+          euler_to_quaternion(0,0,ang,&qx, &qy, &qz, &qw);
+
+          local.name = this->locals_info.at(i).name;
+          local.name.erase(0,8);
+          local.pose.position.x = x;
+          local.pose.position.y = y;
+          local.pose.position.z = z;
+          local.pose.orientation.x = qx;
+          local.pose.orientation.y = qy;
+          local.pose.orientation.z = qz;
+          local.pose.orientation.w = qw;
+        }
+        else
+        {
+          float qx, qy, qz, qw;
+          euler_to_quaternion(
+            this->locals_info.at(i).pose.orientation.x,
+            this->locals_info.at(i).pose.orientation.y,
+            this->locals_info.at(i).pose.orientation.z,
+            &qx, &qy, &qz, &qw);
+
+          local.name = this->locals_info.at(i).name;
+          local.pose.position = this->locals_info.at(i).pose.position;
+          local.pose.orientation.x = qx;
+          local.pose.orientation.y = qy;
+          local.pose.orientation.z = qz;
+          local.pose.orientation.w = qw;
+
+        }
         msg.locals.push_back(local);
       }
 
