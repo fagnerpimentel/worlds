@@ -1,3 +1,5 @@
 #!/bin/bash
 
-apt-get install -y ros-melodic-object-recognition-msgs
+distribution=${1:-noetic} 
+
+apt-get install -y ros-$distribution-object-recognition-msgs
