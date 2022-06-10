@@ -28,12 +28,12 @@
     </include>
 
     <!-- locals -->
-    <plugin name="locals" filename="lib_locals_publisher.so">
+    <!-- <plugin name="locals" filename="lib_locals_publisher.so">
       <local name="start">-6.75 0 0 0 0 0</local>
       <local name="goal">6.75 0 0 0 0 0</local>
-    </plugin>
+    </plugin> -->
 
-    <plugin name="path" filename="lib_regions.so">
+    <!-- <plugin name="path" filename="lib_regions.so">
       <region name="start">
         <layer>1</layer>
         <color>Green</color>
@@ -44,7 +44,7 @@
         <color>Blue</color>
         <area>6.75 0 1.5 4</area>
       </region>
-    </plugin>
+    </plugin> -->
 
   </world>
 </sdf>
